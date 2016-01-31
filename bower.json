@@ -1,0 +1,26 @@
+{
+  "name": "meatstudies",
+  "description": "landing page",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "landing",
+    "page"
+  ],
+  "authors": [
+    "Alexey Pogorelov"
+  ],
+  "license": "no license",
+  "homepage": "makemeat.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize-css": "~3.0.3"
+  }
+}
