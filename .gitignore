@@ -9,6 +9,8 @@
 *.log
 *.pdf
 *.psd
+*.iml
+*.idea
 
 Thumbs.db
 
