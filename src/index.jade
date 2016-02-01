@@ -3,17 +3,46 @@ html(lang='en')
 	head
 		meta(charset='UTF-8')
 		title test
+		link(rel='stylesheet', href='css/global.css')
+		link(rel='stylesheet', href='css/main.css')
+
 		//- link(rel='stylesheet', href='libs/animate/animate.css')
 		//- link(rel='stylesheet', href='libs/font-awesome-4.4.0/css/font-awesome.min.css')
 		//- link(rel='stylesheet', href='css/grid.css')
-		//- link(rel='stylesheet', href='css/global.css')
 		//- link(rel='stylesheet', href='css/fonts.css')
 		//- link(rel='stylesheet', href='css/animation.css')
 		//- link(rel='stylesheet', href='css/elements.css')
-		//- link(rel='stylesheet', href='css/main.css')
 		//- link(rel='stylesheet', href='css/media.css')
 		body
-
+			//- mixins
+			mixin list(className, ...items)
+				ul(className=className)
+					each item in items
+						li= item
+			div.top-line
+				.content
+					ul.main-navigation
+						li
+							a(href="#about") О курсе
+						li
+							a(href="#teachers") Предподаватели
+						li
+							a(href="#program") Программа
+						li
+							a(href="#prices") Стоимость
+						li
+							a(href="#contact") Контакты
+					button.type-1 ЗАПИСАТЬСЯ
+			section.header
+				.container
+					.left-col
+						.main-logo
+							img(src="")
+					.right-col
+						.main-content
+							h2 UID и UXD
+							h5 3 месяца по вторникам и четвергам. 
 
 		script(src='libs/jquery-2.1.4/jquery-2.1.4.min.js')
 		script(src='js/main.js')
+

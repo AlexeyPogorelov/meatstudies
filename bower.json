@@ -11,7 +11,7 @@
     "Alexey Pogorelov"
   ],
   "license": "no license",
-  "homepage": "makemeat.com",
+  "homepage": "http://studies.makemeat.com",
   "private": true,
   "ignore": [
     "**/.*",
@@ -21,6 +21,7 @@
     "tests"
   ],
   "dependencies": {
-    "normalize-css": "~3.0.3"
+    "normalize-css": "~3.0.3",
+    "jquery": "~2.2.0"
   }
 }
