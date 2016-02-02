@@ -1,7 +1,92 @@
+$font-stack: "Gotham Pro", sans-serif
+$main-color: #ffe400
+$font-color: #1a1a1a
+$dark-color: #eee
+$left-width: 460px
+$right-width: 700px
+
 button.type-1
 	background: transparent
+	text-transform: uppercase
+	color: black
+	font-size: 22px
+	font-weight: 700
+	letter-spacing: 1.47px
+	line-height: 21px
+
+button.type-2
+	background-color: $main-color
+	border-radius: 2px
+	color: white
+	font-size: 22px
+	font-weight: 700
+	letter-spacing: 1px
+	line-height: 22px
+	padding: 17px 37px
+
+button.type-3
+	background-color: $main-color
+	color: black
+	border-radius: 2px
+	font-size: 22px;
+	font-weight: 700;
+	letter-spacing: 1.47px;
+	line-height: 21px;
+	text-transform: uppercase
+	padding: 28px 69px
+
+.button-label
+	background-color: $main-color
+	border-radius: 2px
+	color: black
+	display: inline-block
+	font-size: 22px
+	font-weight: 700
+	letter-spacing: 1.47px
+	line-height: 21px
+
+.label-2
+	background-color: black
+	color: $main-color
+	display: inline-block
+	position: relative
+	top: -2px
+	font-size: 14px
+	font-weight: 700
+	line-height: 13px
+	margin-left: 17px
+	padding: 7px 12px
 
 .yellow
-	background-color: #ffe400;
+	background-color: $main-color
+
 	h2
-		color: white;
+		color: white
+
+ul.type-1
+	margin-bottom: 21px
+
+	li
+		color: #1a1a1a
+		font-size: 20px
+		font-weight: 400
+		position: relative
+		padding-left: 14px
+		margin-bottom: 7px
+
+		&:before
+			border-radius: 50%
+			content: ''
+			background-color: #1a1a1a
+			height: 6px
+			position: absolute
+			top: 14px
+			left: 0
+			width: 6px
+
+		span
+			display: block
+			overflow: hidden
+			line-height: 34px
+
+

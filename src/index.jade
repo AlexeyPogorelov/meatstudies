@@ -3,16 +3,9 @@ html(lang='en')
 	head
 		meta(charset='UTF-8')
 		title test
-		link(rel='stylesheet', href='css/global.css')
-		link(rel='stylesheet', href='css/main.css')
+		link(rel='stylesheet', href='bower_components/font-awesome/css/font-awesome.min.css')
+		link(rel='stylesheet', href='css/concated.css')
 
-		//- link(rel='stylesheet', href='libs/animate/animate.css')
-		//- link(rel='stylesheet', href='libs/font-awesome-4.4.0/css/font-awesome.min.css')
-		//- link(rel='stylesheet', href='css/grid.css')
-		//- link(rel='stylesheet', href='css/fonts.css')
-		//- link(rel='stylesheet', href='css/animation.css')
-		//- link(rel='stylesheet', href='css/elements.css')
-		//- link(rel='stylesheet', href='css/media.css')
 		body
 			//- mixins
 			mixin list(className, ...items)
@@ -20,7 +13,7 @@ html(lang='en')
 					each item in items
 						li= item
 			div.top-line
-				.content
+				.container
 					ul.main-navigation
 						li
 							a(href="#about") О курсе
@@ -42,7 +35,7 @@ html(lang='en')
 						.main-content
 							h2 UID и UXD
 							h5 3 месяца по вторникам и четвергам. 
-							p User Experience, он же UX, он же пользовательский опыт. Такое распостраненное и модное слово сейчас, что оно уже давно вышло за рамки дизайнерской тусовки. Все его слышали, но не все, к сожалению, понимают. UX подход это прежде всего  умение думать. Так User Experience, он же UX, он же пользовательский опыт. 
+							p User Experience, он же UX, он же пользовательский опыт. Такое распостраненное и модное слово сейчас, что оно уже давно вышло за рамки дизайнерской тусовки. <br /> <br /> Все его слышали, но не все, к сожалению, понимают. UX подход это прежде всего  умение думать. Так User Experience, он же UX, он же пользовательский опыт. 
 				.container
 					div#main-slider.main-slider
 						.slider-viewport
@@ -57,13 +50,13 @@ html(lang='en')
 					.right-col
 						.date-holder-1
 							.icon-holder
-								img(src="img/icons/calendar-icon-1.svg")
+								img(src="img/icons/calendar-icon-1.svg").calendar-icon-1
 							.text-holder
 								span.bold 3 месяца
 								span 15 февраля – 16 мая
 						.date-holder-1
 							.icon-holder
-								img(src="img/icons/clock-icon-1.svg")
+								img(src="img/icons/clock-icon-1.svg").clock-icon-1
 							.text-holder
 								span.bold Вторник - Четверг
 								span 19:15 – 21:15
@@ -72,12 +65,14 @@ html(lang='en')
 					.left-col
 						h2 Для кого
 					.right-col
-						p User Experience, он же UX, он же пользовательский опыт. Такое распостраненное и модное слово сейчас, что оно уже давно вышло за рамки дизайнерской тусовки. Все его слышали, но не все, к сожалению, понимают. UX подход это прежде всего  умение думать. Так 
-						h4 ВАЖНО! Для занятий вам понадобится ноутбук.
+						.content
+							p User Experience, он же UX, он же пользовательский опыт. Такое распостраненное и модное слово сейчас, что оно уже давно вышло за рамки дизайнерской тусовки.
+							h4 ВАЖНО! Для занятий вам понадобится ноутбук.
 			section.do-it-block
-				.button-holder
-					button записаться
-			section.whos-block
+				.container(style="background-image: url(img/content/audience-1.jpg);")
+					.button-holder
+						button записаться
+			section.teachers-block
 				.container
 					.header-row
 						.alexandr-head
@@ -86,7 +81,8 @@ html(lang='en')
 							h2 Куратор курса
 						.right-col
 							h2 Саша Кагор
-							h6 Основатель и Арт-директор продакт-дизайн агенства MEAT
+							h6 Основатель и Арт-директор продакт-дизайн агенства 
+								b MEAT
 					.content-row
 						.left-col
 							ul.socials-type-1
@@ -112,7 +108,7 @@ html(lang='en')
 										i.fa.fa-pinterest
 						.right-col
 							p Дизайнер интерфейсов со стажем более 10 лет. Прошел классическую школу старой закалки начиная с полиграфии, рекламных агенств и диджитал студий. Позже прокачал свои навыки в аутсорсовых и продуктовых IT-компаниях. Сейчас основал своё дизайн агенство и успешно работает с рынком. <br /> <br /> За плечами несколько сотен Web-проектов и мобильных приложений. Разработал дизайн десктоп-приложений для Windows и iOS, а также интерфейсы для телевизоров.
-							button Портфолио
+							button.type-2 Портфолио
 			section.teachers
 				.container
 					.left-col
@@ -150,23 +146,34 @@ html(lang='en')
 					.right-col
 						ul.type-1
 							li
-								span • История UX дизайна. Концепция дизайн-мышления.
-								span • Consumer experience vs user experience
-								span • Как понять своего пользователя. Use-cases и user journey. Прототипирование c использованием персонажей.
-								span • Продуктовый дизайн: процесс проектирования и разработки 
-								span • Общие принципы разработки интерфейсов. 
-								span • Типология сайтов. Мифы и лайфхаки проектирования.
-								span • Работа с формами и подача текста.
-								span • Проектирование мобильных приложений. 
-								span • Lean Startup.
-								span • Интерфейсы будущего. 
+								span История UX дизайна. Концепция дизайн-мышления.
+							li
+								span Consumer experience vs user experience
+							li
+								span Как понять своего пользователя. Use-cases и user journey. Прототипирование c использованием персонажей.
+							li
+								span Продуктовый дизайн: процесс проектирования и разработки 
+							li
+								span Общие принципы разработки интерфейсов. 
+							li
+								span Типология сайтов. Мифы и лайфхаки проектирования.
+							li
+								span Работа с формами и подача текста.
+							li
+								span Проектирование мобильных приложений. 
+							li
+								span Lean Startup.
+							li
+								span Интерфейсы будущего. 
 						br
 						h4 Практическая работа на курсе:
 						ul.type-1
 							li
-								span • Проектирование интерфейсов бытовых приборов
-								span • Проектирование сайтов
-								span • Проектирование онлайн-сервисов
+								span Проектирование интерфейсов бытовых приборов
+							li
+								span Проектирование сайтов
+							li
+								span Проектирование онлайн-сервисов
 			section.price-block.yellow
 				.container
 					.left-col
@@ -174,19 +181,19 @@ html(lang='en')
 					.right-col
 						.date-holder-1
 							.icon-holder
-								img(src="img/icons/money-icon-1.svg")
+								img(src="img/icons/money-icon-1.svg").money-icon-1
 							.text-holder
 								span.bold 3200 грн/месяц 
 								span или 8600 за весь курс
 									.label-2 экономия 1000 грн
 						.date-holder-1
 							.icon-holder
-								img(src="img/icons/team-icon-1.svg")
+								img(src="img/icons/team-icon-1.svg").team-icon-1
 							.text-holder
 								span.bold 15 человек
 								span в группе
 			section.presentation-block
-				.container
+				.container(style="background-image: url(img/content/audience-1.jpg);")
 					.left-col
 						h2 Место проведения
 						.address-holder
@@ -204,69 +211,71 @@ html(lang='en')
 						h3 15 дней
 						h6 февраль
 						.calendar-holder
-							.day.crossed 1
-							.day.crossed 2
-							.day.crossed 3
-							.day.crossed 4
-							.day.crossed 5
-							.day.crossed 6
-							.day.crossed 7
-							.day 8
-							.day 9
-							.day 10
-							.day 11
-							.day 12
-							.day 13
-							.day 14
-							.day 15
-							.day 16
-							.day 17
-							.day 18
-							.day 19
-							.day 20
-							.day 21
-							.day 22
-							.day 23
-							.day 24
-							.day 25
-							.day 26
-							.day 27
-							.day 28
-							.day.active 29
+							span.day.crossed 1
+							span.day.crossed 2
+							span.day.crossed 3
+							span.day.crossed 4
+							span.day.crossed 5
+							span.day.crossed 6
+							span.day.crossed 7
+							span.day 8
+							span.day 9
+							span.day 10
+							span.day 11
+							span.day 12
+							span.day 13
+							span.day 14
+							span.day 15
+							span.day 16
+							span.day 17
+							span.day 18
+							span.day 19
+							span.day 20
+							span.day 21
+							span.day 22
+							span.day 23
+							span.day 24
+							span.day 25
+							span.day 26
+							span.day 27
+							span.day 28
+							span.day.active 29
 						.user-icons-holder
-							.user
-								img(src="img/icons/user-icon-1.svg")
-							.user
-								img(src="img/icons/user-icon-2.svg")
-							.user
-								img(src="img/icons/user-icon-3.svg")
-							.user
-								img(src="img/icons/user-icon-4.svg")
-							.user
-								img(src="img/icons/user-icon-5.svg")
-							.user.free
-								img(src="img/icons/user-icon-6.svg")
-							.user.free
-								img(src="img/icons/user-icon-7.svg")
-							.user.free
-								img(src="img/icons/user-icon-8.svg")
-							.user.free
-								img(src="img/icons/user-icon-9.svg")
-							.user.free
-								img(src="img/icons/user-icon-10.svg")
-							.user.free
-								img(src="img/icons/user-icon-11.svg")
-							.user.free
-								img(src="img/icons/user-icon-12.svg")
-							.user.free
-								img(src="img/icons/user-icon-13.svg")
-							.user.free
-								img(src="img/icons/user-icon-14.svg")
-							.user.free
-								img(src="img/icons/user-icon-15.svg")
-							.user.free
-								img(src="img/icons/user-icon-16.svg")
-						button записаться на  курс
+							h3 5 мест
+							.users
+								span.user
+									img(src="img/icons/user-icon-1.svg")
+								span.user
+									img(src="img/icons/user-icon-2.svg")
+								span.user
+									img(src="img/icons/user-icon-3.svg")
+								span.user
+									img(src="img/icons/user-icon-4.svg")
+								span.user
+									img(src="img/icons/user-icon-5.svg")
+								span.user.free
+									img(src="img/icons/user-icon-6.svg")
+								span.user.free
+									img(src="img/icons/user-icon-7.svg")
+								span.user.free
+									img(src="img/icons/user-icon-8.svg")
+								span.user.free
+									img(src="img/icons/user-icon-9.svg")
+								span.user.free
+									img(src="img/icons/user-icon-10.svg")
+								span.user.free
+									img(src="img/icons/user-icon-11.svg")
+								span.user.free
+									img(src="img/icons/user-icon-12.svg")
+								span.user.free
+									img(src="img/icons/user-icon-13.svg")
+								span.user.free
+									img(src="img/icons/user-icon-14.svg")
+								span.user.free
+									img(src="img/icons/user-icon-15.svg")
+								span.user.free
+									img(src="img/icons/user-icon-16.svg")
+						button.type-3 записаться на  курс
 			section.footer
 				.container
 					.left-col

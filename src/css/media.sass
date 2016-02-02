@@ -1,0 +1,67 @@
+//	X LARGE
+@media screen and (min-width: 1664px)
+	.container
+		width: 1260px
+
+//	LARGE
+@media screen and (min-width: 1420px)
+	.container
+		width: 1160px
+
+//	MEDIUM
+@media screen and (max-width: 1419px)
+	.container
+		width: 1160px
+
+//	1280
+@media screen and (max-width: 1280px)
+	.container
+		width: 800px
+
+//	TABLET
+@media screen and (max-width: 1024px)
+	.container
+		width: 100%
+	.tablet-visible
+		display: initial
+
+//	MOBILE
+@media screen and (max-width: 959px)
+	.container
+		width: 100%
+	body::-webkit-scrollbar
+		width: 0
+		height: 0
+		background-color: #fff
+		border: none
+	.mobile-visible
+		display: inherit !important
+	.mobile-hidden
+		display: none !important
+	.mobile-xs-visible
+		display: inherit
+	.mobile-xs-hidden
+		display: none
+	.full-height .content-holder, .vertical-middle .content-holder
+		position: static
+		top: auto
+		-webkit-transform: none
+		-ms-transform: none
+		-o-transform: none
+		transform: none
+
+//	SMALL
+@media screen and (max-width: 800px)
+	.container
+		width: 100%
+
+@media screen and (max-width: 660px)
+	.container
+		width: 100%
+
+//	FIXES
+
+//	xSMALL
+@media screen and (max-width: 479px)
+	.container
+		width: 100%
