@@ -52,7 +52,9 @@ gulp.task('sass', function () {
 // JADE
 gulp.task('jade', function(){
 	gulp.src(path.src.html)
-		.pipe(jade())
+		.pipe(jade({
+			pretty: true
+		}))
 		.pipe(gulp.dest(path.dist.html))
 		.pipe(reload({stream:true}));
 });
