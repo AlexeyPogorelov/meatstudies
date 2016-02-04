@@ -1,6 +1,8 @@
 $main-color: #ffe400
 $font-color: #1a1a1a
 $dark-color: #eee
+$left-width-1280: 320px
+$right-width-1280: 560px
 
 //	X LARGE
 @media screen and (min-width: 1664px)
@@ -25,12 +27,13 @@ $dark-color: #eee
 		button
 			display: none
 	.left-col, .right-col
-		padding: 0 100px
-		text-align: left
+		// padding: 0 100px
+		// text-align: left
 	.left-col
-		width: 100%
+		padding-right: 70px
+		width: $left-width-1280
 	.right-col
-		width: 100%
+		width: $right-width-1280
 	h2
 		font-size: 32px
 	.top-line
@@ -52,10 +55,46 @@ $dark-color: #eee
 			background-color: $main-color
 	.main-logo
 		margin-left: 0
+
+	.socials-type-1
+		li
+			margin-top: -21px
+		a
+			font-size: 20px
+			font-weight: 700
+			line-height: 69px
+		i
+			text-align: center
+			right: -5px
+			width: 36px
 	.teachers-block
+		padding-top: 61px
+		.header-row
+			margin-bottom: 64px
+			.left-col
+				padding: 0
+				padding-right: 70px
+				padding-left: 70px
+				h2
+					line-height: 33px
+					text-align: right
+			.right-col
+				padding: 0
+				padding-left: 238px
+				h2
+					font-size: 28px
+				h6
+					font-size: 16px
+					line-height: 20px
+					margin-top: 16px
 		.alexandr-head
-			position: absolute
-			left: 0
+			top: 64px
+			img
+				width: 166px
+
+		.content-row
+			button
+				margin-top: 15px
 
 	// header
 	.header
@@ -87,10 +126,8 @@ $dark-color: #eee
 				padding: 0
 				text-align: right
 				padding-right: 70px
-				width: 320px
 			.right-col
 				padding: 0
-				width: 560px
 
 			.date-holder-1
 				margin-top: 4px
@@ -116,9 +153,9 @@ $dark-color: #eee
 			img
 				margin-top: 2px
 		.text-holder
-			display: inline-block
+			// display: inline-block
 			// margin-left: 22px
-			vertical-align: top
+			// vertical-align: top
 			span, p
 				display: block
 				font-size: 20px
@@ -130,7 +167,213 @@ $dark-color: #eee
 
 	.whos-block
 		padding-top: 46px
+		padding-bottom: 65px
 
+		.left-col
+			padding: 0
+			padding-right: 71px
+			text-align: right
+			width: 320px
+		.right-col
+			padding: 0
+			margin-top: 2px
+			width: 560px
+
+			p, h4
+				font-size: 16px
+				max-width: 520px
+
+			p
+				color: #1a1a1a
+				line-height: 24px
+				font-weight: 400
+
+			h4
+				color: #414141
+				font-weight: 900
+				margin-top: 21px
+
+	
+	// do-it-block
+	.do-it-block
+		.container
+			height: 448px
+
+			button
+				font-size: 22px
+				margin-top: 7px
+				padding: 22px 64px
+
+	// end do-it-block
+	.teachers-block
+		.left-col
+			padding-right: 68px
+		.content-row
+			p
+				font-size: 16px
+				line-height: 23px
+
+	// teachers
+	.teachers
+		padding-top: 62px
+		h2
+			font-size: 38px
+			line-height: 39px
+		.persons-slider
+			margin-top: 8px
+
+			.slide
+				float: left
+				width: 186px
+
+				.image-holder
+					width: 116px
+
+				.content-holder
+					.name
+						font-size: 18px
+						margin-top: 14px
+						width: auto
+
+					p
+						margin-top: 1px
+						color: #d1d1d1
+						font-size: 14px
+						line-height: 17px
+						width: 140px
+
+	// end teachers
+
+	// program
+	.program
+		margin-top: 75px
+		.button-label
+			margin-left: 10px
+		.left-col
+			width: $left-width-1280 - 10px
+			h2
+				line-height: 32px
+		.right-col
+			padding-right: 65px
+			padding-bottom: 41px
+			width: $right-width-1280 - 10px
+
+		.container.border
+			padding-top: 97px
+	// end program
+
+
+	// price-block
+	.price-block
+		background-color: transparent
+		padding-bottom: 0
+		.container
+			background-color: $main-color
+			padding-top: 35px
+
+			.right-col
+				padding-top: 9px
+
+				.date-holder-1
+					margin-bottom: 5px
+
+				.date-holder-1:last-child
+					margin-bottom: 9px
+
+				.money-icon-1
+					margin-top: 14px
+					width: 44px
+
+				.team-icon-1
+					width: 42px
+
+				.label-2
+					top: -4px
+					margin-left: 2px
+	// end price-block
+
+	// presentation-block
+	.presentation-block
+		.container
+			height: 458px
+
+			.left-col
+				padding-top: 88px
+				h2
+					line-height: 31px
+
+				.address-holder
+					margin-top: 64px
+
+					button
+						font-size: 21px
+						padding: 16px 3px
+						margin-top: 18px
+						margin-right: 0
+
+					span
+						font-size: 16px
+						line-height: 33px
+
+					.bold
+						display: block
+						font-size: 21px
+						line-height: 30px
+
+	// end presentation-block
+
+	// start-date-block
+	.start-date-block
+		padding-top: 64px
+		padding-bottom: 70px
+
+		h6
+			margin-top: 9px
+			font-size: 17px;
+		h2
+			line-height: 31px
+		h3
+			font-size: 28px
+			line-height: 44px
+			
+		button
+			margin-top: 22px
+
+	.calendar-holder
+		margin-top: 10px
+
+		.day
+			color: #8c8c8c
+			display: inline-block
+			font-size: 24px
+			font-weight: 900
+			line-height: 33px
+			margin-bottom: 34px
+			position: relative
+			text-align: left
+			width: 56px
+
+			&.crossed:after
+				height: 34px
+				width: 8px
+
+	.user-icons-holder
+		margin-top: 14px
+
+		.users
+			margin-top: 27px
+
+	// end start-date-block
+
+	// footer
+	.footer
+		padding-bottom: 60px
+
+		.container
+			padding-top: 45px
+			padding-bottom: 11px
+
+	// end footer
 
 //	TABLET
 @media screen and (max-width: 780px)
