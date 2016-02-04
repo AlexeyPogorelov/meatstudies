@@ -75,14 +75,13 @@ $right-width: 700px
 .main-navigation
 	li
 		display: inline-block
-		margin-right: 44px
-		padding-top: 34px
-		padding-bottom: 34px
+		margin-right: 39px
+		padding: 34px 0
 
 	a
 		color: black
 		font-size: 22px
-		font-weight: 500
+		font-weight: 900
 		line-height: 21px
 // end top line
 
@@ -287,13 +286,12 @@ $right-width: 700px
 		font-weight: 700
 		letter-spacing: 1.47px
 		line-height: 21px
-		margin-left: 102px
 		padding: 28px 61px
 		position: absolute
 		text-transform: uppercase
 		top: -4px
 
-	.container
+	.container.border
 		border: 10px solid $main-color
 		border-bottom: none
 		padding-top: 106px
@@ -309,23 +307,26 @@ $right-width: 700px
 
 // price-block
 .price-block
-	padding-top: 55px
+	background-color: transparent
 	padding-bottom: 0
+	.container
+		background-color: $main-color
+		padding-top: 55px
 
-	.right-col
-		padding-top: 9px
+		.right-col
+			padding-top: 9px
 
-		.date-holder-1
-			margin-bottom: 19px
+			.date-holder-1
+				margin-bottom: 19px
 
-		.date-holder-1:last-child
-			margin-bottom: 12px
+			.date-holder-1:last-child
+				margin-bottom: 12px
 
-		.money-icon-1
-			margin-top: 14px
+			.money-icon-1
+				margin-top: 14px
 
-		.team-icon-1
-			margin-top: 2px
+			.team-icon-1
+				margin-top: 2px
 // end price-block
 
 // presentation-block

@@ -1,3 +1,7 @@
+$main-color: #ffe400
+$font-color: #1a1a1a
+$dark-color: #eee
+
 //	X LARGE
 @media screen and (min-width: 1664px)
 	.container
@@ -14,16 +18,127 @@
 		width: 1160px
 
 //	1280
-@media screen and (max-width: 1280px)
+@media screen and (max-width: 1240px)
 	.container
-		width: 800px
+		width: 880px
+	.top-line
+		button
+			display: none
+	.left-col, .right-col
+		padding: 0 100px
+		text-align: left
+	.left-col
+		width: 100%
+	.right-col
+		width: 100%
+	h2
+		font-size: 32px
+	.top-line
+		min-height: 70px
+		text-align: center
+		button
+			display: none
+	.main-navigation
+		text-align: center
+		li
+			margin: 0 12px
+			padding: 20px 0
+		a
+			font-size: 18px
+			line-height: 17px
+	.yellow
+		background-color: transparent
+		.container
+			background-color: $main-color
+	.main-logo
+		margin-left: 0
+	.teachers-block
+		.alexandr-head
+			position: absolute
+			left: 0
+
+	// header
+	.header
+		.left-col
+			padding-right: 0
+			padding-left: 0
+			width: 313px
+		.right-col
+			margin-top: 92px
+			padding-right: 0
+			padding-left: 0
+			width: 567px
+		.main-content
+			color: #1a1a1a
+			font-size: 18px
+			font-weight: 400
+			line-height: 27px
+			max-width: 536px
+	#main-slider.main-slider
+		margin-top: 67px
+	.header
+		padding-bottom: 18px
+
+	.when-block
+		.container
+			padding-top: 40px
+			// padding-left: 53px
+			.left-col
+				padding: 0
+				text-align: right
+				padding-right: 70px
+				width: 320px
+			.right-col
+				padding: 0
+				width: 560px
+
+			.date-holder-1
+				margin-top: 4px
+				margin-bottom: 1px
+
+				.calendar-icon-1
+					margin-left: 1px
+					margin-top: 8px
+					width: 35px
+
+				.clock-icon-1
+					margin-left: -2px
+					margin-top: 5px
+					margin-bottom: 4px
+					width: 44px
+
+	.date-holder-1
+		.icon-holder
+			display: inline-block
+			margin-bottom: 43px
+			width: 64px
+
+			img
+				margin-top: 2px
+		.text-holder
+			display: inline-block
+			// margin-left: 22px
+			vertical-align: top
+			span, p
+				display: block
+				font-size: 20px
+				line-height: 27px
+				font-weight: 300
+				margin-bottom: 0
+			.bold
+				font-weight: 700
+
+	.whos-block
+		padding-top: 46px
+
 
 //	TABLET
-@media screen and (max-width: 1024px)
+@media screen and (max-width: 780px)
 	.container
-		width: 100%
+		width: 660px
 	.tablet-visible
 		display: initial
+
 
 //	MOBILE
 @media screen and (max-width: 959px)
