@@ -3,6 +3,7 @@ $font-color: #1a1a1a
 $dark-color: #eee
 $left-width-1280: 320px
 $right-width-1280: 560px
+$tablet-cont-width: 660px
 
 //	X LARGE
 @media screen and (min-width: 1664px)
@@ -203,8 +204,8 @@ $right-width-1280: 560px
 				font-size: 22px
 				margin-top: 7px
 				padding: 22px 64px
-
 	// end do-it-block
+
 	.teachers-block
 		.left-col
 			padding-right: 68px
@@ -241,7 +242,6 @@ $right-width-1280: 560px
 						font-size: 14px
 						line-height: 17px
 						width: 140px
-
 	// end teachers
 
 	// program
@@ -319,7 +319,6 @@ $right-width-1280: 560px
 						display: block
 						font-size: 21px
 						line-height: 30px
-
 	// end presentation-block
 
 	// start-date-block
@@ -362,7 +361,6 @@ $right-width-1280: 560px
 
 		.users
 			margin-top: 27px
-
 	// end start-date-block
 
 	// footer
@@ -372,19 +370,373 @@ $right-width-1280: 560px
 		.container
 			padding-top: 45px
 			padding-bottom: 11px
-
 	// end footer
 
 //	TABLET
-@media screen and (max-width: 780px)
+@media screen and (max-width: 900px)
 	.container
-		width: 660px
+		width: $tablet-cont-width
 	.tablet-visible
 		display: initial
+	.tablet-hidden
+		display: none !important
+
+		// 
+	.top-line
+		button
+			display: none
+	.left-col, .right-col
+		padding-left: 100px
+		text-align: left
+		float: none
+	.left-col
+		padding-right: 0
+		text-align: left
+		width: $tablet-cont-width
+	.right-col
+		width: $tablet-cont-width
+	h2
+		font-size: 32px
+	.top-line
+		min-height: 70px
+		text-align: center
+		button
+			display: none
+	.main-navigation
+		text-align: center
+		li
+			margin: 0 12px
+			padding: 20px 0
+		a
+			font-size: 18px
+			line-height: 17px
+	
+	// header
+	.header
+		margin-top: 0
+		padding-bottom: 0
+
+		.left-col
+			margin-top: 36px
+
+		.right-col
+			margin-top: 32px
+
+		.main-content
+			margin-left: 100px
+			max-width: 100%
+
+			h2
+				color: black
+				margin-left: -3px
+				font-size: 62px
+				font-weight: 700
+				line-height: 59px
+				letter-spacing: -0.1px
+			h5
+				margin-bottom: 21px
+
+			p
+				font-size: 16px;
+				line-height: 24px;
+
+	.main-logo
+		margin-top: 4px
+		margin-left: 75px
+		img
+			height: 122px
+
+	#main-slider.main-slider
+		margin-top: 46px
+
+	// when-block
+	.when-block
+		padding-top: 54px
+		padding-bottom: 0px
+		.container
+			padding-top: 20px
+			padding-bottom: 20px
+			.left-col
+				text-align: left
+				padding-left: 100px
+			.right-col
+				padding-left: 100px
+
+				.date-holder-1
+					margin-top: 15px
+					.icon-holder
+						margin-bottom: 26px
+					.calendar-icon-1
+						margin-top: 1px
+						width: 37px
+					.clock-icon-1
+						margin-left: -1px
+						margin-top: 5px
+						width: 45px
+	// end when-block
+
+	// whos-block
+	.whos-block
+		padding-bottom: 46px
+		.left-col
+			padding-left: 100px
+			text-align: left
+			width: $tablet-cont-width
+		.right-col
+			padding-left: 100px
+			text-align: left
+			width: $tablet-cont-width
+		.content
+			margin-top: 24px
+			max-width: 469px
+
+	// end whos-block
+
+	// do-it-block
+	.do-it-block
+		.container
+			height: 388px
+
+			button
+				font-size: 22px
+				font-weight: 700
+				margin-top: -13px
+				padding: 22px 64px
+				font-weight: 700
+	// end do-it-block
+
+
+	// teachers-block
+	.teachers-block
+		padding-top: 44px
+
+		.alexandr-head
+			margin-top: 12px
+			margin-left: -152px
+
+		.header-row
+			margin-bottom: 16px
+			.left-col
+				margin-top: 0
+				padding-right: 58px
+				h2
+					font-size: 38px
+			.right-col
+				padding-left: 307px
+
+				h2
+					margin-top: 24px
+
+				h6
+					margin-top: 6px
+
+		.content-row
+			button, ul, li
+				display: inline-block
+			.socials-type-1
+				margin-bottom: 8px
+				li
+					margin-bottom: 8px
+					span
+						display: none
+					i
+						width: 43px
+			button
+				font-size: 18px
+				padding: 10px 34px
+	// end teachers-block
+
+	// teachers
+	.teachers
+		padding-top: 12px
+		.persons-slider
+			margin-top: 38px
+	// end teachers
+
+	// program
+	.program
+		margin-top: 30px
+		.header-row
+			.left-col
+				display: none
+		
+		.left-col
+			padding-left: 90px
+			width: auto
+			h2
+				font-size: 38px;
+		.right-col
+			padding-left: 90px
+
+		.button-label
+			font-size: 20px;
+			font-weight: 800
+			letter-spacing: 1.33px;
+			padding: 28px 97px
+			top: 6px
+
+		.container.border
+			padding-top: 79px
+
+			.right-col
+				padding-right: 0
+				padding-top: 44px
+				padding-bottom: 22px
+				font-size: 16px
+	// end program
+
+	// price-block
+	.price-block
+		.container
+			padding-top: 30px
+
+			.right-col
+				padding-top: 23px
+
+				.date-holder-1
+					margin-bottom: 0
+
+				.date-holder-1:last-child
+					margin-bottom: 0
+	// end price-block
+
+	// presentation-block
+	.presentation-block
+		.container
+			position: relative
+			height: 454px
+			.left-col
+				position: absolute
+				top: 47px
+				left: 50px
+				right: 50px
+				bottom: 47px
+				background: rgba(255,255,255,.9)
+				padding: 50px
+				height: auto
+				width: auto
+				.address-holder
+					margin-top: 79px
+					button
+						font-size: 18px
+						// font-weight: 700
+						display: block
+						margin-top: 11px
+						padding: 16px 30px
+					button.type-4
+						color: $main-color
+						background: none
+						border: none
+						font-size: 18px
+						font-weight: 700
+						float: right
+						line-height: 33px
+						padding-right: 40px
+						position: absolute
+						right: 7px
+						bottom: 50px
+					.bold
+						line-height: 33px
+			.right-col
+				display: none
+	// end presentation-block
+
+
+	// start-date-block
+	.start-date-block
+	// 	padding-bottom: 80px
+		padding-top: 35px
+
+		h2
+			font-size: 38px
+			// display: none
+	// 	h6
+	// 		margin-top: 16px
+
+	// 	button
+	// 		margin-top: 32px
+
+	// .calendar-holder
+	// 	margin-top: 15px
+
+	// 	.day
+	// 		color: #8c8c8c
+	// 		display: inline-block
+	// 		font-size: 26px
+	// 		font-weight: 900
+	// 		line-height: 39px
+	// 		margin-bottom: 32px
+	// 		position: relative
+	// 		text-align: left
+	// 		width: 60px
+
+	// 		&.crossed:after
+	// 			content: ''
+	// 			background-color: rgba(244,31,82,.8)
+	// 			position: absolute
+	// 			left: 1px
+	// 			top: 5px
+	// 			height: 36px
+	// 			width: 10px
+	// 			transform: rotate(37deg)
+
+	// 		&.active:before
+	// 			content: ''
+	// 			background: url('../img/icons/selected-date-1.svg') no-repeat
+	// 			position: absolute
+	// 			left: -20px
+	// 			top: -20px
+	// 			height: 76px
+	// 			width: 74px
+
+	// .user-icons-holder
+		// margin-top: 20px
+
+		// .users
+		// 	margin-top: 33px
+		// 	vertical-align: top
+
+		// 	.user
+		// 		display: inline-block
+		// 		margin-right: 9px
+		// 		margin-bottom: 27px
+		// 		vertical-align: bottom
+		// 		width: 40px
+
+	// end start-date-block
+
+	// footer
+	// .footer
+		// padding-bottom: 60px
+
+		// .container
+		// 	padding-top: 55px
+		// 	padding-bottom: 96px
+		// 	background-color: black
+
+		// 	.footer-logo
+		// 		margin-top: 20px
+		// 		margin-right: 51px
+
+		// 	.text-group
+		// 		margin-bottom: 29px
+
+		// 	p
+		// 		color: #fff
+
+		// 	a
+		// 		color: #ffe400
+		// 		display: inline-block
+		// 		font-size: 25px
+		// 		font-weight: 700
+		// 		line-height: 35px
+		// 		margin-top: 4px
+
+	// end footer
 
 
 //	MOBILE
-@media screen and (max-width: 959px)
+@media screen and (max-width: 1px)
 	.container
 		width: 100%
 	body::-webkit-scrollbar
@@ -409,17 +761,17 @@ $right-width-1280: 560px
 		transform: none
 
 //	SMALL
-@media screen and (max-width: 800px)
+@media screen and (max-width: 1px)
 	.container
 		width: 100%
 
-@media screen and (max-width: 660px)
+@media screen and (max-width: 1px)
 	.container
 		width: 100%
 
 //	FIXES
 
 //	xSMALL
-@media screen and (max-width: 479px)
+@media screen and (max-width: 1px)
 	.container
 		width: 100%

@@ -61,6 +61,11 @@ $right-width: 700px
 	top: 0
 	width: 100%
 	z-index: 2
+	transform: translateY(-100%)
+	transition: transform .3s ease-in
+	&.showed
+		transform: translateY(0)
+		transition: transform .3s ease-out
 
 	button
 		color: black
@@ -232,8 +237,6 @@ $right-width: 700px
 		button
 			margin-left: -1px
 			margin-top: 7px
-
-
 // end teachers-block
 
 // teachers
@@ -266,7 +269,6 @@ $right-width: 700px
 					font-weight: 400
 					line-height: 21px
 					width: 140px
-
 // end teachers
 
 // program
@@ -302,7 +304,6 @@ $right-width: 700px
 
 			h4
 				margin-bottom: 10px
-
 // end program
 
 // price-block
