@@ -28,14 +28,16 @@ html(lang='en')
 		link(rel='stylesheet', href='css/concated.css')
 
 		body
-
+			
+			//- добавил стрелку "вверх"
 			div#to-top
 				img(src="img/icons/up_button.svg" alt="toTop")
-			.gamburger.mobile-visible
+			//- для работы кнопочек добавил классы .modal-open и #mobile-menu
+			.gamburger.mobile-visible.modal-open(data-target="#mobile-menu")
 				span.line
 				span.line
 				span.line
-			div.mobile-menu
+			div.modal.mobile-menu#mobile-menu
 				.container
 					button.type-1.modal-open(data-target="#subscribe") записаться
 					ul.main-navigation
@@ -49,7 +51,7 @@ html(lang='en')
 							a(href="#prices") Стоимость
 						li
 							a(href="#contact") Контакты
-					button.close-button
+					button.close-button.close-modal
 
 			div.top-line
 				.container
@@ -82,7 +84,7 @@ html(lang='en')
 								.slide
 									.image-holder
 										img(src="img/content/tabel-collage-1.png")
-			section.when-block.yellow
+			section#about.when-block.yellow
 				.container
 					.left-col
 						h2 Когда
@@ -149,7 +151,7 @@ html(lang='en')
 						.right-col
 							p Дизайнер интерфейсов со стажем более 10 лет. Прошел классическую школу старой закалки начиная с полиграфии, рекламных агенств и диджитал студий. Позже прокачал свои навыки в аутсорсовых и продуктовых IT-компаниях. Сейчас основал своё дизайн агенство и успешно работает с рынком. <br /> <br /> За плечами несколько сотен Web-проектов и мобильных приложений. Разработал дизайн десктоп-приложений для Windows и iOS, а также интерфейсы для телевизоров.
 							button.type-2.tablet-hidden.modal-open(data-target="#portfolio") Портфолио
-			section.teachers
+			section#teachers.teachers
 				.container
 					.left-col
 						h2 Лекторы курса
@@ -175,7 +177,7 @@ html(lang='en')
 										.content-holder
 											p.name Еще Кто-то
 											p Основатель и арт-директор студии TDESER
-			section.program
+			section.program#program
 				.header-row.container
 					.left-col &nbsp
 					.right-col
@@ -214,7 +216,7 @@ html(lang='en')
 								span Проектирование сайтов
 							li
 								span Проектирование онлайн-сервисов
-			section.price-block.yellow
+			section#prices.price-block.yellow
 				.container
 					.left-col
 						h2 Стоимость
@@ -232,7 +234,7 @@ html(lang='en')
 							.text-holder
 								span.bold 15 человек
 								span в группе
-			section.presentation-block
+			section.presentation-block#contact
 				.container(style="background-image: url(img/content/audience-1.jpg);")
 					.left-col
 						h2 Место проведения
@@ -355,11 +357,46 @@ html(lang='en')
 					img(src="img/icons/cross-1.svg" alt="close")
 
 				.modal-content
-					.container
+					div
 						.left-col
 							form(action="#")
+								.form-group
+									input(placeholder="Имя")
+								.form-group
+									input(placeholder="Телефон")
+								.form-group
+									input(placeholder="Email")
+								.form-group
+									input(placeholder="Профиль Facebook")
+								.form-group
+									button.type-3(type="submit") отправить
 						.right-col
+							.content-holder
+								.date-holder-1
+									.icon-holder
+										img(src="img/icons/calendar-icon-1.svg").calendar-icon-1
+									.text-holder
+										span.bold 3 месяца
+										span 15 февраля – 16 мая
+								.date-holder-1
+									.icon-holder
+										img(src="img/icons/clock-icon-1.svg").clock-icon-1
+									.text-holder
+										span.bold Вторник - Четверг
+										span 19:15 – 21:15
+								.date-holder-1
+									.icon-holder
+										img(src="img/icons/money-icon-1.svg").money-icon-1
+									.text-holder
+										span.bold 3200 грн/месяц 
+										span или 8600 за весь курс
+								.date-holder-1
+									.icon-holder
+										img(src="img/icons/team-icon-1.svg").team-icon-1
+									.text-holder
+										span.bold 15 человек
+										span в группе
 
-		script(src='../bower_components/jquery/dist/jquery.js')
+		script(src='bower_components/jquery/dist/jquery.js')
 		script(src='js/main.js')
 

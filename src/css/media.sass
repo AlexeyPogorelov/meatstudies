@@ -615,7 +615,7 @@ $tablet-cont-width: 660px
 				display: none
 			.right-col
 				position: relative
-				margin: 0 32px
+				margin: 0 auto
 				text-align: center
 		
 		.left-col
@@ -745,7 +745,6 @@ $tablet-cont-width: 660px
 		.footer-logo
 			display: none
 	// end footer
-
 
 //	MOBILE
 @media screen and (max-width: 700px)
@@ -1027,7 +1026,12 @@ $tablet-cont-width: 660px
 		.left-col, .right-col
 			padding-left: 30px
 			padding-right: 30px
+
+	// program
 	.program
+		.header-row
+			.right-col
+				margin: 0 32px
 		.left-col, .right-col
 			padding-left: 30px
 			padding-right: 30px
@@ -1036,6 +1040,7 @@ $tablet-cont-width: 660px
 		.container.border
 			.right-col
 				padding-right: 30px
+
 	.price-block .right-col, .price-block .left-col
 		padding-left: 30px
 		padding-right: 30px
@@ -1155,6 +1160,23 @@ $tablet-cont-width: 660px
 		width: 100%
 
 //	FIXES
+@media screen and (max-height: 480px)
+	.modal-holder, .modal-holder#subscribe
+		background: #fff
+		.close-modal
+			bottom: auto
+			left: auto
+			right: 20px
+			top: 20px
+
+		.modal-content, form, .left-col
+			position: static !important
+			transform: none !important
+			padding-bottom: 40px
+	.modal-holder#subscribe
+		.left-col
+			form
+				position: static
 
 //	xSMALL
 @media screen and (max-width: 1px)

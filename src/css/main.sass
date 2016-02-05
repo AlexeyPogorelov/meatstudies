@@ -724,5 +724,127 @@ $right-width: 700px
 				line-height: 36px
 // end temp
 
+// modals
+.modal-holder#subscribe
+	.left-col
+		width: 50%
+		padding: 20px 0
+
+		form
+			position: absolute
+			top: 50%
+			transform: translateY(-50%)
+			text-align: center
+			width: 50%
+			button
+				margin: auto
+				margin-top: 14px
+				font-weight: 900
+				width: 100%
+			.form-group
+				display: block
+				margin-left: auto
+				margin-right: auto
+				max-width: 540px
+				margin-bottom: 36px
+				padding-left: 60px
+				padding-right: 60px
+				input
+					width: 100%
+	.right-col
+		background: $main-color
+		position: absolute
+		left: 50%
+		height: 100%
+		width: 50%
+		.content-holder
+			position: absolute
+			top: 50%
+			left: 100px
+			transform: translateY(-50%)
+
+
+@media screen and (max-width: 1000px)
+	// modals
+	.modal-holder#subscribe
+		.left-col
+			width: 100%
+			padding: 20px 0
+
+			form
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				text-align: center
+				width: 100%
+				button
+					margin: auto
+					margin-top: 14px
+					font-weight: 900
+					width: 100%
+				.form-group
+					display: block
+					margin-left: auto
+					margin-right: auto
+					// max-width: 540px
+					margin-bottom: 36px
+					padding-left: 60px
+					padding-right: 60px
+					input
+						width: 100%
+		.right-col
+			display: none
+
+
+@media screen and (max-width: 600px)
+	// modals
+	.modal-holder#subscribe
+		.close-modal
+			top: auto
+			right: auto
+			left: 50%
+			bottom: 43px
+			z-index: 1
+			transform: translateX(-50%) rotate(45deg)
+		.modal-content
+			left: 32px
+			right: 32px
+			top: 32px
+			bottom: 32px
+			.left-col
+
+				form
+					position: static
+					padding-top: 12px
+					transform: none
+
+					button
+						font-size: 18px
+						padding: 21px 37px
+						margin-top: 21px
+					.form-group
+						padding-left: 26px
+						padding-right: 26px
+						margin-bottom: 20px
+
+					input
+						font-size: 16px
+						&::-webkit-input-placeholder
+							font-size: 16px
+						&:-moz-placeholder
+							font-size: 16px
+						&::-moz-placeholder
+							font-size: 16px
+						&:-ms-input-placeholder
+							font-size: 16px
+	// end modals
+
+#presentation
+	background: #fff
+	.modal-content
+		left: 0
+		right: 0
+// end modals
+
 // 
 // end 
