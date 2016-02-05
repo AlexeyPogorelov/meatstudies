@@ -4,6 +4,7 @@ html(lang='en')
 		meta(charset='UTF-8')
 		title MEAT Studies
 
+		meta(name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no")
 		link(rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png")
 		link(rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png")
 		link(rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png")
@@ -27,13 +28,16 @@ html(lang='en')
 		link(rel='stylesheet', href='css/concated.css')
 
 		body
+
+			div#to-top
+				img(src="img/icons/up_button.svg" alt="toTop")
 			.gamburger.mobile-visible
 				span.line
 				span.line
 				span.line
 			div.mobile-menu
 				.container
-					button.type-1 записаться
+					button.type-1.modal-open(data-target="#subscribe") записаться
 					ul.main-navigation
 						li
 							a(href="#about") О курсе
@@ -60,7 +64,7 @@ html(lang='en')
 							a(href="#prices") Стоимость
 						li
 							a(href="#contact") Контакты
-					button.type-1 записаться
+					button.type-1.modal-open(data-target="#subscribe") записаться
 			section.header
 				.container
 					.left-col
@@ -106,7 +110,7 @@ html(lang='en')
 			section.do-it-block
 				.container(style="background-image: url(img/content/audience-1.jpg);")
 					.button-holder
-						button записаться
+						button.modal-open(data-target="#subscribe") записаться
 			section.teachers-block
 				.container
 					.header-row
@@ -120,31 +124,31 @@ html(lang='en')
 								b MEAT
 					.content-row
 						.left-col
-							button.type-2.tablet-visible Портфолио
+							button.type-2.tablet-visible.modal-open(data-target="#portfolio") Портфолио
 							ul.socials-type-1
 								li
-									a(src="#" target="_blank")
+									a(href="#" target="_blank")
 										span facebook
 										i.fa.fa-facebook
 								li
-									a(src="#" target="_blank")
+									a(href="#" target="_blank")
 										span instagram
 										i.fa.fa-instagram
 								li
-									a(src="#" target="_blank")
+									a(href="#" target="_blank")
 										span linkedin
 										i.fa.fa-linkedin
 								li
-									a(src="#" target="_blank")
+									a(href="#" target="_blank")
 										span medium
 										i.fa.fa-medium
 								li
-									a(src="#" target="_blank")
+									a(href="#" target="_blank")
 										span pinterest
 										i.fa.fa-pinterest
 						.right-col
 							p Дизайнер интерфейсов со стажем более 10 лет. Прошел классическую школу старой закалки начиная с полиграфии, рекламных агенств и диджитал студий. Позже прокачал свои навыки в аутсорсовых и продуктовых IT-компаниях. Сейчас основал своё дизайн агенство и успешно работает с рынком. <br /> <br /> За плечами несколько сотен Web-проектов и мобильных приложений. Разработал дизайн десктоп-приложений для Windows и iOS, а также интерфейсы для телевизоров.
-							button.type-2.tablet-hidden Портфолио
+							button.type-2.tablet-hidden.modal-open(data-target="#portfolio") Портфолио
 			section.teachers
 				.container
 					.left-col
@@ -175,7 +179,7 @@ html(lang='en')
 				.header-row.container
 					.left-col &nbsp
 					.right-col
-						.label.button-label записаться на  курс
+						.label.button-label.modal-open(data-target="#subscribe") записаться на  курс
 				.container.border
 					.left-col
 						h2 Программа курса
@@ -238,7 +242,7 @@ html(lang='en')
 							button Посмотреть на карте
 							button.type-4.tablet-visible Смотреть фото
 					.right-col
-						div#view-presentation.view-presentation
+						div#view-presentation.view-presentation.modal-open(data-target="#presentation")
 							img(src="img/icons/zoom-icon-1.svg")
 			section.start-date-block
 				.container
@@ -310,9 +314,9 @@ html(lang='en')
 									img(src="img/icons/user-icon-14.svg")
 								span.user.free
 									img(src="img/icons/user-icon-15.svg")
-								span.user.free
-									img(src="img/icons/user-icon-16.svg")
-						button.type-3 записаться на  курс
+								//- span.user.free
+									//- img(src="img/icons/user-icon-16.svg")
+						button.type-3.modal-open(data-target="#subscribe") записаться на  курс
 			section.footer
 				.container
 					.left-col
@@ -326,29 +330,35 @@ html(lang='en')
 							p или звоните на номер
 							a(href="tel:studies@makemeat.com") 093 141 42 09
 
-				//- modal
+			//- modal
 
-				.modal.gallery
-					.modal-holder
-						.modal-container
-							.gallery-slider#gallery-slider
-								.slider-viewport
-									.slider-holder
-										.slide
-											.image-holder
-												img(src="img/icons/anonimus-icon-1.png")
-										.slide
-											.image-holder
-												img(src="img/icons/anonimus-icon-1.png")
-										.slide
-											.image-holder
-												img(src="img/icons/anonimus-icon-1.png")
-				.modal.subscribe
-					.modal-holder
-						.modal-container
-							.left-col
-								form(action="#")
-							.right-col
+			.modal-holder#presentation
+				.close-modal
+					img(src="img/icons/cross-1.svg" alt="close")
+				.modal-content
+					.modal-container
+						.gallery-slider#gallery-slider
+							.slider-viewport
+								.slider-holder
+									.slide
+										.image-holder
+											img(src="img/icons/anonimus-icon-1.png")
+									.slide
+										.image-holder
+											img(src="img/icons/anonimus-icon-1.png")
+									.slide
+										.image-holder
+											img(src="img/icons/anonimus-icon-1.png")
+
+			.modal-holder#subscribe
+				.close-modal
+					img(src="img/icons/cross-1.svg" alt="close")
+
+				.modal-content
+					.container
+						.left-col
+							form(action="#")
+						.right-col
 
 		script(src='../bower_components/jquery/dist/jquery.js')
 		script(src='js/main.js')

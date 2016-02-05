@@ -3,17 +3,52 @@ $font-color: #1a1a1a
 $dark-color: #eee
 $left-width-1280: 320px
 $right-width-1280: 560px
+$left-width-1420: 530px
+$right-width-1420: 770px
 $tablet-cont-width: 660px
 
 //	X LARGE
 @media screen and (min-width: 1664px)
 	.container
-		width: 1260px
+		width: 1300px
 
 //	LARGE
 @media screen and (min-width: 1420px)
 	.container
-		width: 1160px
+		width: 1300px
+	.left-col
+		// padding-right: 70px
+		width: $left-width-1420
+	.right-col
+		width: $right-width-1420
+	.header
+		.left-col
+			width: 511px
+
+	// program
+	.program
+		.button-label
+		.left-col
+			width: $left-width-1420 - 10px
+		.right-col
+			width: $right-width-1420 - 10px
+	// end program
+	.price-block
+		.container
+			padding-bottom: 20px
+	.presentation-block
+		.container
+			.left-col
+				padding-top: 124px
+				.address-holder
+					margin-top: 170px
+	
+	.start-date-block
+		h3
+			margin-top: 8px
+	.footer
+		.container
+			padding-bottom: 20px
 
 //	MEDIUM
 @media screen and (max-width: 1419px)
@@ -64,6 +99,7 @@ $tablet-cont-width: 660px
 			font-size: 20px
 			font-weight: 700
 			line-height: 69px
+			padding: 10px 0
 		i
 			text-align: center
 			right: -5px
@@ -88,6 +124,7 @@ $tablet-cont-width: 660px
 					font-size: 16px
 					line-height: 20px
 					margin-top: 16px
+					margin-bottom: 0px
 		.alexandr-head
 			top: 64px
 			img
@@ -328,7 +365,7 @@ $tablet-cont-width: 660px
 
 		h6
 			margin-top: 9px
-			font-size: 17px;
+			font-size: 17px
 		h2
 			line-height: 31px
 		h3
@@ -435,8 +472,8 @@ $tablet-cont-width: 660px
 				margin-bottom: 21px
 
 			p
-				font-size: 16px;
-				line-height: 24px;
+				font-size: 16px
+				line-height: 24px
 
 	.main-logo
 		margin-top: 4px
@@ -526,18 +563,33 @@ $tablet-cont-width: 660px
 
 				h6
 					margin-top: 6px
+					font-size: 14px
+					line-height: 19px
 
 		.content-row
 			button, ul, li
 				display: inline-block
+			button.type-2.tablet-hidden
+				display: block !important
+				padding: 16px 66px
+				margin: auto
+				margin-top: 33px
+				font-size: 20px
+				font-weight: 700
 			.socials-type-1
 				margin-bottom: 8px
 				li
 					margin-bottom: 8px
+					&:nth-child(1n+4)
+						display: none
+				a
+					padding: 8px 0
 					span
 						display: none
 					i
 						width: 43px
+			p
+				line-height: 21px
 			button
 				font-size: 18px
 				padding: 10px 34px
@@ -546,8 +598,13 @@ $tablet-cont-width: 660px
 	// teachers
 	.teachers
 		padding-top: 12px
+		.left-col
+			margin-top: 37px
 		.persons-slider
 			margin-top: 38px
+		h2
+			font-size: 30px
+
 	// end teachers
 
 	// program
@@ -556,52 +613,84 @@ $tablet-cont-width: 660px
 		.header-row
 			.left-col
 				display: none
+			.right-col
+				position: relative
+				margin: 0 32px
+				text-align: center
 		
 		.left-col
 			padding-left: 90px
 			width: auto
 			h2
-				font-size: 38px;
+				font-size: 30px
 		.right-col
 			padding-left: 90px
 
 		.button-label
-			font-size: 20px;
-			font-weight: 800
-			letter-spacing: 1.33px;
-			padding: 28px 97px
-			top: 6px
+			font-size: 15px
+			font-weight: 900
+			letter-spacing: 0.94px
+			line-height: 14px
+			padding: 22px 7px
+			left: 0
+			top: 17px
+			width: 100%
+			display: inline-block
+			margin: auto
 
 		.container.border
-			padding-top: 79px
+			padding-top: 59px
 
 			.right-col
 				padding-right: 0
-				padding-top: 44px
+				padding-left: 18px
+				padding-top: 17px
 				padding-bottom: 22px
-				font-size: 16px
+				line-height: 22px
+				font-size: 15px
+			ul.type-1 li
+				margin-bottom: 20px
+			ul.type-1 li span
+				font-size: 15px
+				line-height: 26px
+
 	// end program
 
 	// price-block
 	.price-block
 		.container
-			padding-top: 30px
+			padding-top: 24px
 
 			.right-col
 				padding-top: 23px
+
+				.label-2
+					display: none
 
 				.date-holder-1
 					margin-bottom: 0
 
 				.date-holder-1:last-child
 					margin-bottom: 0
+				.date-holder-1
+					.icon-holder
+						margin-bottom: 39px
+						.money-icon-1
+							margin-top: 5px
+							width: 51px
+						.team-icon-1
+							margin-top: -5px
+							width: 51px
+					&:last-child
+						margin-bottom: 8px
 	// end price-block
 
 	// presentation-block
 	.presentation-block
 		.container
 			position: relative
-			height: 454px
+			// height: 460px
+			height: 421px
 			.left-col
 				position: absolute
 				top: 47px
@@ -630,8 +719,8 @@ $tablet-cont-width: 660px
 						line-height: 33px
 						padding-right: 40px
 						position: absolute
-						right: 7px
-						bottom: 50px
+						right: 10px
+						bottom: 20px
 					.bold
 						line-height: 33px
 			.right-col
@@ -686,7 +775,7 @@ $tablet-cont-width: 660px
 			margin: 0 12px
 			padding: 20px 0
 		a
-			font-size: 15px;
+			font-size: 15px
 
 	.main-logo
 		margin-left: 60px
@@ -773,6 +862,12 @@ $tablet-cont-width: 660px
 			padding-right: 60px
 			padding-left: 60px
 	// end price-block
+
+
+	.presentation-block
+		.container
+			height: 421px
+			// height: 460px
 
 	// start-date-block
 	.start-date-block
@@ -866,7 +961,7 @@ $tablet-cont-width: 660px
 		.main-content
 			margin-left: 30px
 			h2
-				font-size: 40px;
+				font-size: 40px
 			h5
 				margin-top: 8px
 		p
@@ -947,17 +1042,90 @@ $tablet-cont-width: 660px
 
 	.presentation-block
 		.container
+			height: 420px
 			.left-col
 				left: 23px
 				right: 23px
 				top: 40px
 				bottom: 40px
-				padding: 26px
+				padding: 37px 26px
 				.address-holder
-					margin-top: 10px
-	.start-date-block .right-col, .start-date-block .left-col
-		padding-left: 30px
-		padding-right: 30px
+					margin-top: 25px
+					span.bold
+						line-height: 20px
+					span
+						font-size: 15px
+					button
+						display: block
+						font-size: 16px
+						line-height: 50px
+						letter-spacing: 0.4px
+						text-align: center
+						padding: 0 20px
+						margin: auto
+						margin-top: 29px
+					button.type-4.tablet-visible
+						// display: block !important
+						margin: auto
+						margin-top: 15px
+						padding: 0
+						float: none
+						position: static
+						text-align: center
+						// font-size: 18px
+						width: 100%
+	.start-date-block
+		padding-top: 34px
+		.right-col, .left-col
+			padding-left: 30px
+			padding-right: 30px
+			h2
+				font-size: 30px
+			h3
+				font-size: 21px
+				margin-top: 17px
+				line-height: 29px
+			h6
+				margin-top: 4px
+				font-size: 14px
+		button.type-3
+			margin-top: 38px
+			font-size: 15px
+			font-weight: 900
+			letter-spacing: 0.94px
+			padding: 18px 0
+
+	.calendar-holder
+		// margin-top: 10px
+		margin-right: -20px
+		.day
+			color: #8c8c8c
+			font-size: 17px
+			font-weight: 900
+			line-height: 33px
+			margin-bottom: 19px
+			position: relative
+			text-align: left
+			width: 40px
+
+			&.crossed:after
+				// position: relative
+				left: 4px
+				height: 22px
+				width: 5px
+			&.active:before
+				transform: scale(0.7) translate(-6px, -4px)
+	.user-icons-holder
+		margin-top: 0
+		.users
+			margin-top: 13px
+			margin-right: -15px
+			.user
+				margin-right: 28px
+				margin-bottom: 10px
+				width: 11px
+				img
+					width: 20px
 
 	.footer
 		padding-left: 0
@@ -965,8 +1133,22 @@ $tablet-cont-width: 660px
 		padding-bottom: 0
 		margin-bottom: 0
 		.container
+			padding-top: 34px
 			padding-left: 30px
 			padding-right: 30px
+			.text-group
+				margin-bottom: 24px
+				a
+					margin-top: 0px
+					font-size: 20px
+				p
+					color: white
+					font-size: 13px
+
+					line-height: 17px
+
+					color: white
+					font-size: 13px
 
 @media screen and (max-width: 1px)
 	.container
