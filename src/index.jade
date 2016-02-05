@@ -27,6 +27,26 @@ html(lang='en')
 		link(rel='stylesheet', href='css/concated.css')
 
 		body
+			.gamburger.mobile-visible
+				span.line
+				span.line
+				span.line
+			div.mobile-menu
+				.container
+					button.type-1 записаться
+					ul.main-navigation
+						li
+							a(href="#about") О курсе
+						li
+							a(href="#teachers") Предподаватели
+						li
+							a(href="#program") Программа
+						li
+							a(href="#prices") Стоимость
+						li
+							a(href="#contact") Контакты
+					button.close-button
+
 			div.top-line
 				.container
 					ul.main-navigation
@@ -216,7 +236,7 @@ html(lang='en')
 							span.bold Prostir 86
 							span ул. Казимира Малевича, 86П
 							button Посмотреть на карте
-							button.type-4 Смотреть фото
+							button.type-4.tablet-visible Смотреть фото
 					.right-col
 						div#view-presentation.view-presentation
 							img(src="img/icons/zoom-icon-1.svg")
@@ -305,6 +325,30 @@ html(lang='en')
 						.text-group
 							p или звоните на номер
 							a(href="tel:studies@makemeat.com") 093 141 42 09
+
+				//- modal
+
+				.modal.gallery
+					.modal-holder
+						.modal-container
+							.gallery-slider#gallery-slider
+								.slider-viewport
+									.slider-holder
+										.slide
+											.image-holder
+												img(src="img/icons/anonimus-icon-1.png")
+										.slide
+											.image-holder
+												img(src="img/icons/anonimus-icon-1.png")
+										.slide
+											.image-holder
+												img(src="img/icons/anonimus-icon-1.png")
+				.modal.subscribe
+					.modal-holder
+						.modal-container
+							.left-col
+								form(action="#")
+							.right-col
 
 		script(src='../bower_components/jquery/dist/jquery.js')
 		script(src='js/main.js')

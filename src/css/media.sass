@@ -377,7 +377,7 @@ $tablet-cont-width: 660px
 	.container
 		width: $tablet-cont-width
 	.tablet-visible
-		display: initial
+		display: inline-block !important
 	.tablet-hidden
 		display: none !important
 
@@ -667,14 +667,6 @@ $tablet-cont-width: 660px
 		height: 0
 		background-color: #fff
 		border: none
-	.mobile-visible
-		display: inherit !important
-	.mobile-hidden
-		display: none !important
-	.mobile-xs-visible
-		display: inherit
-	.mobile-xs-hidden
-		display: none
 	.full-height .content-holder, .vertical-middle .content-holder
 		position: static
 		top: auto
@@ -800,9 +792,181 @@ $tablet-cont-width: 660px
 	// end footer
 
 //	SMALL
-@media screen and (max-width: 1px)
-	.container
-		width: 100%
+@media screen and (max-width: 620px)
+	.mobile-visible
+		display: inherit !important
+	.mobile-hidden
+		display: none !important
+	.mobile-xs-visible
+		display: inherit
+	.mobile-xs-hidden
+		display: none
+	.top-line
+		display: none
+	.teachers-block
+		.header-row
+			position: relative
+			.left-col
+				padding-left: 32px
+				padding-right: 32px
+				width: 100%
+				h2
+					text-align: center
+			.right-col
+				padding-left: 160px
+		.alexandr-head
+			margin: 0
+			left: 22px
+			top: 53px
+			transform: translate(0)
+			img
+				width: 100px
+		.content-row
+			.left-col
+				padding-left: 113px
+			button
+				display: none !important
+		.header-row
+			.right-col
+				h2
+					margin-top: 60px
+	.main-logo
+		margin-left: 30px
+
+
+	.date-holder-1
+		.icon-holder
+			// display: inline-block
+			// margin-bottom: 49px
+			// width: 68px
+
+			img
+				// margin-top: 2px
+		.text-holder
+			// display: inline-block
+			// margin-left: 22px
+			// vertical-align: top
+			span, p
+				font-size: 16px
+				// display: block
+				// font-size: 24px
+				line-height: 22px
+				// font-weight: 300
+				// margin-bottom: 3px
+			.bold
+				font-size: 18px
+				// font-weight: 700
+
+
+	.header
+		.right-col
+			padding-right: 30px
+			padding-top: 0
+			margin-top: 0
+		.main-content
+			margin-left: 30px
+			h2
+				font-size: 40px;
+			h5
+				margin-top: 8px
+		p
+			line-height: 22px
+		.main-logo
+			margin-top: 0
+			img
+				height: 90px
+
+	.when-block
+		.container
+			padding-top: 27px
+			padding-bottom: 40px
+			.left-col, .right-col
+				padding-left: 30px
+			.right-col
+				.date-holder-1
+					margin-top: 11px
+					.icon-holder
+						margin-bottom: 15px
+						width: 54px
+					.clock-icon-1
+						width: 38px
+	.whos-block
+		padding-top: 10px
+		padding-bottom: 35px
+		.container
+			padding-top: 2px
+			.left-col, .right-col
+				padding-left: 30px
+				padding-right: 30px
+			.content
+				margin-top: 12px
+			p
+				line-height: 22px
+
+	.do-it-block
+		.container
+			height: 263px
+			button
+				margin-top: 10px
+				padding: 16px 58px
+				font-size: 18px
+
+	.teachers-block
+		padding-top: 34px
+		.content-row
+			.right-col
+				padding-left: 30px
+				padding-right: 30px
+		.header-row
+			.left-col
+				h2
+					font-size: 30px
+			.right-col
+				padding-left: 133px
+				padding-right: 0px
+				h2
+					margin-top: 40px
+					font-size: 24px
+
+	.teachers
+		.left-col, .right-col
+			padding-left: 30px
+			padding-right: 30px
+	.program
+		.left-col, .right-col
+			padding-left: 30px
+			padding-right: 30px
+		.right-col
+			width: auto
+		.container.border
+			.right-col
+				padding-right: 30px
+	.price-block .right-col, .price-block .left-col
+		padding-left: 30px
+		padding-right: 30px
+
+	.presentation-block
+		.container
+			.left-col
+				left: 23px
+				right: 23px
+				top: 40px
+				bottom: 40px
+				padding: 26px
+				.address-holder
+					margin-top: 10px
+	.start-date-block .right-col, .start-date-block .left-col
+		padding-left: 30px
+		padding-right: 30px
+
+	.footer
+		padding-left: 0
+		padding-right: 0
+		padding-bottom: 0
+		margin-bottom: 0
+		.container
+			padding-left: 30px
+			padding-right: 30px
 
 @media screen and (max-width: 1px)
 	.container

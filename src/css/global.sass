@@ -20,17 +20,17 @@ body
 			position: fixed
 
 // webkit scroll
-.lightbox-cell::-webkit-scrollbar-corner, .dropdown::-webkit-scrollbar-corner, .mobile-navbar-holder::-webkit-scrollbar-corner
+.lightbox-cell::-webkit-scrollbar-corner, .dropdown::-webkit-scrollbar-corner, .mobile-menu .container::-webkit-scrollbar-corner
 	background-color: #e5e5e5
 
-.lightbox-cell::-webkit-scrollbar, .dropdown::-webkit-scrollbar, .mobile-navbar-holder::-webkit-scrollbar
+.lightbox-cell::-webkit-scrollbar, .dropdown::-webkit-scrollbar, .mobile-menu .container::-webkit-scrollbar
 	width: 6px
 	height: 0
 	background-color: #fff
 	border: none
 
-.lightbox-cell::-webkit-scrollbar-thumb, .dropdown::-webkit-scrollbar-thumb, .mobile-navbar-holder::-webkit-scrollbar-thumb
-	background-color: #EE2151
+.lightbox-cell::-webkit-scrollbar-thumb, .dropdown::-webkit-scrollbar-thumb, .mobile-menu .container::-webkit-scrollbar-thumb
+	background-color: $main-color
 	border: 1px solid #e5e5e5
 // end webkit scroll
 
@@ -329,7 +329,7 @@ input
 .active
 	color: $main-color
 
-.hidden, .mobile-visible
+.hidden, .mobile-visible, .tablet-visible
 	display: none !important
 
 .mobile-xs-visible, .x-mobile-visible, .tablet-visible
@@ -734,3 +734,25 @@ button:active, .btn:active, button:focus, .btn:focus
 			transform: scale(1, 1)
 			-webkit-transition: transform .3s
 			transition: transform .3s
+
+.gamburger
+	cursor: pointer
+	padding: 20px
+	position: fixed
+	right: 6px
+	top: 28px
+	z-index: 2
+	.line
+		background: #000
+		display: block
+		margin-bottom: 4px
+		height: 4px
+		width: 30px
+		transition: transform .3s ease-out
+	&:hover
+		.line:first-child
+			transform: translateY(-3px)
+			transition: transform .3s ease-out
+		.line:last-child
+			transform: translateY(3px)
+			transition: transform .3s ease-out
