@@ -53,8 +53,6 @@ $(window).on('load', function () {
 			return plg;
 		})();
 
-
-
 		// modals
 		$('.modal-open').on('click', function (e) {
 			e.preventDefault();
@@ -171,27 +169,27 @@ $(window).on('load', function () {
 				init: function () {
 					state.cur = state.cur || 0;
 					state.slides = DOM.$slides.length;
-					state.activeSlides = DOM.$slides.length / opt.slidesOnPage;
+					state.pages = Math.ceil(DOM.$slides.length / opt.slidesOnPage);
 					DOM.$preloader.fadeOut(150);
-					console.log(state)
+					// console.log(state)
 				},
 				resize: function () {
 					state.sliderWidth = DOM.$viewport.width();
-					DOM.$slides.width( (DOM.$viewport.width() - 59) / opt.slidesOnPage);
+					DOM.$slides.width( DOM.$viewport.width() / opt.slidesOnPage);
 					DOM.$slides.height(
 							(function ($slides) {
 								var max = 1;
 								$slides.each(function () {
-									var width = $(this).find('> div').outerHeight();
-									if (width > max) {
-										max = width;
+									var height = $(this).find('> div').outerHeight();
+									if (height > max) {
+										max = height;
 									}
 								});
 								return max;
 							})(DOM.$slides) + 26
 						);
 					state.slideWidth = DOM.$slides.eq(0).outerWidth() + 12;
-					DOM.$sliderHolder.width(state.slideWidth * state.activeSlides);
+					DOM.$sliderHolder.width(state.slideWidth * state.slides);
 				},
 				prevSlide: function () {
 					var id = state.cur - 1;
@@ -203,7 +201,7 @@ $(window).on('load', function () {
 				},
 				nextSlide: function () {
 					var id = state.cur + 1;
-					if (id >= state.activeSlides) {
+					if (id >= state.pages) {
 						// this.toSlide(0);
 						return;
 					}
@@ -232,7 +230,7 @@ $(window).on('load', function () {
 						DOM.$pagination = $('<div>').addClass('paginator-holder');
 						DOM.$pagination.appendTo(DOM.$slider);
 					}
-					for (var i = 0; i < state.activeSlides / opt.slidesOnPage; i++) {
+					for (var i = 0; i < state.pages / opt.slidesOnPage; i++) {
 						var page = $('<div>').data('page', i).addClass('page');
 						if (!i) {
 							page.addClass('active');
