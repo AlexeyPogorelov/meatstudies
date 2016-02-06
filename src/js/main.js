@@ -154,6 +154,7 @@ $(window).on('load', function () {
 				'slideClass': '.slide',
 				'nameClass': '.slide-name',
 				'imageClass': '.slide-image',
+				'pagination': false,
 				'slidesOnPage': 1
 			}, opt);
 
@@ -165,16 +166,21 @@ $(window).on('load', function () {
 					DOM.$viewport = DOM.$slider.find('.slider-viewport');
 					DOM.$sliderHolder = DOM.$viewport.find('.slider-holder');
 					DOM.$slides = DOM.$sliderHolder.find('.slide');
+					DOM.$slides.eq(0).addClass('active')
 				},
 				init: function () {
 					state.cur = state.cur || 0;
 					state.slides = DOM.$slides.length;
 					state.pages = Math.ceil(DOM.$slides.length / opt.slidesOnPage);
 					DOM.$preloader.fadeOut(150);
-					// console.log(state)
 				},
 				resize: function () {
 					state.sliderWidth = DOM.$viewport.width();
+					if ($(window).width() > 300 && opt.slidesOnPage > 1 && $(window).width() <= 700) {
+						opt.slidesOnPage = Math.floor( opt.slidesOnPage / 2 );
+						plg.init();
+						plg.toSlide(0);
+					}
 					DOM.$slides.width( DOM.$viewport.width() / opt.slidesOnPage);
 					DOM.$slides.height(
 							(function ($slides) {
@@ -194,7 +200,6 @@ $(window).on('load', function () {
 				prevSlide: function () {
 					var id = state.cur - 1;
 					if (id < 0) {
-						// this.toSlide(state.activeSlides - 1);
 						return;
 					}
 					this.toSlide(id);
@@ -202,24 +207,20 @@ $(window).on('load', function () {
 				nextSlide: function () {
 					var id = state.cur + 1;
 					if (id >= state.pages) {
-						// this.toSlide(0);
 						return;
 					}
 					this.toSlide(id);
 				},
 				toSlide: function (id) {
+					// console.log(typeof id);
+					// console.log(id);
+					// id = parseInt(id);
+							// alert()
 					DOM.$sliderHolder.css({
 						'-webkit-transform': 'translateX( -' + (state.sliderWidth * id) + 'px)',
 						'transform': 'translateX( -' + (state.sliderWidth * id) + 'px)'
 					});
-					// .one('animationend webkitAnimationEnd MSAnimationEnd oAnimationEnd', function () {
-					// 	$(this).css({
-					// 		'left': 1
-					// 	});
-					// });
-					// DOM.$sliderHolder.css({
-					// 	'left': -(state.slideWidth * opt.slidesOnPage * id)
-					// });
+					DOM.$slides.eq(id).addClass('active').siblings().removeClass('active');
 					DOM.$pagination.find('.page').eq(id).addClass('active').siblings().removeClass('active');
 					state.cur = id;
 				},
@@ -228,8 +229,13 @@ $(window).on('load', function () {
 						DOM.$pagination.empty();
 					} else {
 						DOM.$pagination = $('<div>').addClass('paginator-holder');
-						DOM.$pagination.appendTo(DOM.$slider);
+						if (opt.pagination || true) {
+							DOM.$pagination.appendTo(DOM.$slider);
+						}
 					}
+					$('<div>')
+						.addClass('prev-slide')
+						.appendTo(DOM.$pagination);
 					for (var i = 0; i < state.pages / opt.slidesOnPage; i++) {
 						var page = $('<div>').data('page', i).addClass('page');
 						if (!i) {
@@ -237,6 +243,9 @@ $(window).on('load', function () {
 						}
 						DOM.$pagination.append(page);
 					}
+					$('<div>')
+						.addClass('next-slide')
+						.appendTo(DOM.$pagination);
 				}
 			};
 
@@ -255,6 +264,10 @@ $(window).on('load', function () {
 				var $target = $(e.target);
 				if ($target.hasClass('page')) {
 					plg.toSlide($(e.target).data('page'));
+				} else if ($target.hasClass('prev-slide')) {
+					plg.prevSlide();
+				} else if ($target.hasClass('next-slide')) {
+					plg.nextSlide();
 				}
 			});
 
@@ -263,16 +276,20 @@ $(window).on('load', function () {
 				state.touchStart.xPos = e.originalEvent.touches[0].clientX;
 				state.touchStart.yPos = e.originalEvent.touches[0].clientY;
 				state.touchStart.timeStamp = e.timeStamp;
+				// console.log('-----');
 			});
 			DOM.$slider.on('touchmove', function (e) {
 				state.touchEnd.xPos = e.originalEvent.touches[0].clientX;
 				state.touchEnd.yPos = e.originalEvent.touches[0].clientY;
+				// console.log('-----');
 			});
 			DOM.$slider.on('touchend', function (e) {
 				var distance = 70,
 					speed = 200,
 					deltaX = state.touchEnd.xPos - state.touchStart.xPos,
 					deltaY = Math.abs(state.touchEnd.yPos - state.touchStart.yPos);
+				state.touchEnd.xPos = 0;
+				state.touchEnd.yPos = 0;
 					// time = e.timeStamp - state.touchStart.timeStamp;
 				// console.log('-----');
 				// console.log(time);

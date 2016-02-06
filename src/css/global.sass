@@ -156,6 +156,7 @@ input
 	padding-right: 16px
 	transition: outline-color .4s
 	&:focus
+		outline: none
 	&::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder
 
 //	END INPUT
@@ -675,8 +676,11 @@ button:active, .btn:active, button:focus, .btn:focus
 			float: left
 			.slide-wrapper
 				transform: translateZ(0)
+.paginator-holder
+	.page
+		cursor: pointer
 
-#main-modal.modal-holder a.close-modal, .modal-holder .close-modal
+.modal-holder a.close-modal, .modal-holder .close-modal
 	cursor: pointer
 	display: block
 	height: 35px
@@ -687,9 +691,11 @@ button:active, .btn:active, button:focus, .btn:focus
 	width: 35px
 	transform: rotate(45deg)
 	transition: opacity .1s
-
-#main-modal.modal-holder a.close-modal:after
-	display: none
+	&:after
+		display: none
+	&:hover
+		transition: opacity .3s
+		opacity: 1
 
 .modal-holder
 	background: $main-color

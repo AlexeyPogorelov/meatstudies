@@ -4,6 +4,7 @@ $font-color: #1a1a1a
 $dark-color: #eee
 $left-width: 460px
 $right-width: 700px
+$hover-color: #f4da00
 
 button.type-1
 	background: transparent
@@ -17,6 +18,10 @@ button.type-1
 	line-height: 21px
 	padding: 20px 57px
 	margin-top: 14px
+	transition: background .3s, color .3s
+	&:hover
+		background-color: $main-color
+		transition: background .1s, color .1s
 
 button.type-2
 	background-color: $main-color
@@ -27,6 +32,10 @@ button.type-2
 	letter-spacing: 1px
 	line-height: 22px
 	padding: 17px 37px
+	transition: background .3s, color .3s
+	&:hover
+		background-color: $hover-color
+		transition: background .1s, color .1s
 
 button.type-3
 	background-color: $main-color
@@ -38,6 +47,10 @@ button.type-3
 	line-height: 21px
 	text-transform: uppercase
 	padding: 28px 69px
+	transition: background .3s, color .3s
+	&:hover
+		background-color: $hover-color
+		transition: background .1s, color .1s
 
 button.type-4
 	color: $main-color
@@ -46,6 +59,9 @@ button.type-4
 	font-size: 18px
 	font-weight: 700
 	line-height: 33px
+	transition: background .3s, color .3s
+	&:hover
+		transition: background .1s, color .1s
 
 .button-label
 	background-color: $main-color
@@ -71,6 +87,25 @@ button.type-4
 
 .yellow
 	background-color: $main-color
+
+.underline
+	position: relative
+	&:before
+		background-color: $main-color
+		bottom: 0
+		content: ''
+		display: block
+		height: 2px
+		opacity: 0
+		position: absolute
+		width: 0
+		// transform: translateY(10px)
+		transition: width .3s, opacity .3s, transform .3s ease-out
+	&:hover:before
+		opacity: 1
+		// transform: translateY(0)
+		width: 100%
+		transition: width .3s, opacity .3s, transform .3s ease-out
 
 	h2
 		color: white
@@ -133,6 +168,15 @@ ul.type-1
 
 
 // INPUTs
+.form-group
+	position: relative
+input ~ .input-line
+	position: absolute
+	left: 0
+	bottom: 0
+	width: 0
+	&:focus
+		width: 100%
 
 input
 	border: none
@@ -143,9 +187,10 @@ input
 	outline-color: transparent
 	outline-width: 5px
 	padding: 0 16px 0 9px
+	position: relative
 	transition: outline-color .4s
 	&:focus
-		border-bottom: 3px solid #000
+		// border-bottom: 3px solid #000
 	&::-webkit-input-placeholder
 		color: #b3b3b3
 		font-family: $font-stack

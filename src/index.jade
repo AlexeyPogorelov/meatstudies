@@ -37,35 +37,45 @@ html(lang='en')
 			span.line
 			span.line
 			span.line
-		div.modal.mobile-menu#mobile-menu
+		div.modal.mobile-menu#mobile-menu.modal-holder
 			.container
 				button.type-1.modal-open(data-target="#subscribe") записаться
 				ul.main-navigation
 					li
-						a(href="#about") О курсе
+						a(href="#about")
+							span О курсе
 					li
-						a(href="#teachers") Предподаватели
+						a(href="#teachers")
+							span Предподаватели
 					li
-						a(href="#program") Программа
+						a(href="#program")
+							span Программа
 					li
-						a(href="#prices") Стоимость
+						a(href="#prices")
+							span Стоимость
 					li
-						a(href="#contact") Контакты
+						a(href="#contact")
+							span Контакты
 				button.close-button.close-modal
 
 		div.top-line
 			.container
 				ul.main-navigation
 					li
-						a(href="#about") О курсе
+						a(href="#about")
+							span О курсе
 					li
-						a(href="#teachers") Предподаватели
+						a(href="#teachers")
+							span Предподаватели
 					li
-						a(href="#program") Программа
+						a(href="#program")
+							span Программа
 					li
-						a(href="#prices") Стоимость
+						a(href="#prices")
+							span Стоимость
 					li
-						a(href="#contact") Контакты
+						a(href="#contact")
+							span Контакты
 				button.type-1.modal-open(data-target="#subscribe") записаться
 		section.header
 			.container
@@ -266,7 +276,7 @@ html(lang='en')
 						span.bold Prostir 86
 						span ул. Казимира Малевича, 86П
 						button Посмотреть на карте
-						button.type-4.tablet-visible Смотреть фото
+						button.type-4.tablet-visible.modal-open(data-target="#presentation") Смотреть фото
 				.right-col
 					div#view-presentation.view-presentation.modal-open(data-target="#presentation")
 						img(src="img/icons/zoom-icon-1.svg")
@@ -310,35 +320,35 @@ html(lang='en')
 					.user-icons-holder
 						h3 5 мест
 						.users
-							span.user
+							span.user.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-1.svg")
-							span.user
+							span.user.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-2.svg")
-							span.user
+							span.user.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-3.svg")
-							span.user
+							span.user.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-4.svg")
-							span.user
+							span.user.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-5.svg")
-							span.user.free
+							span.user.free.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-6.svg")
-							span.user.free
+							span.user.free.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-7.svg")
-							span.user.free
+							span.user.free.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-8.svg")
-							span.user.free
+							span.user.free.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-9.svg")
-							span.user.free
+							span.user.free.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-10.svg")
-							span.user.free
+							span.user.free.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-11.svg")
-							span.user.free
+							span.user.free.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-12.svg")
-							span.user.free
+							span.user.free.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-13.svg")
-							span.user.free
+							span.user.free.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-14.svg")
-							span.user.free
+							span.user.free.modal-open(data-target="#subscribe")
 								img(src="img/icons/user-icon-15.svg")
 							//- span.user.free
 								//- img(src="img/icons/user-icon-16.svg")
@@ -351,10 +361,10 @@ html(lang='en')
 				.right-col
 					.text-group
 						p По всем вопросам пишите на email
-						a(href="mailto:studies@makemeat.com") studies@makemeat.com
+						a.underline(href="mailto:studies@makemeat.com") studies@makemeat.com
 					.text-group
 						p или звоните на номер
-						a(href="tel:studies@makemeat.com") 093 141 42 09
+						a.underline(href="tel:studies@makemeat.com") 093 141 42 09
 
 		//- modal
 
@@ -368,13 +378,13 @@ html(lang='en')
 							.slider-holder
 								.slide
 									.image-holder
-										img(src="img/icons/anonimus-icon-1.png")
+										img(src="img/content/audience-1.jpg")
 								.slide
 									.image-holder
-										img(src="img/icons/anonimus-icon-1.png")
+										img(src="img/content/audience-2.jpg")
 								.slide
 									.image-holder
-										img(src="img/icons/anonimus-icon-1.png")
+										img(src="img/content/tabel-collage-1.png")
 
 		.modal-holder#subscribe
 			.close-modal

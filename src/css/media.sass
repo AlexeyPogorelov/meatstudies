@@ -849,10 +849,19 @@ $tablet-cont-width: 660px
 
 			.slide
 				float: left
-				width: 180px
+				text-align: center
+				// width: 180px
+				width: auto
 
 				.image-holder
-					width: 116px
+					// width: 116px
+					width: auto
+				.content-holder
+					.name
+						width: auto
+					p
+						width: auto
+
 	// end teachers
 
 	// price-block
@@ -897,6 +906,14 @@ $tablet-cont-width: 660px
 		display: none
 	.top-line
 		display: none
+
+	.modal-holder a.close-modal, .modal-holder .close-modal
+		right: auto
+		top: auto
+		left: 50%
+		bottom: 20px
+		transform: translateX(-50%) rotate(45deg)
+
 	.teachers-block
 		.header-row
 			position: relative
@@ -1155,11 +1172,27 @@ $tablet-cont-width: 660px
 					color: white
 					font-size: 13px
 
-@media screen and (max-width: 1px)
-	.container
-		width: 100%
+	#presentation
+		.modal-content
+			.gallery-slider
+				margin-top: calc(30vh)
+				padding: 10px
+				.paginator-holder
+					transform: translateZ(0)
+					.page
+						margin: 0 7px
+						height: 9px
+						width: 9px
+				.prev-slide, .next-slide
+					pointer-events: none
+				.slider-viewport
+					&:before, &:after
+					.slider-holder
+						.slide
+							&.active
+							.image-holder
+								padding: 0 4px
 
-//	FIXES
 @media screen and (max-height: 480px)
 	.modal-holder, .modal-holder#subscribe
 		background: #fff
@@ -1182,3 +1215,6 @@ $tablet-cont-width: 660px
 @media screen and (max-width: 1px)
 	.container
 		width: 100%
+
+//	FIXES
+// @media screen and (max-width: 700px)

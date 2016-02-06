@@ -4,6 +4,7 @@ $font-color: #1a1a1a
 $dark-color: #eee
 $left-width: 460px
 $right-width: 700px
+$hover-color: #f4da00
 
 .right-col, .left-col
 	float: left
@@ -24,6 +25,10 @@ $right-width: 700px
 		font-size: 23px
 		font-weight: 700
 		line-height: 60px
+		transition: color .3s
+		&:hover
+			color: $hover-color
+			transition: color .1s
 	i
 		text-align: center
 		padding-left: 0px
@@ -86,8 +91,37 @@ $right-width: 700px
 	a
 		color: black
 		font-size: 22px
-		font-weight: 900
+		font-weight: 600
 		line-height: 21px
+		position: relative
+		span
+			margin: 0 10px
+			position: relative
+			z-index: 2
+		&:before
+			background-color: $main-color
+			bottom: -12px
+			content: ''
+			display: block
+			height: 9px
+			opacity: 0
+			position: absolute
+			width: 0
+			width: 100%
+			z-index: 0
+			// transform: translateY(10px)
+			transition: width .3s, opacity .3s, transform .3s ease-out
+		&.active:before
+			opacity: 1
+			bottom: 0
+			// transform: translateY(0)
+			transition: width .3s, bottom .3s, opacity .3s, transform .3s ease-out
+		&:hover:before
+			opacity: 1
+			// transform: translateY(0)
+			bottom: -12px
+			transition: width .3s, bottom .3s, opacity .3s, transform .3s ease-out
+
 
 .mobile-menu
 	background-color: $main-color;
@@ -236,8 +270,12 @@ $right-width: 700px
 			text-transform: uppercase
 			transform: translate(-50%, -50%)
 			font-weight: 700
+			transition: background .3s, color .3s
 			// height: 80px
 			// width: 348px
+			&:hover
+				background-color: $hover-color
+				transition: background .1s, color .1s
 
 // end do-it-block
 
@@ -333,6 +371,7 @@ $right-width: 700px
 		width: $right-width - 10px
 
 	.button-label
+		cursor: pointer
 		color: black
 		font-size: 22px
 		font-weight: 700
@@ -342,6 +381,10 @@ $right-width: 700px
 		position: absolute
 		text-transform: uppercase
 		top: -4px
+		transition: background .3s, color .3s
+		&:hover
+			background-color: $hover-color
+			transition: background .1s, color .1s
 
 	.container.border
 		border: 10px solid $main-color
@@ -407,6 +450,11 @@ $right-width: 700px
 					padding: 20px 32px
 					margin-top: 11px
 					margin-right: 3px
+					transition: background .3s, color .3s, border .3s
+					&:hover
+						background-color: $hover-color
+						border: 3px solid $hover-color
+						transition: background .1s, color .1s, border .1s
 
 				span
 					color: black
@@ -470,10 +518,10 @@ $right-width: 700px
 			content: ''
 			background-color: rgba(244,31,82,.8)
 			position: absolute
-			left: 1px
-			top: 5px
+			left: 3px
+			top: 1px
 			height: 36px
-			width: 10px
+			width: 9px
 			transform: rotate(37deg)
 
 		&.active:before
@@ -493,6 +541,7 @@ $right-width: 700px
 		vertical-align: top
 
 		.user
+			cursor: pointer
 			display: inline-block
 			margin-right: 9px
 			margin-bottom: 27px
@@ -841,10 +890,67 @@ $right-width: 700px
 
 #presentation
 	background: #fff
+	.close-modal
+		z-index: 2
 	.modal-content
 		left: 0
 		right: 0
+		top: 0
+		bottom: 0
+		.gallery-slider
+			overflow: hidden
+			padding: 80px
+			z-index: 999
+			.paginator-holder
+				margin-top: 20px
+				text-align: center
+				.page
+					background: #eaeaea
+					border-radius: 50%
+					display: inline-block
+					margin: 0 11px
+					height: 14px
+					width: 14px
+					z-index: 2
+					&.active
+						background: $main-color
+				.prev-slide, .next-slide
+					cursor: pointer
+					position: fixed
+					top: 0
+					height: 100%
+					width: 100px
+					transform: translateZ(0)
+					z-index: 2
+				.prev-slide
+					left: 0
+				.next-slide
+					right: 0
+			.slider-viewport
+				overflow: visible
+				&:before, &:after
+					content: ''
+					display: table
+					clear: both
+				.slider-holder
+					z-index: 999
+					.slide
+						max-height: 750px
+						overflow: hidden
+						opacity: 0.3
+						transition: opacity .3s
+						&.active
+							opacity: 1
+							transition: opacity .3s
+						.image-holder
+							padding: 0 30px
 // end modals
+
+// FIXES
+div[data-control="editable"]
+	z-index: 999
+
+// end FIXES
 
 // 
 // end 
