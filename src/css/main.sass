@@ -17,25 +17,6 @@ $hover-color: #f4da00
 .right-col
 	width: $right-width
 
-.socials-type-1
-	li
-		margin-top: -12px
-	a
-		color: $main-color
-		font-size: 23px
-		font-weight: 700
-		line-height: 60px
-		transition: color .3s
-		&:hover
-			color: $hover-color
-			transition: color .1s
-	i
-		text-align: center
-		padding-left: 0px
-		position: relative
-		right: -11px
-		width: 50px
-
 .date-holder-1
 	.icon-holder
 		display: inline-block
@@ -85,7 +66,7 @@ $hover-color: #f4da00
 .main-navigation
 	li
 		display: inline-block
-		margin-right: 39px
+		margin-right: 19px
 		padding: 34px 0
 
 	a
@@ -101,6 +82,7 @@ $hover-color: #f4da00
 		&:before
 			background-color: $main-color
 			bottom: -12px
+			left: 0
 			content: ''
 			display: block
 			height: 9px
@@ -110,7 +92,7 @@ $hover-color: #f4da00
 			width: 100%
 			z-index: 0
 			// transform: translateY(10px)
-			transition: width .3s, opacity .3s, transform .3s ease-out
+			transition: width .3s, bottom .9s, opacity .3s, transform .3s ease-out
 		&.active:before
 			opacity: 1
 			bottom: 0
@@ -132,7 +114,7 @@ $hover-color: #f4da00
 	transform: translateY(-100%)
 	height: 100%
 	width: 100%
-	z-index: 2
+	z-index: 3
 	&.opened
 		transform: translateY(0)
 	.container
@@ -180,7 +162,7 @@ $hover-color: #f4da00
 	padding-bottom: 83px
 
 	.left-col
-		margin-top: 20px
+		margin-top: 15px
 
 	.right-col
 		margin-top: 73px
@@ -204,6 +186,7 @@ $hover-color: #f4da00
 
 .main-logo
 	margin-top: 4px
+	margin-top: 0
 	margin-left: 75px
 
 #main-slider.main-slider
@@ -212,15 +195,16 @@ $hover-color: #f4da00
 
 // when-block
 .when-block
-	padding-top: 54px
-	padding-bottom: 13px
+	.container
+		padding-top: 54px
+		padding-bottom: 13px
 
-	.date-holder-1
-		margin-top: 10px
+		.date-holder-1
+			margin-top: 10px
 
-		.clock-icon-1
-			margin-left: -4px
-			margin-top: 1px
+			.clock-icon-1
+				margin-left: -4px
+				margin-top: 1px
 // end when-block
 
 // whos-block
@@ -364,7 +348,10 @@ $hover-color: #f4da00
 	margin-top: 80px
 	// margin-bottom: 58px
 	position: relative
-
+	animation: none !important
+	.header-row
+		transform: translateZ(100px)
+		z-index: 2
 	.left-col
 		width: $left-width - 10px
 	.right-col
@@ -381,6 +368,7 @@ $hover-color: #f4da00
 		position: absolute
 		text-transform: uppercase
 		top: -4px
+		transform: transformZ(100px)
 		transition: background .3s, color .3s
 		&:hover
 			background-color: $hover-color
@@ -481,11 +469,15 @@ $hover-color: #f4da00
 				top: 0
 				width: 100%
 
-				img
+				img, svg
 					position: absolute
 					top: 50%
 					left: 50%
 					transform: translate(-50%, -50%)
+					&:hover
+						*
+							fill: $main-color
+							transition: fill .3s
 
 // end presentation-block
 
@@ -547,6 +539,8 @@ $hover-color: #f4da00
 			margin-bottom: 27px
 			vertical-align: bottom
 			width: 40px
+			&.free
+				opacity: .3
 
 // end start-date-block
 
@@ -557,6 +551,7 @@ $hover-color: #f4da00
 	.container
 		padding-top: 55px
 		padding-bottom: 96px
+		padding-bottom: 55px
 		background-color: black
 
 		.footer-logo
@@ -774,6 +769,34 @@ $hover-color: #f4da00
 // end temp
 
 // modals
+#mail-sent
+	z-index: 999
+	.modal-content
+		position: absolute
+		top: 50%
+		left: 50%
+		bottom: auto
+		right: auto
+		transform: translate(-50%, -50%)
+		background: $main-color
+		height: auto
+		min-height: 0
+		h2
+			color: #fff
+			max-width: 400px;
+			color: white;
+			font-size: 46px;
+			font-weight: 700;
+			line-height: 44px;
+			margin-bottom: 25px
+		p
+			/* Text style for "На ваш Email п" */
+			width: 600px;
+			color: black;
+			font-size: 21px;
+			font-weight: 400;
+			line-height: 32px;
+
 .modal-holder#subscribe
 	.left-col
 		width: 50%
@@ -948,8 +971,9 @@ $hover-color: #f4da00
 
 // FIXES
 div[data-control="editable"]
-	z-index: 999
-
+	// z-index: 9
+.redactor-editor, .redactor-box, .redactor-box textarea
+	background-color: transparent !important
 // end FIXES
 
 // 

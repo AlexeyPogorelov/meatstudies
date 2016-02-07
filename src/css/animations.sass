@@ -1,0 +1,92 @@
+
+@keyframes fadeIn
+	from
+		opacity: 0
+
+	to
+		opacity: 1
+
+@keyframes fadeInUp
+	from
+		opacity: 0
+		transform: translate(0, 60px)
+
+	to
+		opacity: 1
+		transform: translate(0, 0)
+
+@keyframes fadeInRight
+	from
+		opacity: 0
+		transform: translate(40px, 0)
+
+	to
+		opacity: 1
+		transform: translate(0, 0)
+
+.fadeInRightA
+	animation-name: fadeInRightA
+
+@keyframes fadeInRightA
+	from
+		transform: translate(40px, 0)
+
+	to
+		transform: translate(0, 0)
+
+.fadeInUpA
+	animation-name: fadeInUpA
+
+@keyframes fadeInUpA
+	from
+		transform: translate(0, 60px)
+
+	to
+		transform: translate(0, 0)
+
+.scaleInA
+	animation-name: scaleInA
+
+@keyframes scaleInA
+	from
+		opacity: 0
+		transform: scale(2)
+
+	to
+		opacity: 1
+		transform: scale(1)
+
+.scaleOutA
+	animation-name: scaleOutA
+
+.scaleOutAi
+	animation-name: scaleOutA !important
+
+@keyframes scaleOutA
+	from
+		opacity: 1
+		transform: scale(1)
+
+	to
+		opacity: 0
+		transform: scale(2)
+
+@keyframes scaleOutAi
+	from
+		transform: scale(1)
+
+	to
+		transform: scale(2)
+
+// intro
+.header.animated
+	.left-col, .right-col, .main-slider
+		animation-duration: 1s
+		animation-fill-mode: both
+		animation-name: fadeInRight
+	.left-col
+		animation-delay: .3s
+	.right-col
+		animation-delay: .6s
+	.main-slider
+		animation-delay: .9s

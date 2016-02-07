@@ -33,6 +33,8 @@ body
 	background-color: $main-color
 	border: 1px solid #e5e5e5
 // end webkit scroll
+button, input, optgroup, select, textarea
+	font-family: $font-stack
 
 section
 	display: block
@@ -155,6 +157,7 @@ input
 	padding-left: 16px
 	padding-right: 16px
 	transition: outline-color .4s
+	font-weight: 500
 	&:focus
 		outline: none
 	&::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder
@@ -381,10 +384,6 @@ input
 	left: 50%
 	overflow: auto
 	box-shadow: 0 0 24px rgba(0, 0, 0, 0.4)
-	-webkit-transform: translate(-50%, -50%)
-	-moz-transform: translate(-50%, -50%)
-	-ms-transform: translate(-50%, -50%)
-	-o-transform: translate(-50%, -50%)
 	transform: translate(-50%, -50%)
 	z-index: 10
 	&::-webkit-scrollbar
@@ -393,30 +392,20 @@ input
 	img
 		max-width: 100%
 
-.preloader
-	background-color: $dark-color
-	//background: none !important
-	position: fixed
-	height: 100%
-	width: 100%
-	z-index: 9999
-	-webkit-transform: translateZ(0)
-	transform: translateZ(0)
 
 .client-safari .preloader
-	-webkit-transform: translateZ(800px)
 	transform: translateZ(800px)
 	z-index: 999999
 
 .preloader
-	&:before
-		background: $dark-color
-		content: ""
-		height: 6px
-		left: 0
-		position: fixed
-		top: 0
-		width: 100%
+	background-color: #fff
+	position: fixed
+	left: 0
+	top: 0
+	height: 100%
+	width: 100%
+	z-index: 9999
+	transform: translateZ(0)
 	> .after
 		background: $dark-color
 		content: ""
@@ -425,28 +414,24 @@ input
 		position: fixed
 		top: 0
 		width: 100%
-		background: #4d2ce0
+		background: $main-color
 		width: 10px
-		-webkit-transition: width .5s
 		transition: width .5s
 	&.blue
-		background-color: #4d2ce0
+		background-color: $main-color
 		&:before
-			background-color: #4d2ce0
+			background-color: $main-color
 		> .after
 			background-color: $dark-color
-			-webkit-transition: width .6s
 			-o-transition: width .6s
 			transition: width .6s
 	img
 		position: absolute
-		-webkit-transform: translate(-50%, -50%)
 		transform: translate(-50%, -50%)
 		top: 50%
 		left: 50%
 	svg
 		position: absolute
-		-webkit-transform: rotate(51deg) translate(-71%, 11%)
 		transform: rotate(51deg) translate(-71%, 11%)
 		top: 50%
 		left: 50%
@@ -456,7 +441,6 @@ input
 		color: #ffffff
 		font-size: 40px
 		position: absolute
-		-webkit-transform: translate(-50%, -50%)
 		transform: translate(-50%, -50%)
 		top: 50%
 		left: 50%
@@ -465,19 +449,16 @@ input
 #to-top
 	cursor: pointer
 	position: fixed
-	right: 30px
-	bottom: 49px
-	bottom: 30px
+	right: 6px
+	bottom: 36px
 	opacity: 0
 	height: 60px
 	width: 60px
 	z-index: 2
 	transform: translateY(60px)
-	-webkit-transition: transform .3s, opacity .3s, bottom .3s
 	transition: transform .3s, opacity .3s, bottom .3s
 	&.opened
 		opacity: 1
-		-webkit-transition: transform .3s, opacity .3s, bottom .3s
 		transition: transform .3s, opacity .3s, bottom .3s
 		transform: translateY(0)
 
@@ -531,7 +512,6 @@ input
 		width: 100%
 		top: 50%
 		position: relative
-		-webkit-transform: translateY(-50%)
 		transform: translateY(-50%)
 
 .vertical-middle
@@ -543,7 +523,6 @@ input
 		width: 100%
 		top: 50%
 		position: relative
-		-webkit-transform: translateY(-50%)
 		transform: translateY(-50%)
 
 //	NAVIIGATION
@@ -757,19 +736,19 @@ button:active, .btn:active, button:focus, .btn:focus
 			transform: translateY(3px)
 			transition: transform .3s ease-out
 
-#to-top
-	cursor: pointer
-	position: fixed
-	right: 30px
-	bottom: 49px
-	bottom: 30px
-	opacity: 0
-	height: 60px
-	width: 60px
-	z-index: 3
-	transform: translateY(60px)
-	transition: transform .3s, opacity .3s, bottom .3s
-	&.opened
-		opacity: 1
-		transition: transform .3s, opacity .3s, bottom .3s
-		transform: translateY(0)
+// #to-top
+// 	cursor: pointer
+// 	position: fixed
+// 	right: 30px
+// 	bottom: 49px
+// 	bottom: 30px
+// 	opacity: 0
+// 	height: 60px
+// 	width: 60px
+// 	z-index: 3
+// 	transform: translateY(60px)
+// 	transition: transform .3s, opacity .3s, bottom .3s
+// 	&.opened
+// 		opacity: 1
+// 		transition: transform .3s, opacity .3s, bottom .3s
+// 		transform: translateY(0)

@@ -82,11 +82,14 @@ button.type-4
 	font-size: 14px
 	font-weight: 700
 	line-height: 13px
-	margin-left: 17px
+	margin-left: 7px
 	padding: 7px 12px
 
 .yellow
-	background-color: $main-color
+	.container
+		background-color: $main-color
+		h2
+			color: #fff
 
 .underline
 	position: relative
@@ -167,16 +170,55 @@ ul.type-1
 // @media screen and (max-width: 900px)
 
 
+.socials-type-1
+	li
+		margin-top: -12px
+	a
+		color: $main-color
+		font-size: 23px
+		font-weight: 700
+		line-height: 60px
+		transition: color .3s
+		&:hover
+			color: $hover-color
+			transition: color .1s
+	i
+		text-align: center
+		padding-left: 0px
+		position: relative
+		right: -11px
+		width: 50px
+
+.socials-type-2
+	li
+		display: inline-block
+	a
+		color: $main-color
+		font-size: 23px
+		font-weight: 700
+		line-height: 60px
+		margin-right: 34px
+		transition: color .3s
+		&:hover
+			color: $hover-color
+			transition: color .1s
+	i
+
 // INPUTs
-.form-group
+.input-holder
 	position: relative
 input ~ .input-line
+	background: #000
+	height: 3px
 	position: absolute
 	left: 0
 	bottom: 0
 	width: 0
-	&:focus
-		width: 100%
+	z-index: 2
+	transition: width .3s
+input:focus ~ .input-line
+	width: 100%
+	transition: width .3s
 
 input
 	border: none

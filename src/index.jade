@@ -24,10 +24,14 @@ html(lang='en')
 		meta(name="msapplication-TileImage" content="/mstile-144x144.png")
 		meta(name="theme-color" content="#ffffff")
 
+		link(rel='stylesheet', href='bower_components/normalize-css/normalize.css')
 		link(rel='stylesheet', href='bower_components/font-awesome/css/font-awesome.min.css')
+		link(rel='stylesheet', href='bower_components/animate.css/animate.css')
 		link(rel='stylesheet', href='css/concated.css')
 
-		body
+	body
+		.preloader
+			.after
 
 		//- добавил стрелку "вверх"
 		div#to-top
@@ -279,7 +283,9 @@ html(lang='en')
 						button.type-4.tablet-visible.modal-open(data-target="#presentation") Смотреть фото
 				.right-col
 					div#view-presentation.view-presentation.modal-open(data-target="#presentation")
-						img(src="img/icons/zoom-icon-1.svg")
+						img.hidden(src="img/icons/zoom-icon-1.svg")
+						svg(height="92" width="94" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94 92")
+							<path fill="#ffffff" fill-rule="evenodd" d="M 45.32 37.01 L 45.32 26 C 45.32 24.16 43.83 22.68 42 22.68 C 40.17 22.68 38.68 24.16 38.68 26 L 38.68 37.01 L 26.88 37.01 C 25.05 37.01 23.55 38.42 23.55 40.16 C 23.55 41.9 25.04 43.31 26.88 43.31 L 38.68 43.31 L 38.68 54.33 C 38.68 56.17 40.17 57.65 42 57.65 C 43.83 57.65 45.32 56.16 45.32 54.33 L 45.32 43.31 L 57.12 43.31 C 58.95 43.31 60.45 41.9 60.45 40.16 C 60.45 38.43 58.96 37.01 57.12 37.01 L 45.32 37.01 Z M 68.08 70.41 C 60.95 75.88 51.88 79.15 42 79.15 C 19.08 79.15 0.5 61.54 0.5 39.81 C 0.5 18.09 19.08 0.47 42 0.47 C 64.92 0.47 83.5 18.09 83.5 39.81 C 83.5 49.97 79.44 59.23 72.77 66.21 L 92.26 85.69 C 93.55 86.99 93.61 89.04 92.38 90.26 C 91.15 91.49 89.1 91.43 87.81 90.14 L 68.08 70.41 Z M 42 72.99 C 61.33 72.99 77 58.14 77 39.81 C 77 21.49 61.33 6.64 42 6.64 C 22.67 6.64 7 21.49 7 39.81 C 7 58.14 22.67 72.99 42 72.99 Z M 42 72.99" />
 		section.start-date-block
 			.container
 				.left-col
@@ -365,9 +371,31 @@ html(lang='en')
 					.text-group
 						p или звоните на номер
 						a.underline(href="tel:studies@makemeat.com") 093 141 42 09
+					.text-group
+						ul.socials-type-2
+							li
+								a(href="#" target="_blank")
+									i.fa.fa-facebook
+							li
+								a(href="#" target="_blank")
+									i.fa.fa-instagram
+							li
+								a(href="#" target="_blank")
+									i.fa.fa-linkedin
+							li
+								a(href="#" target="_blank")
+									i.fa.fa-medium
+							li
+								a(href="#" target="_blank")
+									i.fa.fa-pinterest
 
 		//- modal
-
+		.modal-holder#mail-sent
+			.close-modal
+				img(src="img/icons/cross-2.svg" alt="close")
+			.modal-content
+				h2 Спасибо за регистрацию! 
+				p На ваш Email придет письмо с инструкцией, что делать дальше ;)
 		.modal-holder#presentation
 			.close-modal
 				img(src="img/icons/cross-1.svg" alt="close")
@@ -388,22 +416,31 @@ html(lang='en')
 
 		.modal-holder#subscribe
 			.close-modal
-				img(src="img/icons/cross-1.svg" alt="close")
+				img(src="img/icons/cross-2.svg" alt="close")
 
 			.modal-content
 				div
 					.left-col
 						form(action="#")
 							.form-group
-								input(placeholder="Имя")
+								.input-holder
+									input(placeholder="Имя")
+									.input-line
 							.form-group
-								input(placeholder="Телефон")
+								.input-holder
+									input(placeholder="Телефон")
+									.input-line
 							.form-group
-								input(placeholder="Email")
+								.input-holder
+									input(placeholder="Email")
+									.input-line
 							.form-group
-								input(placeholder="Профиль Facebook")
+								.input-holder
+									input(placeholder="Профиль Facebook")
+									.input-line
 							.form-group
-								button.type-3(type="submit") отправить
+								.input-holder
+									button.type-3(type="submit") отправить
 					.right-col
 						.content-holder
 							.date-holder-1
@@ -432,5 +469,6 @@ html(lang='en')
 									span в группе
 
 	script(src='bower_components/jquery/dist/jquery.js')
+	script(src='bower_components/wow/dist/wow.js')
 	script(src='js/main.js')
 

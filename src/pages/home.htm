@@ -1,0 +1,447 @@
+url = "/"
+layout = "default"
+
+[editable]
+
+[contactForm]
+injectBootstrapAssets = 0
+injectMainScript = 1
+==
+<?php
+function onStart()
+{
+    use Carbon\Carbon;
+
+    $today = Carbon::today();
+
+    $this['menu'] = \Intertech\Meatds\Models\MenuSettings::instance();
+    $this['images'] = \Intertech\Meatds\Models\ImageSettings::instance();
+    $this['contacts'] = \Intertech\Meatds\Models\ContactSettings::instance();
+    $this['socials'] = \Intertech\Meatds\Models\SocialSettings::instance();
+    $this['curator'] = \Intertech\Meatds\Models\CuratorSettings::instance();
+    $this['lecturers'] = \Intertech\Meatds\Models\Lecturer::orderBy('sort_order', 'asc')->get();
+$this['location'] = \Intertech\Meatds\Models\LocationSettings::instance();
+$this['mainSlider'] = \Intertech\Meatds\Models\MainSliderSettings::instance();
+
+$statistics = \Intertech\Meatds\Models\StatisticsSettings::instance();
+if (!empty($statistics->start_date) && !empty($statistics->finish_date)) {
+$this['daysLeft'] = $today->diffInDays($statistics->finish_date, false)+1;
+$this['daysCount'] = $statistics->start_date->diffInDays($statistics->finish_date, false)+1;
+}
+$this['seats'] = $statistics->people - $statistics->registered;
+$this['statistics'] = $statistics;
+}
+
+function onEnd()
+{
+$menu = \Intertech\Meatds\Models\MenuSettings::instance();
+$this->page->title = $menu->title;
+}
+?>
+==
+<div class="preloader">
+    <div class="after" style="width: 100%;"></div>
+</div>
+<div id="to-top"><img src="{{ 'assets/img/icons/up_button.svg'|theme }}" alt="toTop"></div>
+<div data-target="#mobile-menu" class="gamburger mobile-visible modal-open"><span class="line"></span><span class="line"></span><span class="line"></span></div>
+<div id="mobile-menu" class="modal mobile-menu">
+    <div class="container">
+        <button data-target="#subscribe" class="type-1 modal-open">записаться</button>
+        <ul class="main-navigation">
+            <li><a href="#about">{{ menu.about }}</a></li>
+            <li><a href="#teachers">{{ menu.teachers }}</a></li>
+            <li><a href="#program">{{ menu.program }}</a></li>
+            <li><a href="#prices">{{ menu.prices }}</a></li>
+            <li><a href="#contact">{{ menu.contact }}</a></li>
+        </ul>
+        <button class="close-button close-modal"></button>
+    </div>
+</div>
+<div class="top-line">
+    <div class="container">
+        <ul class="main-navigation">
+            <li><a href="#about">{{ menu.about }}</a></li>
+            <li><a href="#teachers">{{ menu.teachers }}</a></li>
+            <li><a href="#program">{{ menu.program }}</a></li>
+            <li><a href="#prices">{{ menu.prices }}</a></li>
+            <li><a href="#contact">{{ menu.contact }}</a></li>
+        </ul>
+        <button data-target="#subscribe" class="type-1 modal-open">записаться</button>
+    </div>
+</div>
+<section class="header">
+    <div class="container">
+        <div class="left-col">
+            <div class="main-logo"><img src="{{ 'assets/img/content/main-logo-1.svg'|theme }}"></div>
+        </div>
+        <div class="right-col">
+            <div class="main-content">
+                {% component 'editable' file="edit1.htm" %}
+                {% component 'editable' file="edit2.htm" %}
+                {% component 'editable' file="edit3.htm" %}
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div id="main-slider" class="main-slider">
+            <div class="slider-viewport">
+                <div class="slider-holder">
+                    {% for image in mainSlider.images %}
+                    <div class="slide">
+                        <div class="image-holder"><img src="{{ image.path }}"></div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="about" class="when-block yellow">
+    <div class="container">
+        <div class="left-col">
+            {% component 'editable' file="edit4.htm" %}
+        </div>
+        <div class="right-col">
+            <div class="date-holder-1">
+                <div class="icon-holder"><img src="{{ 'assets/img/icons/calendar-icon-1.svg'|theme }}" class="calendar-icon-1"></div>
+                <div class="text-holder">{% component 'editable' file="edit5.htm" %}</div>
+            </div>
+            <div class="date-holder-1">
+                <div class="icon-holder"><img src="{{ 'assets/img/icons/clock-icon-1.svg'|theme }}" class="clock-icon-1"></div>
+                <div class="text-holder">{% component 'editable' file="edit6.htm" %}</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="whos-block">
+    <div class="container">
+        <div class="left-col">
+            {% component 'editable' file="edit7.htm" %}
+        </div>
+        <div class="right-col">
+            <div class="content">
+                {% component 'editable' file="edit8.htm" %}
+            </div>
+        </div>
+    </div>
+</section>
+<section class="do-it-block">
+    <div style="background-image: url('{{ images.background.path }}');" class="container">
+        <div class="button-holder">
+            <button data-target="#subscribe" class="modal-open">записаться</button>
+        </div>
+    </div>
+</section>
+<section class="teachers-block">
+    <div class="container">
+        <div class="header-row">
+            <div class="alexandr-head"><img src="{{ curator.photo.path }}"></div>
+            <div class="left-col">
+                {% component 'editable' file="edit9.htm" %}
+            </div>
+            <div class="right-col">
+                <h2>{{ curator.name }}</h2>
+                <h6>{{ curator.intro|raw }}</h6>
+            </div>
+        </div>
+        <div class="content-row">
+            <div class="left-col">
+                <button data-target="#portfolio" class="type-2 tablet-visible modal-open">Портфолио</button>
+                <ul class="socials-type-1">
+                    {% if socials.facebook %}
+                    <li><a href="{{ socials.facebook }}" target="_blank"><span>facebook</span><i class="fa fa-facebook"></i></a></li>
+                    {% endif %}
+                    {% if socials.instagram %}
+                    <li><a href="{{ socials.instagram }}" target="_blank"><span>instagram</span><i class="fa fa-instagram"></i></a></li>
+                    {% endif %}
+                    {% if socials.linkedin %}
+                    <li><a href="{{ socials.linkedin }}" target="_blank"><span>linkedin</span><i class="fa fa-linkedin"></i></a></li>
+                    {% endif %}
+                    {% if socials.medium %}
+                    <li><a href="{{ socials.medium }}" target="_blank"><span>medium</span><i class="fa fa-medium"></i></a></li>
+                    {% endif %}
+                    {% if socials.pinterest %}
+                    <li><a href="{{ socials.pinterest }}" target="_blank"><span>pinterest</span><i class="fa fa-pinterest"></i></a></li>
+                    {% endif %}
+                    {% if socials.twitter %}
+                    <li><a href="{{ socials.twitter }}" target="_blank"><span>twitter</span><i class="fa fa-twitter"></i></a></li>
+                    {% endif %}
+                    {% if socials.dribbble %}
+                    <li><a href="{{ socials.dribbble }}" target="_blank"><span>dribbble</span><i class="fa fa-dribbble"></i></a></li>
+                    {% endif %}
+                    {% if socials.behance %}
+                    <li><a href="{{ socials.behance }}" target="_blank"><span>behance</span><i class="fa fa-behance"></i></a></li>
+                    {% endif %}
+                    {% if socials.tumblr %}
+                    <li><a href="{{ socials.tumblr }}" target="_blank"><span>tumblr</span><i class="fa fa-tumblr"></i></a></li>
+                    {% endif %}
+                    {% if socials.soundcloud %}
+                    <li><a href="{{ socials.soundcloud }}" target="_blank"><span>soundcloud</span><i class="fa fa-soundcloud"></i></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="right-col">
+                {{ curator.description|raw }}
+                <a href="{{ curator.link }}"><button data-target="#portfolio" class="type-2 tablet-hidden modal-open">{{ curator.link_title }}</button></a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="teachers" class="teachers">
+    <div class="container">
+        <div class="left-col">
+            {% component 'editable' file="edit10.htm" %}
+        </div>
+        <div class="right-col">
+            <div id="persons-slider" class="persons-slider">
+                <div class="slider-viewport">
+                    <div class="slider-holder">
+                        {% for lecturer in lecturers %}
+                        <div class="slide">
+                            <div class="slide-wrapper">
+                                <div class="image-holder">
+                                    {% if lecturer.photo %}
+                                    <img src="{{ lecturer.photo.path }}">
+                                    {% else %}
+                                    <img src="{{ 'assets/img/icons/anonimus-icon-1.png'|theme }}">
+                                    {% endif%}
+                                </div>
+                                <div class="content-holder">
+                                    <p class="name">{{ lecturer.name }}</p>
+                                    <p>{{ lecturer.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="program" class="program">
+    <div class="header-row container">
+        <div class="left-col">&nbsp</div>
+        <div class="right-col">
+            <div data-target="#subscribe" class="label button-label modal-open">записаться на  курс</div>
+        </div>
+    </div>
+    <div class="container border">
+        <div class="left-col">
+            {% component 'editable' file="edit11.htm" %}
+        </div>
+        <div class="right-col">
+            {% component 'editable' file="edit12.htm" %}
+        </div>
+    </div>
+</section>
+<section id="prices" class="price-block yellow">
+    <div class="container">
+        <div class="left-col">
+            {% component 'editable' file="edit13.htm" %}
+        </div>
+        <div class="right-col">
+            <div class="date-holder-1">
+                <div class="icon-holder"><img src="{{ 'assets/img/icons/money-icon-1.svg'|theme }}" class="money-icon-1"></div>
+                <div class="text-holder"><span class="bold">3200 грн/месяц </span><span>или 8600 за весь курс
+                  <div class="label-2">экономия 1000 грн</div></span></div>
+            </div>
+            <div class="date-holder-1">
+                <div class="icon-holder"><img src="{{ 'assets/img/icons/team-icon-1.svg'|theme }}" class="team-icon-1"></div>
+                <div class="text-holder">{% component 'editable' file="edit15.htm" %}</div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="presentation-block">
+    <div style="background-image: url('{{ location.image.path }}');" class="container">
+        <div class="left-col">
+            {% component 'editable' file="edit16.htm" %}
+            <div class="address-holder"><span class="bold">{{ location.place }}</span><span>{{ location.address|raw }}</span>
+                <button>{{ location.link_title }}</button>
+                <button class="type-4 tablet-visible">Смотреть фото</button>
+            </div>
+        </div>
+        <div class="right-col">
+            <div id="view-presentation" data-target="#presentation" class="view-presentation modal-open">
+                <img src="{{ 'assets/img/icons/zoom-icon-1.svg'|theme }}" class="hidden">
+                <svg height="92" width="94" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94 92">
+                    <path fill="#ffffff" fill-rule="evenodd" d="M 45.32 37.01 L 45.32 26 C 45.32 24.16 43.83 22.68 42 22.68 C 40.17 22.68 38.68 24.16 38.68 26 L 38.68 37.01 L 26.88 37.01 C 25.05 37.01 23.55 38.42 23.55 40.16 C 23.55 41.9 25.04 43.31 26.88 43.31 L 38.68 43.31 L 38.68 54.33 C 38.68 56.17 40.17 57.65 42 57.65 C 43.83 57.65 45.32 56.16 45.32 54.33 L 45.32 43.31 L 57.12 43.31 C 58.95 43.31 60.45 41.9 60.45 40.16 C 60.45 38.43 58.96 37.01 57.12 37.01 L 45.32 37.01 Z M 68.08 70.41 C 60.95 75.88 51.88 79.15 42 79.15 C 19.08 79.15 0.5 61.54 0.5 39.81 C 0.5 18.09 19.08 0.47 42 0.47 C 64.92 0.47 83.5 18.09 83.5 39.81 C 83.5 49.97 79.44 59.23 72.77 66.21 L 92.26 85.69 C 93.55 86.99 93.61 89.04 92.38 90.26 C 91.15 91.49 89.1 91.43 87.81 90.14 L 68.08 70.41 Z M 42 72.99 C 61.33 72.99 77 58.14 77 39.81 C 77 21.49 61.33 6.64 42 6.64 C 22.67 6.64 7 21.49 7 39.81 C 7 58.14 22.67 72.99 42 72.99 Z M 42 72.99" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="start-date-block">
+    <div class="container">
+        <div class="left-col">
+            {% component 'editable' file="edit17.htm" %}
+        </div>
+        <div class="right-col">
+            <h3>{{ dayFilter(daysLeft) }}</h3>
+            <h6>февраль</h6>
+            <div class="calendar-holder">
+                {% if daysCount %}
+                {% for i in 1..daysCount %}
+                {% if loop.last and daysLeft != 0 %}
+                <span class="day active">{{ loop.index }}</span>
+                {% elseif loop.index <= daysCount - daysLeft %}
+                <span class="day crossed">{{ loop.index }}</span>
+                {% else %}
+                <span class="day">{{ loop.index }}</span>
+                {% endif %}
+                {% endfor %}
+                {% endif %}
+            </div>
+            <div class="user-icons-holder">
+                <h3>{{ seatFilter(seats) }}</h3>
+                <div class="users">
+                    {% set count = 0 %}
+                    {% for i in 1..statistics.people %}
+                    {% set count = count + 1 %}
+                    <span data-target="#subscribe" class="user modal-open {% if loop.index > statistics.registered %} free {% endif %}"><img src="/themes/meatds/assets/img/icons/user-icon-{{ count }}.svg"></span>
+                    {% if count == 16 %}
+                    {% set count = 0 %}
+                    {% endif %}
+                    {% endfor %}
+                </div>
+            </div>
+            <button data-target="#subscribe" class="type-3 modal-open">записаться на  курс</button>
+        </div>
+    </div>
+</section>
+<section class="footer">
+    <div class="container">
+        <div class="left-col">
+            <div class="footer-logo"><img src="{{ 'assets/img/content/main-logo-2.svg'|theme }}"></div>
+        </div>
+        <div class="right-col">
+            <div class="text-group">
+                {% component 'editable' file="edit18.htm" %}<a href="mailto:{{ contacts.email }}" class="underline">{{ contacts.email }}</a></div>
+            <div class="text-group">
+                {% component 'editable' file="edit19.htm" %}<a href="tel:{{ contacts.phone }}" class="underline">{{ contacts.phone }}</a></div>
+            <div class="text-group">
+                <ul class="socials-type-2">
+                    {% if socials.facebook %}
+                    <li><a href="{{ socials.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    {% endif %}
+                    {% if socials.instagram %}
+                    <li><a href="{{ socials.instagram }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    {% endif %}
+                    {% if socials.linkedin %}
+                    <li><a href="{{ socials.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    {% endif %}
+                    {% if socials.medium %}
+                    <li><a href="{{ socials.medium }}" target="_blank"><i class="fa fa-medium"></i></a></li>
+                    {% endif %}
+                    {% if socials.pinterest %}
+                    <li><a href="{{ socials.pinterest }}" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                    {% endif %}
+                    {% if socials.twitter %}
+                    <li><a href="{{ socials.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    {% endif %}
+                    {% if socials.dribbble %}
+                    <li><a href="{{ socials.dribbble }}" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                    {% endif %}
+                    {% if socials.behance %}
+                    <li><a href="{{ socials.behance }}" target="_blank"><i class="fa fa-behance"></i></a></li>
+                    {% endif %}
+                    {% if socials.tumblr %}
+                    <li><a href="{{ socials.tumblr }}" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+                    {% endif %}
+                    {% if socials.soundcloud %}
+                    <li><a href="{{ socials.soundcloud }}" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="mail-sent" class="modal-holder">
+    <div class="close-modal"><img src="{{ 'assets/img/icons/cross-2.svg'|theme }}" alt="close"></div>
+    <div class="modal-content">
+        <h2>Спасибо за регистрацию! </h2>
+        <p>На ваш Email придет письмо с инструкцией, что делать дальше ;)</p>
+    </div>
+</div>
+<div id="presentation" class="modal-holder">
+    <div class="close-modal"><img src="{{ 'assets/img/icons/cross-1.svg'|theme }}" alt="close"></div>
+    <div class="modal-content">
+        <div class="modal-container">
+            <div id="gallery-slider" class="gallery-slider">
+                <div class="slider-viewport">
+                    <div class="slider-holder">
+                        {% for image in location.images %}
+                        <div class="slide">
+                            <div class="image-holder"><img src="{{ image.path }}"></div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="subscribe" class="modal-holder">
+    <div class="close-modal"><img src="{{ 'assets/img/icons/cross-2.svg'|theme }}" alt="close"></div>
+    <div class="modal-content">
+        <div>
+            <div class="left-col">
+                <form class="flexiContactForm" role="form"
+                      data-request="contactForm::onMailSent"
+                      data-request-success="mailSent()"
+                        >
+                    <div class="form-group">
+                        <div class="input-holder">
+                            <input placeholder="Имя" name="name">
+                            <div class="input-line"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-holder">
+                            <input placeholder="Телефон" name="phone">
+                            <div class="input-line"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-holder">
+                            <input placeholder="Email" name="email">
+                            <div class="input-line"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-holder">
+                            <input placeholder="Профиль Facebook" name="facebook">
+                            <div class="input-line"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="type-3">отправить</button>
+                    </div>
+                </form>
+            </div>
+            <div class="right-col">
+                <div class="content-holder">
+                    <div class="date-holder-1">
+                        <div class="icon-holder"><img src="{{ 'assets/img/icons/calendar-icon-1.svg'|theme }}" class="calendar-icon-1"></div>
+                        <div class="text-holder">{% component 'editable' file="edit5.htm" %}</div>
+                    </div>
+                    <div class="date-holder-1">
+                        <div class="icon-holder"><img src="{{ 'assets/img/icons/clock-icon-1.svg'|theme }}" class="clock-icon-1"></div>
+                        <div class="text-holder">{% component 'editable' file="edit6.htm" %}</div>
+                    </div>
+                    <div class="date-holder-1">
+                        <div class="icon-holder"><img src="{{ 'assets/img/icons/money-icon-1.svg'|theme }}" class="money-icon-1"></div>
+                        <div class="text-holder"><span class="bold">3200 грн/месяц </span><span>или 8600 за весь курс</span></div>
+                    </div>
+                    <div class="date-holder-1">
+                        <div class="icon-holder"><img src="{{ 'assets/img/icons/team-icon-1.svg'|theme }}" class="team-icon-1"></div>
+                        <div class="text-holder">{% component 'editable' file="edit15.htm" %}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
