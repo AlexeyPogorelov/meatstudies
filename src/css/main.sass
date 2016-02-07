@@ -351,7 +351,7 @@ $hover-color: #f4da00
 	animation: none !important
 	.header-row
 		transform: translateZ(100px)
-		z-index: 2
+		z-index: 1
 	.left-col
 		width: $left-width - 10px
 	.right-col
@@ -541,6 +541,8 @@ $hover-color: #f4da00
 			width: 40px
 			&.free
 				opacity: .3
+			&:hover
+				// filter: invert(1)
 
 // end start-date-block
 
@@ -884,7 +886,6 @@ $hover-color: #f4da00
 			top: 32px
 			bottom: 32px
 			.left-col
-
 				form
 					position: static
 					padding-top: 12px
@@ -914,7 +915,8 @@ $hover-color: #f4da00
 #presentation
 	background: #fff
 	.close-modal
-		z-index: 2
+		z-index: 3
+		// transform: translateZ(0)
 	.modal-content
 		left: 0
 		right: 0
@@ -958,7 +960,7 @@ $hover-color: #f4da00
 				.slider-holder
 					z-index: 999
 					.slide
-						max-height: 750px
+						max-height: 76vh
 						overflow: hidden
 						opacity: 0.3
 						transition: opacity .3s
@@ -974,6 +976,11 @@ div[data-control="editable"]
 	// z-index: 9
 .redactor-editor, .redactor-box, .redactor-box textarea
 	background-color: transparent !important
+
+body.client-ios
+	button.type-1, #mobile-menu button.type-1
+		padding: 14px 9px 10px
+
 // end FIXES
 
 // 

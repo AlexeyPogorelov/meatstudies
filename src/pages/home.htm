@@ -44,15 +44,35 @@ $this->page->title = $menu->title;
 </div>
 <div id="to-top"><img src="{{ 'assets/img/icons/up_button.svg'|theme }}" alt="toTop"></div>
 <div data-target="#mobile-menu" class="gamburger mobile-visible modal-open"><span class="line"></span><span class="line"></span><span class="line"></span></div>
-<div id="mobile-menu" class="modal mobile-menu">
+<div id="mobile-menu" class="modal mobile-menu modal-holder">
     <div class="container">
         <button data-target="#subscribe" class="type-1 modal-open">записаться</button>
         <ul class="main-navigation">
-            <li><a href="#about">{{ menu.about }}</a></li>
-            <li><a href="#teachers">{{ menu.teachers }}</a></li>
-            <li><a href="#program">{{ menu.program }}</a></li>
-            <li><a href="#prices">{{ menu.prices }}</a></li>
-            <li><a href="#contact">{{ menu.contact }}</a></li>
+            <li>
+                <a href="#about" class="active">
+                    <span>{{ menu.about }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="#teachers">
+                    <span>{{ menu.teachers }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="#program">
+                    <span>{{ menu.program }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="#prices">
+                    <span>{{ menu.prices }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="#contact">
+                    <span>{{ menu.contact }}</span>
+                </a>
+            </li>
         </ul>
         <button class="close-button close-modal"></button>
     </div>
@@ -60,11 +80,31 @@ $this->page->title = $menu->title;
 <div class="top-line">
     <div class="container">
         <ul class="main-navigation">
-            <li><a href="#about">{{ menu.about }}</a></li>
-            <li><a href="#teachers">{{ menu.teachers }}</a></li>
-            <li><a href="#program">{{ menu.program }}</a></li>
-            <li><a href="#prices">{{ menu.prices }}</a></li>
-            <li><a href="#contact">{{ menu.contact }}</a></li>
+            <li>
+                <a href="#about" class="active">
+                    <span>{{ menu.about }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="#teachers">
+                    <span>{{ menu.teachers }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="#program">
+                    <span>{{ menu.program }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="#prices">
+                    <span>{{ menu.prices }}</span>
+                </a>
+            </li>
+            <li>
+                <a href="#contact">
+                    <span>{{ menu.contact }}</span>
+                </a>
+            </li>
         </ul>
         <button data-target="#subscribe" class="type-1 modal-open">записаться</button>
     </div>
