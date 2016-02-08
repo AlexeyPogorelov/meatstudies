@@ -145,6 +145,7 @@ $hover-color: #f4da00
 			margin: auto
 			padding: 14px 9px
 			// width: 200px
+			width: calc(100% - 31px);
 		button.close-button
 			background: url('../img/icons/cross-button-1.svg') 0 0 no-repeat
 			position: absolute
@@ -576,9 +577,15 @@ $hover-color: #f4da00
 		.footer-logo
 			margin-top: 20px
 			margin-right: 51px
+			img
+				width: 180px
+				position: relative
+				top: 46px
+				left: 22px
 
 		.text-group
 			margin-bottom: 29px
+			position: relative
 
 		p
 			color: #fff
@@ -590,6 +597,14 @@ $hover-color: #f4da00
 			font-weight: 700
 			line-height: 35px
 			margin-top: 4px
+
+		.to-top
+			cursor: pointer
+			position: absolute
+			right: 0px
+			top: -4px
+			height: 47px
+			width: 47px
 
 // end footer
 
@@ -867,7 +882,12 @@ $hover-color: #f4da00
 			top: 50%
 			left: 30%
 			transform: translateY(-50%)
+			.date-holder-1
+				min-height: 100px
+				.money-icon-1
+					margin-top: 14px
 			.date-holder-1:last-child
+				min-height: 10px
 				.icon-holder
 					margin-bottom: 0
 

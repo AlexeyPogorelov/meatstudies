@@ -54,6 +54,10 @@ $tablet-cont-width: 660px
 	.footer
 		.container
 			padding-bottom: 20px
+			.footer-logo
+				img
+					width: auto
+					position: static
 
 //	MEDIUM
 @media screen and (max-width: 1419px)
@@ -286,6 +290,7 @@ $tablet-cont-width: 660px
 		margin-top: 75px
 		.button-label
 			margin-left: 10px
+			top: 6px
 		.left-col
 			width: $left-width-1280 - 10px
 			h2
@@ -348,7 +353,7 @@ $tablet-cont-width: 660px
 						margin-top: 18px
 						margin-right: 0
 
-					span
+					span, p
 						font-size: 14px
 						line-height: 33px
 
@@ -407,6 +412,12 @@ $tablet-cont-width: 660px
 		.container
 			padding-top: 45px
 			padding-bottom: 11px
+			.footer-logo
+				img
+					width: 130px
+					position: relative
+					top: 46px
+					left: 34px
 	// end footer
 
 //	TABLET
@@ -632,18 +643,19 @@ $tablet-cont-width: 660px
 			letter-spacing: 0.94px
 			line-height: 14px
 			padding: 22px 7px
-			left: 0
+			left: 40px;
+			right: 40px;
 			top: 17px
-			width: 100%
+			// width: 100%
 			display: inline-block
 			margin: auto
 
 		.container.border
 			padding-top: 59px
-
 			.right-col
 				padding-right: 0
 				padding-left: 18px
+				padding-left: 90px
 				padding-top: 17px
 				padding-bottom: 22px
 				line-height: 22px
@@ -653,7 +665,6 @@ $tablet-cont-width: 660px
 			ul.type-1 li span
 				font-size: 15px
 				line-height: 26px
-
 	// end program
 
 	// price-block
@@ -864,9 +875,16 @@ $tablet-cont-width: 660px
 						width: auto
 					p
 						width: auto
-
 	// end teachers
 
+	.program
+		.container.border
+			.right-col
+				padding-left: 50px
+				padding-right: 50px
+		.button-label
+			left: 0px
+			right: 0px
 	// price-block
 	.price-block
 		.right-col, .left-col
@@ -1076,7 +1094,8 @@ $tablet-cont-width: 660px
 			width: auto
 		.container.border
 			.right-col
-				padding-right: 30px
+				padding-right: 20px
+				padding-left: 20px
 
 	.price-block .right-col, .price-block .left-col
 		padding-left: 30px
@@ -1187,11 +1206,11 @@ $tablet-cont-width: 660px
 				p
 					color: white
 					font-size: 13px
-
 					line-height: 17px
-
 					color: white
 					font-size: 13px
+				.socials-type-2
+					padding-right: 20px
 
 	#presentation
 		.modal-content
@@ -1215,29 +1234,39 @@ $tablet-cont-width: 660px
 								padding: 0 4px
 
 @media screen and (max-height: 480px)
-
 	.mobile-menu
 		.container
+			left: 0
+			top: 0
+			right: 0
+			bottom: 0
 			button.type-1
-				display: none
+				// display: none
 			button.close-button
-				top: 0
+				top: auto
+				bottom: 20px
+			li
+				padding: 2px
 	.modal-holder, .modal-holder#subscribe
 		background: #fff
 		.close-modal
 			bottom: auto
 			left: auto
-			right: 20px
-			top: 20px
+			bottom: 20px
+			left: 50%
+			// right: 20px
+			// top: 20px
 
 		.modal-content, form, .left-col
 			position: static !important
 			transform: none !important
-			padding-bottom: 40px
+			// padding-bottom: 40px
 	.modal-holder#subscribe
 		.left-col
 			form
 				position: static
+		.modal-content .left-col form .form-group:last-child
+			margin-bottom: 0
 
 //	xSMALL
 @media screen and (max-width: 480px)

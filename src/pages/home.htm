@@ -302,7 +302,7 @@ $this->page->title = $menu->title;
             {% component 'editable' file="edit16.htm" %}
             <div class="address-holder"><span class="bold">{{ location.place }}</span><span>{{ location.address|raw }}</span>
                 <a href="{{ location.map }}"><button>{{ location.link_title }}</button></a>
-                <button class="type-4 tablet-visible">Смотреть фото</button>
+                <button class="type-4 tablet-visible modal-open" data-target="#presentation">Смотреть фото</button>
             </div>
         </div>
         <div class="right-col">
@@ -401,13 +401,17 @@ $this->page->title = $menu->title;
     </div>
 </section>
 <div id="mail-sent" class="modal-holder">
-    <div class="close-modal"><img src="{{ 'assets/img/icons/cross-2.svg'|theme }}" alt="close"></div>
+    <div class="close-modal">
+        <!--<img src="{{ 'assets/img/icons/cross-2.svg'|theme }}" alt="close">-->
+    </div>
     <div class="modal-content">
         {{ contactForm.confirmation_text|raw }}
     </div>
 </div>
 <div id="presentation" class="modal-holder">
-    <div class="close-modal"><img src="{{ 'assets/img/icons/cross-1.svg'|theme }}" alt="close"></div>
+    <div class="close-modal">
+        <!--<img src="{{ 'assets/img/icons/cross-1.svg'|theme }}" alt="close">-->
+    </div>
     <div class="modal-content">
         <div class="modal-container">
             <div id="gallery-slider" class="gallery-slider">

@@ -160,6 +160,9 @@ $(document).on('ready', function () {
 			});
 			return plg;
 		})();
+		$('.to-top').on('click', function () {
+			$("html, body").stop().animate({scrollTop:0}, 1000, 'swing');
+		});
 
 		// iOS fix
 		if ($.browser.safari && !$.browser.mobile ) $('body').addClass('client-safari');
