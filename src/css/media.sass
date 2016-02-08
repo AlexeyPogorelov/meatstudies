@@ -25,6 +25,11 @@ $tablet-cont-width: 660px
 		.left-col
 			width: 511px
 
+	.header-row
+		.left-col
+			h2
+				padding-left: 60px
+
 	// program
 	.program
 		.button-label
@@ -59,9 +64,6 @@ $tablet-cont-width: 660px
 @media screen and (max-width: 1240px)
 	.container
 		width: 880px
-	.top-line
-		button
-			display: none
 	.left-col, .right-col
 		// padding: 0 100px
 		// text-align: left
@@ -74,17 +76,9 @@ $tablet-cont-width: 660px
 		font-size: 32px
 	.top-line
 		min-height: 70px
-		text-align: center
+		text-align: left
 		button
-			display: none
-	.main-navigation
-		text-align: center
-		li
-			margin: 0 2px
-			padding: 20px 0
-		a
-			font-size: 18px
-			line-height: 17px
+
 	.yellow
 		background-color: transparent
 		.container
@@ -443,10 +437,10 @@ $tablet-cont-width: 660px
 			width: auto
 		button
 			display: none
+
 	.main-navigation
-		text-align: center
 		li
-			margin: 0 2px
+			margin: 0 14px 0 -10px
 			padding: 20px 0
 		a
 			font-size: 18px
@@ -761,6 +755,9 @@ $tablet-cont-width: 660px
 		height: 0
 		background-color: #fff
 		border: none
+	.top-line
+		button
+			display: none
 	.full-height .content-holder, .vertical-middle .content-holder
 		position: static
 		top: auto

@@ -158,6 +158,13 @@ $(document).on('ready', function () {
 		if ($.browser.iphone || $.browser.ipad || $.browser.ipad) $('body').addClass('client-ios');
 		if ($.browser.msie) $('body').addClass('client-ie');
 		if ($.browser.name == 'mozilla') $('body').addClass('client-moz');
+		if ($.browser.mac) $('body').addClass('client-mac');
+
+		$('#phone-field').on('focus', function () {
+			if (!$(this).val()) {
+				$(this).val('+380')
+			}
+		});
 
 		$('.top-line').find('.main-navigation a').on('click', function (e) {
 			e.preventDefault();
@@ -326,6 +333,7 @@ $(document).on('ready', function () {
 				prevSlide: function () {
 					var id = state.cur - 1;
 					if (id < 0) {
+						this.toSlide(state.pages - 1);
 						return;
 					}
 					this.toSlide(id);
@@ -333,6 +341,7 @@ $(document).on('ready', function () {
 				nextSlide: function () {
 					var id = state.cur + 1;
 					if (id >= state.pages) {
+						this.toSlide(0);
 						return;
 					}
 					this.toSlide(id);
