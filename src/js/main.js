@@ -546,15 +546,13 @@ $(document).on('ready', function () {
 			var plg = {
 				init: function () {
 					DOM.$fields = $self.find('[data-validate]');
-					$self.on('test', function (e) {
+					$self.on('submit', function (e) {
 						state.errors = 0;
 						DOM.$fields.each( function () {
 							plg.validate( $(this) );
 						} );
 						if (state.errors) {
 							e.preventDefault();
-						} else {
-							alert();
 						}
 					})
 					DOM.$fields.on('blur', function () {
