@@ -81,6 +81,14 @@ var animationPrefix = (function () {
 			}
 	};
 
+	// TODO
+	$('img').each(function () {
+		if (!this.naturalWidth || true) {
+			loading.trg ++;
+			$(this).one('load', loading.loaded)
+		}
+	});
+
 setTimeout(function () {
 	loading.status(1);
 	setTimeout(loading.done, 500);
@@ -152,13 +160,6 @@ $(document).on('ready', function () {
 			});
 			return plg;
 		})();
-
-		$('img').each(function () {
-			if (!this.naturalHeight) {
-				loading.trg ++;
-				$(this).one('load', loading.loaded)
-			}
-		});
 
 		// iOS fix
 		if ($.browser.safari && !$.browser.mobile ) $('body').addClass('client-safari');

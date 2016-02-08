@@ -1013,7 +1013,7 @@ $tablet-cont-width: 660px
 					.clock-icon-1
 						width: 38px
 	.whos-block
-		padding-top: 10px
+		padding-top: 27px
 		padding-bottom: 35px
 		.container
 			padding-top: 2px
@@ -1047,7 +1047,7 @@ $tablet-cont-width: 660px
 				padding-left: 133px
 				padding-right: 0px
 				h2
-					margin-top: 40px
+					margin-top: 20px
 					font-size: 24px
 
 	.teachers
@@ -1055,9 +1055,14 @@ $tablet-cont-width: 660px
 			padding-left: 30px
 			padding-right: 30px
 		.right-col
-			.slide
-				.slide-wrapper
-					padding: 0 40px
+			overflow: hidden
+			.slider-viewport
+				overflow: visible
+				margin-left: 100px
+				margin-right: 100px
+				.slide
+					.slide-wrapper
+						padding: 0 40px
 
 	// program
 	.program
@@ -1210,6 +1215,7 @@ $tablet-cont-width: 660px
 								padding: 0 4px
 
 @media screen and (max-height: 480px)
+
 	.mobile-menu
 		.container
 			button.type-1
@@ -1234,9 +1240,18 @@ $tablet-cont-width: 660px
 				position: static
 
 //	xSMALL
-@media screen and (max-width: 1px)
+@media screen and (max-width: 480px)
 	.container
 		width: 100%
+
+	.teachers
+		.right-col
+			.slider-viewport
+				margin-left: 50px
+				margin-right: 50px
+				.slide
+					.slide-wrapper
+						padding: 0 10px
 
 //	FIXES
 // @media screen and (max-width: 700px)

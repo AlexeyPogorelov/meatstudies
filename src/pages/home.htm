@@ -23,6 +23,7 @@ function onStart()
     $this['lecturers'] = \Intertech\Meatds\Models\Lecturer::orderBy('sort_order', 'asc')->get();
 $this['location'] = \Intertech\Meatds\Models\LocationSettings::instance();
 $this['mainSlider'] = \Intertech\Meatds\Models\MainSliderSettings::instance();
+$this['contactForm'] = \LaminSanneh\FlexiContact\Models\Settings::instance();
 
 $statistics = \Intertech\Meatds\Models\StatisticsSettings::instance();
 if (!empty($statistics->start_date) && !empty($statistics->finish_date)) {
@@ -41,7 +42,7 @@ $this->page->title = $menu->title;
 ?>
 ==
 <div class="preloader">
-    <div class="after" style="width: 100%;"></div>
+    <div class="after"></div>
 </div>
 <div id="to-top"><img src="{{ 'assets/img/icons/up_button.svg'|theme }}" alt="toTop"></div>
 <div data-target="#mobile-menu" class="gamburger mobile-visible modal-open"><span class="line"></span><span class="line"></span><span class="line"></span></div>
@@ -402,8 +403,7 @@ $this->page->title = $menu->title;
 <div id="mail-sent" class="modal-holder">
     <div class="close-modal"><img src="{{ 'assets/img/icons/cross-2.svg'|theme }}" alt="close"></div>
     <div class="modal-content">
-        <h2>Спасибо за регистрацию! </h2>
-        <p>На ваш Email придет письмо с инструкцией, что делать дальше ;)</p>
+        {{ contactForm.confirmation_text|raw }}
     </div>
 </div>
 <div id="presentation" class="modal-holder">
@@ -426,7 +426,9 @@ $this->page->title = $menu->title;
 </div>
 
 <div id="subscribe" class="modal-holder">
-    <div class="close-modal"></div>
+    <div class="close-modal">
+        <!--<img src="{{ 'assets/img/icons/cross-2.svg'|theme }}" alt="close">-->
+    </div>
     <div class="modal-content">
         <div>
             <div class="left-col">
@@ -436,28 +438,28 @@ $this->page->title = $menu->title;
                         >
                     <div class="form-group">
                         <div class="input-holder">
-                            <input placeholder="Имя" name="name">
+                            <input placeholder="{{ contactForm.name }}" name="name">
                             <div class="error-label">введите Ваше имя</div>
                             <div class="input-line"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-holder">
-                            <input placeholder="Телефон" name="phone" id="phone-field">
+                            <input placeholder="{{ contactForm.phone }}" name="phone" id="phone-field">
                             <div class="error-label">введите Ваш номер телефна</div>
                             <div class="input-line"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-holder">
-                            <input placeholder="Email" name="email">
+                            <input placeholder="{{ contactForm.email }}" name="email">
                             <div class="error-label">введите Ваш E-MAIL</div>
                             <div class="input-line"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-holder">
-                            <input placeholder="Профиль Facebook" name="facebook">
+                            <input placeholder="{{ contactForm.facebook }}" name="facebook">
                             <div class="error-label">))</div>
                             <div class="input-line"></div>
                         </div>

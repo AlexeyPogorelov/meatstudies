@@ -951,6 +951,7 @@ $hover-color: #f4da00
 	overflow: hidden
 	.close-modal
 		z-index: 3
+		background: url("../img/icons/cross-1.svg") no-repeat 50% 50%
 		// transform: translateZ(0)
 	.modal-content
 		left: 0
@@ -1020,6 +1021,12 @@ body.client-mac
 	button.type-1, #mobile-menu button.type-1
 		padding-bottom: 16px
 
+.stripe-loading-indicator.loaded, .stripe-loaded
+	display: none !important
+	opacity: 0 !important
+.stripe-loading-indicator .stripe, .stripe-loading-indicator .stripe-loaded
+	background: $main-color !important
+	display: none !important
 // end FIXES
 
 // 
