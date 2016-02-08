@@ -396,6 +396,7 @@ $this->page->title = $menu->title;
                     <li><a href="{{ bottomSocials.soundcloud }}" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
                     {% endif %}
                 </ul>
+                <div class="to-top mobile-visible"><img src="{{ 'assets/img/icons/up_button.svg'|theme }}" alt="toTop"></div>
             </div>
         </div>
     </div>
@@ -442,21 +443,21 @@ $this->page->title = $menu->title;
                         >
                     <div class="form-group">
                         <div class="input-holder">
-                            <input placeholder="{{ contactForm.name }}" name="name">
+                            <input placeholder="{{ contactForm.name }}" name="name" data-validate="name">
                             <div class="error-label">введите Ваше имя</div>
                             <div class="input-line"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-holder">
-                            <input placeholder="{{ contactForm.phone }}" name="phone" id="phone-field">
+                            <input placeholder="{{ contactForm.phone }}" name="phone" id="phone-field" data-validate="phone">
                             <div class="error-label">введите Ваш номер телефна</div>
                             <div class="input-line"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-holder">
-                            <input placeholder="{{ contactForm.email }}" name="email">
+                            <input placeholder="{{ contactForm.email }}" name="email" data-validate="email">
                             <div class="error-label">введите Ваш E-MAIL</div>
                             <div class="input-line"></div>
                         </div>

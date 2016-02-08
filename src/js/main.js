@@ -546,7 +546,46 @@ $(document).on('ready', function () {
 			var plg = {
 				init: function () {
 					DOM.$fields = $self.find('[data-validate]');
-					console.log(DOM.$fields);
+					$self.on('test', function (e) {
+						state.errors = 0;
+						DOM.$fields.each( function () {
+							plg.validate( $(this) );
+						} );
+						if (state.errors) {
+							e.preventDefault();
+						} else {
+							alert();
+						}
+					})
+					DOM.$fields.on('blur', function () {
+						plg.validate( $(this) );
+					})
+				},
+				test: function (data, type) {
+					switch (type) {
+						case 'name':
+							return /^[а-яА-Яa-zA-Z\-]+$/.test(data);
+						case 'phone':
+							return /^[\(\)0-9\-\s\+]{8,}/.test(data);
+						case 'email':
+							return /^[0-9a-zA-Z._-]+@[0-9a-zA-Z_-]+\.[a-zA-Z._-]+/.test(data);
+						default:
+							return true;
+					}
+				},
+				addLabel: function ($el) {
+					$el.parent().addClass('error');
+				},
+				removeLabel: function ($el) {
+					$el.parent().removeClass('error');
+				},
+				validate: function ($el) {
+					if ( plg.test( $el.val(), $el.data('validate') ) ) {
+						plg.removeLabel( $el );
+					} else {
+						plg.addLabel( $el );
+						state.errors++;
+					}
 				}
 			};
 
