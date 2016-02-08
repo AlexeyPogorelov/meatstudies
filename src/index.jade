@@ -423,24 +423,27 @@ html(lang='en')
 					.left-col
 						form(action="#")
 							.form-group
-								.input-holder
-									input(placeholder="Имя")
+								.input-holder.error
+									input(placeholder="Имя *" data-validate="name")
 									.input-line
+									.error-label введите Ваше имя
 							.form-group
-								.input-holder
-									input#phone-field(placeholder="Телефон")
+								.input-holder.error
+									input#phone-field(placeholder="Телефон *" data-validate="phone")
 									.input-line
+									.error-label введите Ваш номер телефна
 							.form-group
-								.input-holder
-									input(placeholder="Email")
+								.input-holder.error
+									input(placeholder="Email *" data-validate="email")
 									.input-line
+									.error-label введите Ваш E-MAIL
 							.form-group
-								.input-holder
+								.input-holder.error
 									input(placeholder="Профиль Facebook")
 									.input-line
+									.error-label ))
 							.form-group
-								.input-holder
-									button.type-3(type="submit") отправить
+								button.type-3(type="submit") отправить
 					.right-col
 						.content-holder
 							.date-holder-1

@@ -18,6 +18,7 @@ function onStart()
     $this['images'] = \Intertech\Meatds\Models\ImageSettings::instance();
     $this['contacts'] = \Intertech\Meatds\Models\ContactSettings::instance();
     $this['socials'] = \Intertech\Meatds\Models\SocialSettings::instance();
+    $this['bottomSocials'] = \Intertech\Meatds\Models\BottomSocialSettings::instance();
     $this['curator'] = \Intertech\Meatds\Models\CuratorSettings::instance();
     $this['lecturers'] = \Intertech\Meatds\Models\Lecturer::orderBy('sort_order', 'asc')->get();
 $this['location'] = \Intertech\Meatds\Models\LocationSettings::instance();
@@ -54,7 +55,7 @@ $this->page->title = $menu->title;
                 </a>
             </li>
             <li>
-                <a href="#teachers">
+                <a href="#teachers-block">
                     <span>{{ menu.teachers }}</span>
                 </a>
             </li>
@@ -69,7 +70,7 @@ $this->page->title = $menu->title;
                 </a>
             </li>
             <li>
-                <a href="#contact">
+                <a href="#start-date">
                     <span>{{ menu.contact }}</span>
                 </a>
             </li>
@@ -86,7 +87,7 @@ $this->page->title = $menu->title;
                 </a>
             </li>
             <li>
-                <a href="#teachers">
+                <a href="#teachers-block">
                     <span>{{ menu.teachers }}</span>
                 </a>
             </li>
@@ -101,7 +102,7 @@ $this->page->title = $menu->title;
                 </a>
             </li>
             <li>
-                <a href="#contact">
+                <a href="#start-date">
                     <span>{{ menu.contact }}</span>
                 </a>
             </li>
@@ -173,7 +174,7 @@ $this->page->title = $menu->title;
         </div>
     </div>
 </section>
-<section class="teachers-block">
+<section class="teachers-block" id="teachers-block">
     <div class="container">
         <div class="header-row">
             <div class="alexandr-head"><img src="{{ curator.photo.path }}"></div>
@@ -299,7 +300,7 @@ $this->page->title = $menu->title;
         <div class="left-col">
             {% component 'editable' file="edit16.htm" %}
             <div class="address-holder"><span class="bold">{{ location.place }}</span><span>{{ location.address|raw }}</span>
-                <button>{{ location.link_title }}</button>
+                <a href="{{ location.map }}"><button>{{ location.link_title }}</button></a>
                 <button class="type-4 tablet-visible">Смотреть фото</button>
             </div>
         </div>
@@ -313,7 +314,7 @@ $this->page->title = $menu->title;
         </div>
     </div>
 </section>
-<section class="start-date-block">
+<section class="start-date-block" id="start-date">
     <div class="container">
         <div class="left-col">
             {% component 'editable' file="edit17.htm" %}
@@ -351,7 +352,7 @@ $this->page->title = $menu->title;
         </div>
     </div>
 </section>
-<section class="footer">
+<section class="footer" id="footer">
     <div class="container">
         <div class="left-col">
             <div class="footer-logo"><img src="{{ 'assets/img/content/main-logo-2.svg'|theme }}"></div>
@@ -363,35 +364,35 @@ $this->page->title = $menu->title;
                 {% component 'editable' file="edit19.htm" %}<a href="tel:{{ contacts.phone }}" class="underline">{{ contacts.phone }}</a></div>
             <div class="text-group">
                 <ul class="socials-type-2">
-                    {% if socials.facebook %}
-                    <li><a href="{{ socials.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                    {% if bottomSocials.facebook %}
+                    <li><a href="{{ bottomSocials.facebook }}" target="_blank"><i class="fa fa-facebook"></i></a></li>
                     {% endif %}
-                    {% if socials.instagram %}
-                    <li><a href="{{ socials.instagram }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    {% if bottomSocials.instagram %}
+                    <li><a href="{{ bottomSocials.instagram }}" target="_blank"><i class="fa fa-instagram"></i></a></li>
                     {% endif %}
-                    {% if socials.linkedin %}
-                    <li><a href="{{ socials.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                    {% if bottomSocials.linkedin %}
+                    <li><a href="{{ bottomSocials.linkedin }}" target="_blank"><i class="fa fa-linkedin"></i></a></li>
                     {% endif %}
-                    {% if socials.medium %}
-                    <li><a href="{{ socials.medium }}" target="_blank"><i class="fa fa-medium"></i></a></li>
+                    {% if bottomSocials.medium %}
+                    <li><a href="{{ bottomSocials.medium }}" target="_blank"><i class="fa fa-medium"></i></a></li>
                     {% endif %}
-                    {% if socials.pinterest %}
-                    <li><a href="{{ socials.pinterest }}" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                    {% if bottomSocials.pinterest %}
+                    <li><a href="{{ bottomSocials.pinterest }}" target="_blank"><i class="fa fa-pinterest"></i></a></li>
                     {% endif %}
-                    {% if socials.twitter %}
-                    <li><a href="{{ socials.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                    {% if bottomSocials.twitter %}
+                    <li><a href="{{ bottomSocials.twitter }}" target="_blank"><i class="fa fa-twitter"></i></a></li>
                     {% endif %}
-                    {% if socials.dribbble %}
-                    <li><a href="{{ socials.dribbble }}" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                    {% if bottomSocials.dribbble %}
+                    <li><a href="{{ bottomSocials.dribbble }}" target="_blank"><i class="fa fa-dribbble"></i></a></li>
                     {% endif %}
-                    {% if socials.behance %}
-                    <li><a href="{{ socials.behance }}" target="_blank"><i class="fa fa-behance"></i></a></li>
+                    {% if bottomSocials.behance %}
+                    <li><a href="{{ bottomSocials.behance }}" target="_blank"><i class="fa fa-behance"></i></a></li>
                     {% endif %}
-                    {% if socials.tumblr %}
-                    <li><a href="{{ socials.tumblr }}" target="_blank"><i class="fa fa-tumblr"></i></a></li>
+                    {% if bottomSocials.tumblr %}
+                    <li><a href="{{ bottomSocials.tumblr }}" target="_blank"><i class="fa fa-tumblr"></i></a></li>
                     {% endif %}
-                    {% if socials.soundcloud %}
-                    <li><a href="{{ socials.soundcloud }}" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
+                    {% if bottomSocials.soundcloud %}
+                    <li><a href="{{ bottomSocials.soundcloud }}" target="_blank"><i class="fa fa-soundcloud"></i></a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -436,24 +437,28 @@ $this->page->title = $menu->title;
                     <div class="form-group">
                         <div class="input-holder">
                             <input placeholder="Имя" name="name">
+                            <div class="error-label">введите Ваше имя</div>
                             <div class="input-line"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-holder">
                             <input placeholder="Телефон" name="phone" id="phone-field">
+                            <div class="error-label">введите Ваш номер телефна</div>
                             <div class="input-line"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-holder">
                             <input placeholder="Email" name="email">
+                            <div class="error-label">введите Ваш E-MAIL</div>
                             <div class="input-line"></div>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="input-holder">
                             <input placeholder="Профиль Facebook" name="facebook">
+                            <div class="error-label">))</div>
                             <div class="input-line"></div>
                         </div>
                     </div>

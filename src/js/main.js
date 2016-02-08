@@ -192,6 +192,9 @@ $(document).on('ready', function () {
 			bodyOverflow.unfixBody();
 		})
 
+		// validation
+		$('#subscribe').find('form').validate();
+
 		// modals
 		$('.modal-open').on('click', function (e) {
 			e.preventDefault();
@@ -508,6 +511,35 @@ $(document).on('ready', function () {
 			$(window).on('resize', function () {
 				plg.resize();
 			})
+
+			return plg;
+		});
+	};
+
+	$.fn.validate = function (opt) {
+
+		this.each(function (i) {
+
+			var DOM = {},
+				state = {},
+				$self = $(this);
+
+			// options
+			if (!opt) {
+				opt = {};
+			}
+			opt = $.extend({
+			}, opt);
+
+			// methods
+			var plg = {
+				init: function () {
+					DOM.$fields = $self.find('[data-validate]');
+					console.log(DOM.$fields);
+				}
+			};
+
+			plg.init();
 
 			return plg;
 		});

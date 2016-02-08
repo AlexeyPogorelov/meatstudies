@@ -157,7 +157,7 @@ input
 	padding-left: 16px
 	padding-right: 16px
 	transition: outline-color .4s
-	font-weight: 500
+	font-weight: 600
 	&:focus
 		outline: none
 	&::-webkit-input-placeholder, &:-moz-placeholder, &::-moz-placeholder, &:-ms-input-placeholder
@@ -329,6 +329,22 @@ input
 		-moz-appearance: textfield
 
 //	END INPUT NUMBER
+
+.input-holder
+	&.error
+		.error-label
+			display: block
+	&:after
+		background: #f41f52
+	.error-label
+		color: #f41f52
+		font-size: 13px
+		font-weight: 400
+		line-height: 19px
+		position: absolute
+		right: 0
+		bottom: -21px
+		display: none
 
 .active
 	color: $main-color
