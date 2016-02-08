@@ -299,6 +299,12 @@ $hover-color: #f4da00
 
 				b
 					font-weight: 700
+					a
+						color: silver
+						transition: color .2s
+						&:hover
+							color: #000
+							transition: color .1s
 
 	.content-row
 		p
@@ -314,6 +320,9 @@ $hover-color: #f4da00
 // teachers
 .teachers
 	padding-top: 72px
+	.left-col
+		h2
+			padding-left: 60px
 
 	.persons-slider
 		margin-top: 8px
@@ -468,16 +477,19 @@ $hover-color: #f4da00
 				position: absolute
 				top: 0
 				width: 100%
-
+					
 				img, svg
 					position: absolute
 					top: 50%
 					left: 50%
 					transform: translate(-50%, -50%)
-					&:hover
+					*
+						transition: fill .3s
+				&:hover
+					svg
 						*
 							fill: $main-color
-							transition: fill .3s
+							transition: fill .1s
 
 // end presentation-block
 
@@ -485,6 +497,10 @@ $hover-color: #f4da00
 .start-date-block
 	padding-top: 74px
 	padding-bottom: 80px
+
+	.left-col
+		h2
+			padding-left: 60px
 
 	h6
 		margin-top: 16px

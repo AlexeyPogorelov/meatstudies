@@ -333,18 +333,27 @@ input
 .input-holder
 	&.error
 		.error-label
-			display: block
-	&:after
-		background: #f41f52
+			// display: block
+			opacity: 1
+			transition: opacity .3s
+	&.error
+		.input-line
+			background: #f41f52
+			width: 100%
+	.input-holder
+		&:after
+			background: #f41f52
 	.error-label
 		color: #f41f52
 		font-size: 13px
 		font-weight: 400
 		line-height: 19px
+		opacity: 0
 		position: absolute
 		right: 0
 		bottom: -21px
-		display: none
+		transition: opacity .3s
+		// display: none
 
 .active
 	color: $main-color
@@ -676,6 +685,7 @@ button:active, .btn:active, button:focus, .btn:focus
 		cursor: pointer
 
 .modal-holder a.close-modal, .modal-holder .close-modal
+	background: url('../img/icons/cross-2.svg') no-repeat 50% 50%
 	cursor: pointer
 	display: block
 	height: 35px
