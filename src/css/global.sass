@@ -17,7 +17,9 @@ body
 	&.fixed
 		overflow: hidden
 		&.client-ios
-			position: fixed
+			// position: fixed
+			// transition: position .3s
+			// transition-delay: .3s
 
 // webkit scroll
 .lightbox-cell::-webkit-scrollbar-corner, .dropdown::-webkit-scrollbar-corner, .mobile-menu .container::-webkit-scrollbar-corner
@@ -707,6 +709,8 @@ button:active, .btn:active, button:focus, .btn:focus
 	z-index: 10
 	transform-style: preserve-3d
 	perspective: 1000px
+	-webkit-overflow-scrolling: touch
+	overflow-y: scroll
 	transition: opacity .3s ease-out, transform .2s, visibility .4s
 	.close-modal
 		&:after
@@ -739,6 +743,7 @@ button:active, .btn:active, button:focus, .btn:focus
 	right: 6px
 	top: 28px
 	z-index: 2
+	// transform: translateZ(200px)
 	.line
 		background: #000
 		display: block

@@ -37,7 +37,9 @@ var animationPrefix = (function () {
 				}
 
 				// INIT plugins
-				$('#gallery-slider').capabilitiesSlider();
+				$('#gallery-slider').capabilitiesSlider({
+					clickToNext: true
+				});
 				$('#persons-slider').capabilitiesSlider({
 					slidesOnPage: 3
 				});
@@ -302,6 +304,7 @@ $(document).on('ready', function () {
 				'nameClass': '.slide-name',
 				'imageClass': '.slide-image',
 				'pagination': false,
+				'clickToNext': false,
 				'slidesOnPage': 1
 			}, opt);
 
@@ -416,6 +419,8 @@ $(document).on('ready', function () {
 				} else if ($target.hasClass('prev-slide')) {
 					plg.prevSlide();
 				} else if ($target.hasClass('next-slide')) {
+					plg.nextSlide();
+				} else if (opt.clickToNext && $target.parents('.slide').length) {
 					plg.nextSlide();
 				}
 			});
@@ -546,16 +551,9 @@ $(document).on('ready', function () {
 			var plg = {
 				init: function () {
 					DOM.$fields = $self.find('[data-validate]');
-					$self.on('submit', function (e) {
-						state.errors = 0;
-						DOM.$fields.each( function () {
-							plg.validate( $(this) );
-						} );
-						if (state.errors) {
-							e.preventDefault();
-						}
-					})
-					DOM.$fields.on('blur', function () {
+					// $self.on('submit', plg.submit);
+					$self.find('.btn.submit').on('click', plg.submit);
+					DOM.$fields.on('blur keyup', function () {
 						plg.validate( $(this) );
 					})
 				},
@@ -583,6 +581,17 @@ $(document).on('ready', function () {
 					} else {
 						plg.addLabel( $el );
 						state.errors++;
+					}
+				},
+				submit: function (e) {
+					state.errors = 0;
+					DOM.$fields.each( function () {
+						plg.validate( $(this) );
+					} );
+					if (state.errors) {
+						e.preventDefault();
+					} else {
+						$self.trigger('submit');
 					}
 				}
 			};

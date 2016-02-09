@@ -106,7 +106,7 @@ $hover-color: #f4da00
 
 
 .mobile-menu
-	background-color: $main-color;
+	background-color: $main-color
 	position: fixed
 	text-align: center
 	left: 0
@@ -118,7 +118,7 @@ $hover-color: #f4da00
 	&.opened
 		transform: translateY(0)
 	.container
-		background-color: #fff;
+		background-color: #fff
 		overflow: auto
 		position: absolute
 		padding: 20px 10px
@@ -138,14 +138,14 @@ $hover-color: #f4da00
 			a
 				//
 		button.type-1
-			font-size: 18px;
-			font-weight: 700;
-			letter-spacing: 1.2px;
-			line-height: 17px;
+			font-size: 18px
+			font-weight: 700
+			letter-spacing: 1.2px
+			line-height: 17px
 			margin: auto
 			padding: 14px 9px
 			// width: 200px
-			width: calc(100% - 31px);
+			width: calc(100% - 31px)
 		button.close-button
 			background: url('../img/icons/cross-button-1.svg') 0 0 no-repeat
 			position: absolute
@@ -817,19 +817,19 @@ $hover-color: #f4da00
 		min-height: 0
 		h2
 			color: #fff
-			max-width: 400px;
-			color: white;
-			font-size: 46px;
-			font-weight: 700;
-			line-height: 44px;
+			max-width: 400px
+			color: white
+			font-size: 46px
+			font-weight: 700
+			line-height: 44px
 			margin-bottom: 25px
 		p
 			/* Text style for "На ваш Email п" */
-			width: 600px;
-			color: black;
-			font-size: 21px;
-			font-weight: 400;
-			line-height: 32px;
+			width: 600px
+			color: black
+			font-size: 21px
+			font-weight: 400
+			line-height: 32px
 
 .modal-holder#subscribe
 	.left-col
@@ -945,7 +945,7 @@ $hover-color: #f4da00
 					padding-top: 12px
 					transform: none
 
-					button
+					button, .btn
 						font-size: 18px
 						padding: 21px 37px
 						margin-top: 21px
@@ -1016,7 +1016,8 @@ $hover-color: #f4da00
 				.slider-holder
 					z-index: 999
 					.slide
-						max-height: 76vh
+						cursor: pointer
+						max-height: calc(100vh - 200px)
 						overflow: hidden
 						opacity: 0.3
 						transition: opacity .3s
@@ -1036,6 +1037,29 @@ div[data-control="editable"]
 body.client-ios
 	button.type-1, #mobile-menu button.type-1
 		padding: 14px 9px 10px
+	.gamburger
+		transform: translateZ(101px)
+	.program .button-label
+		transform: translateZ(0) !important
+		animation: none !important
+		animation-name: none !important
+		z-index: 0
+	.modal, .modal-holder
+		transform: translateZ(202px)
+		-webkit-overflow-scrolling: touch
+			&:before
+				content: ""
+				display: block
+				width: 1px
+				float: left
+				height: calc(100% + 1px)
+				margin-left: -1px
+				display: block
+			&:after
+				content: ""
+				display: block
+				width: 100%
+				clear: both
 
 body.client-mac
 	button.type-1, #mobile-menu button.type-1
