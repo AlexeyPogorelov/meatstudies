@@ -350,7 +350,7 @@ $(document).on('ready', function () {
 				prevSlide: function () {
 					var id = state.cur - 1;
 					if (id < 0) {
-						this.toSlide(state.pages - 1);
+						// this.toSlide(state.pages - 1);
 						return;
 					}
 					this.toSlide(id);
@@ -358,7 +358,7 @@ $(document).on('ready', function () {
 				nextSlide: function () {
 					var id = state.cur + 1;
 					if (id >= state.pages) {
-						this.toSlide(0);
+						// this.toSlide(0);
 						return;
 					}
 					this.toSlide(id);
@@ -553,9 +553,9 @@ $(document).on('ready', function () {
 					DOM.$fields = $self.find('[data-validate]');
 					// $self.on('submit', plg.submit);
 					$self.find('.btn.submit').on('click', plg.submit);
-					DOM.$fields.on('blur keyup', function () {
-						plg.validate( $(this) );
-					})
+					// DOM.$fields.on('blur keyup', function () {
+					// 	plg.validate( $(this) );
+					// })
 				},
 				test: function (data, type) {
 					switch (type) {
