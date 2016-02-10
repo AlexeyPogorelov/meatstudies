@@ -167,13 +167,14 @@ $(document).on('ready', function () {
 				$('#mail-sent').removeClass('opened');
 				$('#subscribe').removeClass('opened');
 				bodyOverflow.unfixBody();
-			}, 3000);
+			}, 7000);
 		}
 		$('#mail-sent').on('click', function () {
 				$('#mail-sent').removeClass('opened');
 				$('#subscribe').removeClass('opened');
 				bodyOverflow.unfixBody();
 		});
+		window.mailSent = mailSent;
 
 		$('.to-top').on('click', function () {
 			$("html, body").stop().animate({scrollTop:0}, 1000, 'swing');
