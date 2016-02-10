@@ -327,6 +327,25 @@ $hover-color: #f4da00
 
 	.persons-slider
 		margin-top: 8px
+		&:before, &:after
+			content: ''
+			display: table
+			clear: both
+		.slider-holder
+			&:before, &:after
+				content: ''
+				display: table
+				clear: both
+			.slider-viewport
+				&:before, &:after
+					content: ''
+					display: table
+					clear: both
+				.slide-holder
+					&:before, &:after
+						content: ''
+						display: table
+						clear: both
 
 		.slide
 			float: left

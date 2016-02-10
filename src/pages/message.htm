@@ -1,5 +1,28 @@
-<h2>Запись на курс от {{ name }}</h2>
-<p>Номер телефона: {{ phone }}</p>
-<p>Электронная почта: {{ email }}</p>
-<p>Профиль Facebook: {{ facebook }}</p>
-<!-- /makemeat.com/studies/plugins/laminsanneh/flexicontact/views/emails -->
+<style>
+/*	p {
+		margin-bottom: 2em;
+		margin-top: 3px;
+	}
+	p.bold {
+		margin-bottom: 0;
+		font-weight: 700;
+	}*/
+</style>
+<!-- <p class="bold">Запись на курс от</p>
+<p>{{ name }}</p>
+<p class="bold">Телефон</p>
+<p>{{ phone }}</p>
+<p class="bold">Email</p>
+<p>{{ email }}</p>
+<p class="bold">Профиль Facebook</p>
+<p><a href="{{ facebook }}">{{ facebook }}</a></p> -->
+<p class="bold" style="margin-top:3px;margin-bottom:0;font-weight:700;" >Запись на курс от</p>
+<p style="margin-bottom:2em;margin-top:3px;" >{{ name }}</p>
+<p class="bold" style="margin-top:3px;margin-bottom:0;font-weight:700;" >Телефон</p>
+<p style="margin-bottom:2em;margin-top:3px;" >{{ phone }}</p>
+<p class="bold" style="margin-top:3px;margin-bottom:0;font-weight:700;" >Email</p>
+<p style="margin-bottom:2em;margin-top:3px;" >{{ email }}</p>
+{% if facebook %}
+<p class="bold" style="margin-top:3px;margin-bottom:0;font-weight:700;" >Профиль Facebook</p>
+<p style="margin-bottom:2em;margin-top:3px;" ><a href="{{ facebook }}">{{ facebook }}</a></p>
+{% endif %}

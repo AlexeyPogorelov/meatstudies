@@ -622,10 +622,11 @@ $tablet-cont-width: 660px
 		padding-top: 12px
 		.left-col
 			margin-top: 37px
+			h2
+				font-size: 30px
+				padding-left: 0
 		.persons-slider
 			margin-top: 38px
-		h2
-			font-size: 30px
 
 	// end teachers
 
@@ -754,9 +755,10 @@ $tablet-cont-width: 660px
 	.start-date-block
 		padding-top: 47px
 		padding-bottom: 47px
-
-		h2
-			font-size: 38px
+		.left-col
+			h2
+				font-size: 38px
+				padding-left: 0
 		h3
 			margin-top: 20px
 
@@ -876,7 +878,6 @@ $tablet-cont-width: 660px
 		.right-col
 			padding-left: 60px
 			padding-right: 60px
-
 			.slide
 				float: left
 				// text-align: center
@@ -1310,13 +1311,36 @@ $tablet-cont-width: 660px
 						padding: 0 10px
 
 //	FIXES
+@media screen and (max-height: 580px) and (max-width: 622px)
+	#presentation
+		.modal-content
+			.gallery-slider
+				margin-top: calc(50vh - 260px)
+
 @media screen and (max-height: 580px) and (max-width: 580px)
+	#presentation
+		.modal-content
+			.gallery-slider
+				margin-top: calc(50vh - 200px)
+
+@media screen and (max-height: 580px) and (max-width: 380px)
 	#presentation
 		.modal-content
 			.gallery-slider
 				margin-top: calc(50vh - 100px)
 			// .slider-viewport
 			// 	max-width: 400px
+@media screen and (min-width: 621px) and (max-width: 700px)
+	.teachers
+		.right-col
+			overflow: hidden
+			.slider-viewport
+				overflow: visible
+				padding-left: 80px
+				padding-right: 80px
+				.slide-wrapper
+					padding-left: 20px
+					padding-right: 20px
 
 
 // @media screen and (max-width: 700px)

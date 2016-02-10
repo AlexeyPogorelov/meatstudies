@@ -17,7 +17,7 @@ body
 	&.fixed
 		overflow: hidden
 		&.client-ios
-			// position: fixed
+			position: fixed
 			// transition: position .3s
 			// transition-delay: .3s
 
@@ -735,6 +735,9 @@ button:active, .btn:active, button:focus, .btn:focus
 		.modal-content
 			transform: scale(1, 1)
 			transition: transform .3s
+	&::-webkit-scrollbar
+		height: 0
+		width: 0
 
 .gamburger
 	cursor: pointer

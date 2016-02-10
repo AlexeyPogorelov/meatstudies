@@ -38,10 +38,11 @@ var animationPrefix = (function () {
 
 				// INIT plugins
 				$('#gallery-slider').capabilitiesSlider({
-					clickToNext: true
+					clickToNext: true,
 				});
 				$('#persons-slider').capabilitiesSlider({
-					slidesOnPage: 3
+					slidesOnPage: 3,
+					startSlide: 1
 				});
 				// WOW init
 				if ($.browser.desktop) {
@@ -97,11 +98,6 @@ setTimeout(function () {
 }, 10000);
 
 // $('.main-navigation').pageNav();
-
-// mail sent
-function mailSent () {
-	$('#mail-sent').addClass('opened');
-}
 
 $(window).on('load', function () {
 	loading.status(1);
@@ -162,6 +158,23 @@ $(document).on('ready', function () {
 			});
 			return plg;
 		})();
+
+
+		// mail sent
+		function mailSent () {
+				$('#mail-sent').addClass('opened');
+			setTimeout(function () {
+				$('#mail-sent').removeClass('opened');
+				$('#subscribe').removeClass('opened');
+				bodyOverflow.unfixBody();
+			}, 3000);
+		}
+		$('#mail-sent').on('click', function () {
+				$('#mail-sent').removeClass('opened');
+				$('#subscribe').removeClass('opened');
+				bodyOverflow.unfixBody();
+		});
+
 		$('.to-top').on('click', function () {
 			$("html, body").stop().animate({scrollTop:0}, 1000, 'swing');
 		});
@@ -175,7 +188,13 @@ $(document).on('ready', function () {
 
 		$('#phone-field').on('focus', function () {
 			if (!$(this).val()) {
-				$(this).val('+380')
+				$(this).val('+380');
+			}
+		});
+
+		$('#phone-field').on('blur', function () {
+			if ($(this).val() == '+380') {
+				$(this).val('');
 			}
 		});
 
@@ -305,6 +324,7 @@ $(document).on('ready', function () {
 				'imageClass': '.slide-image',
 				'pagination': false,
 				'clickToNext': false,
+				'startSlide': 0,
 				'slidesOnPage': 1
 			}, opt);
 
@@ -329,7 +349,6 @@ $(document).on('ready', function () {
 					if ($(window).width() > 300 && opt.slidesOnPage > 1 && $(window).width() <= 700) {
 						opt.slidesOnPage = Math.floor( opt.slidesOnPage / 2 );
 						plg.init();
-						plg.toSlide(0);
 					}
 					DOM.$slides.width( DOM.$viewport.width() / opt.slidesOnPage);
 					DOM.$slides.height(
@@ -346,6 +365,7 @@ $(document).on('ready', function () {
 						);
 					state.slideWidth = DOM.$slides.eq(0).outerWidth() + 12;
 					DOM.$sliderHolder.width(state.slideWidth * state.slides);
+					plg.toSlide(opt.startSlide);
 				},
 				prevSlide: function () {
 					var id = state.cur - 1;
@@ -364,10 +384,9 @@ $(document).on('ready', function () {
 					this.toSlide(id);
 				},
 				toSlide: function (id) {
-					// console.log(typeof id);
-					// console.log(id);
-					// id = parseInt(id);
-							// alert()
+					if ( id < 0 || id >= state.pages ) {
+						return;
+					}
 					DOM.$sliderHolder.css({
 						'-webkit-transform': 'translateX( -' + (state.sliderWidth * id) + 'px)',
 						'transform': 'translateX( -' + (state.sliderWidth * id) + 'px)'
@@ -556,11 +575,14 @@ $(document).on('ready', function () {
 					// DOM.$fields.on('blur keyup', function () {
 					// 	plg.validate( $(this) );
 					// })
+					DOM.$fields.on('focus', function () {
+						plg.removeLabel( $(this) );
+					})
 				},
 				test: function (data, type) {
 					switch (type) {
 						case 'name':
-							return /^[а-яА-Яa-zA-Z\-]+$/.test(data);
+							return /^[а-яА-Яa-zA-Z\-]+\s{0,1}[а-яА-Яa-zA-Z\-]{0,}$/.test(data);
 						case 'phone':
 							return /^[\(\)0-9\-\s\+]{8,}/.test(data);
 						case 'email':
