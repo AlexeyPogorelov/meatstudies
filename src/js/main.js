@@ -88,7 +88,7 @@ var animationPrefix = (function () {
 	$('img').each(function () {
 		if (!this.naturalWidth || true) {
 			loading.trg ++;
-			$(this).one('load', loading.loaded)
+			$(this).one('load', loading.loaded);
 		}
 	});
 
@@ -152,7 +152,7 @@ $(document).on('ready', function () {
 					}
 				},
 				$el: $el
-			}
+			};
 			$el.on('click', function () {
 				plg.up();
 			});
@@ -201,7 +201,7 @@ $(document).on('ready', function () {
 
 		$('.top-line').find('.main-navigation a').on('click', function (e) {
 			e.preventDefault();
-			$(this).addClass('active')
+			$(this).addClass('active');
 			$(this).parent().siblings().find('> a').removeClass('active');
 			var $target = $( $( this ).attr('href') );
 			if ($target.length) {
@@ -210,11 +210,11 @@ $(document).on('ready', function () {
 				});
 			}
 			bodyOverflow.unfixBody();
-		})
+		});
 		$('#mobile-menu').find('.main-navigation a').on('click', function (e) {
 			e.preventDefault();
-			$('.mobile-menu').removeClass('opened')
-			$(this).addClass('active')
+			$('.mobile-menu').removeClass('opened');
+			$(this).addClass('active');
 			$(this).parent().siblings().find('> a').removeClass('active');
 			var $target = $( $( this ).attr('href') );
 			if ($target.length) {
@@ -223,7 +223,7 @@ $(document).on('ready', function () {
 				});
 			}
 			bodyOverflow.unfixBody();
-		})
+		});
 
 		// validation
 		$('#subscribe').find('form').validate();
@@ -337,7 +337,7 @@ $(document).on('ready', function () {
 					DOM.$viewport = DOM.$slider.find('.slider-viewport');
 					DOM.$sliderHolder = DOM.$viewport.find('.slider-holder');
 					DOM.$slides = DOM.$sliderHolder.find('.slide');
-					DOM.$slides.eq(0).addClass('active')
+					DOM.$slides.eq(0).addClass('active');
 				},
 				init: function () {
 					state.cur = state.cur || 0;
@@ -520,7 +520,7 @@ $(document).on('ready', function () {
 						} else if (y == array.length - 1) {
 							plg.avtive(array[y].$elem);
 						}
-					};
+					}
 				},
 				avtive: function ($el) {
 					if ($el !== state.$active) {
@@ -532,9 +532,9 @@ $(document).on('ready', function () {
 				resize: function () {
 					DOM.$lnks.each(function (i, elem) {
 							array[i] = {};
-							array[i]['$elem'] = $(elem);
-							array[i]['trg'] = $(elem).attr('href') || $(elem).data('target');
-							array[i]['val'] = $(array[i]['trg']).offset().top;
+							array[i].$elem = $(elem);
+							array[i].trg = $(elem).attr('href') || $(elem).data('target');
+							array[i].val = $(array[i].trg).offset().top;
 						});
 				}
 			};
@@ -542,11 +542,11 @@ $(document).on('ready', function () {
 			plg.init();
 			$(window).on('scroll', function () {
 				plg.scroll($(this).scrollTop() + 110);
-			})
+			});
 
 			$(window).on('resize', function () {
 				plg.resize();
-			})
+			});
 
 			return plg;
 		});
@@ -578,7 +578,7 @@ $(document).on('ready', function () {
 					// })
 					DOM.$fields.on('focus', function () {
 						plg.removeLabel( $(this) );
-					})
+					});
 				},
 				test: function (data, type) {
 					switch (type) {
