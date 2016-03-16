@@ -55,19 +55,26 @@ $hover-color: #f4da00
 
 	button
 		color: black
-		font-size: 22px
+		background: $main-color
+		font-size: 26px
 		font-weight: 700
 		letter-spacing: 1.47px
 		line-height: 21px
+		margin: 0
 		position: absolute
-		right: 12px
+		right: 0
 		top: 0
+
+		small
+			display: block
+			font-size: 18px
+			font-weight: 100
 
 .main-navigation
 	li
 		display: inline-block
 		margin-right: 19px
-		padding: 34px 0
+		padding: 29px 0
 
 	a
 		color: black
@@ -203,6 +210,22 @@ $hover-color: #f4da00
 			.clock-icon-1
 				margin-left: -4px
 				margin-top: 1px
+
+		.description-holder
+			max-width: 584px
+			padding-right: 20px
+			h4
+				font-size: 23px
+				line-height: 27px
+				color: #414141
+				font-weight: 900
+				margin-bottom: 40px
+
+			p
+				color: black;
+				font-weight: 400
+				margin-bottom: 20px
+
 // end when-block
 
 // whos-block
@@ -588,7 +611,7 @@ $hover-color: #f4da00
 	.container
 		padding-top: 55px
 		padding-bottom: 55px
-		background-color: black
+		// background-color: black
 
 		.footer-logo
 			margin-top: 20px
@@ -604,10 +627,10 @@ $hover-color: #f4da00
 			position: relative
 
 		p
-			color: #fff
+			// color: #fff
 
 		a
-			color: $main-color
+			// color: $main-color
 			display: inline-block
 			font-size: 25px
 			font-weight: 700
@@ -622,7 +645,41 @@ $hover-color: #f4da00
 			height: 47px
 			width: 47px
 
+		.socials-type-2 a
+			color: #fff
+
 // end footer
+
+// mobile
+.mobile-top-line
+	background: rgba(255,255,255,.8)
+	display: none
+	position: fixed
+	top: 0
+	left: 0
+	height: 70px
+	width: 100%
+	z-index: 3
+
+	.gamburger
+		position: static
+		margin-top: 6px
+
+	button.type-1
+		background: $main-color
+		font-size: 21px
+		padding: 11px 36px
+		margin: 0
+		top: 0
+		position: absolute
+		right: 0
+		width: auto
+
+		small
+			display: block
+			font-size: 15px
+			font-weight: 100
+
 
 // temp
 
@@ -636,6 +693,7 @@ $hover-color: #f4da00
 		line-height: 50px
 		font-size: 22px
 		font-weight: 700
+
 .temp-content
 	.container
 		width: 830px
@@ -660,14 +718,18 @@ $hover-color: #f4da00
 		color: $main-color
 		font-size: 22px
 		font-weight: 700
+
 	.header-2
 		color: #c3c3c3
 		font-size: 18px
 		font-weight: 700
+
 	.header-2.big
 		display: block
+
 	.header-2.sml
 		display: none
+
 	.header-3
 		color: #c3c3c3
 		font-size: 18px
@@ -683,19 +745,23 @@ $hover-color: #f4da00
 			font-weight: 900
 			line-height: 55px
 			margin-bottom: 20px
+
 		p
 			color: #1a1a1a
 			font-size: 18px
 			font-weight: 400
 			line-height: 32px
+
 		ul
 			margin-top: 20px
 			margin-bottom: 20px
+
 		li
 			color: #1a1a1a
 			font-size: 18px
 			font-weight: 400
 			line-height: 32px
+
 			&:before
 				top: 15px
 				height: 5px
@@ -730,6 +796,7 @@ $hover-color: #f4da00
 			line-height: 20px
 			font-size: 16px
 			font-weight: 700
+
 	.temp-content
 		.container
 			width: calc(100% - 52px)
@@ -753,14 +820,18 @@ $hover-color: #f4da00
 			font-size: 22px
 			font-weight: 700
 			margin-bottom: 12px
+
 		.header-2
 			color: #c3c3c3
 			font-size: 18px
 			font-weight: 700
+
 		.header-2.sml
 			display: block
+
 		.header-2.big
 			display: none
+
 		.header-3
 			color: #c3c3c3
 			font-size: 18px
@@ -778,14 +849,17 @@ $hover-color: #f4da00
 				font-weight: 900
 				line-height: 55px
 				margin-bottom: 20px
+
 			p
 				color: #1a1a1a
 				font-size: 15px
 				font-weight: 400
 				line-height: 23px
+
 			ul
 				margin-top: 20px
 				margin-bottom: 20px
+
 			li
 				color: #1a1a1a
 				font-size: 15px
@@ -818,6 +892,7 @@ $hover-color: #f4da00
 // modals
 #mail-sent
 	z-index: 999
+
 	.modal-content
 		position: absolute
 		top: 50%
@@ -828,6 +903,7 @@ $hover-color: #f4da00
 		background: $main-color
 		height: auto
 		min-height: 0
+
 		h2
 			color: #fff
 			max-width: 400px
@@ -835,6 +911,7 @@ $hover-color: #f4da00
 			font-weight: 700
 			line-height: 44px
 			margin-bottom: 25px
+
 		p
 			/* Text style for "На ваш Email п" */
 			width: 600px
@@ -847,6 +924,7 @@ $hover-color: #f4da00
 	.left-col
 		width: 50%
 		padding: 20px 0
+
 		.close-modal
 			bottom: 100px
 
@@ -856,11 +934,13 @@ $hover-color: #f4da00
 			transform: translateY(-50%)
 			text-align: center
 			width: 50%
+
 			button
 				margin: auto
 				margin-top: 14px
 				font-weight: 900
 				width: 100%
+
 			.form-group
 				display: block
 				margin-left: auto
@@ -870,8 +950,10 @@ $hover-color: #f4da00
 				padding-left: 60px
 				padding-right: 60px
 				text-align: center
+
 				.input-holder
 					text-align: center
+
 					&:after
 						content: ''
 						display: block
@@ -889,17 +971,22 @@ $hover-color: #f4da00
 		left: 50%
 		height: 100%
 		width: 50%
+
 		.content-holder
 			position: absolute
 			top: 50%
 			left: 30%
 			transform: translateY(-50%)
+
 			.date-holder-1
 				min-height: 100px
+
 				.money-icon-1
 					margin-top: 14px
+
 			.date-holder-1:last-child
 				min-height: 10px
+
 				.icon-holder
 					margin-bottom: 0
 
