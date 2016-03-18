@@ -37,26 +37,29 @@ html(lang='en')
 		div#to-top
 			img(src="img/icons/up_button.svg" alt="toTop")
 		//- для работы кнопочек добавил классы .modal-open и #mobile-menu
-		.gamburger.mobile-visible.modal-open(data-target="#mobile-menu")
-			span.line
-			span.line
-			span.line
+		.mobile-top-line
+			.gamburger.modal-open(data-target="#mobile-menu")
+				span.line
+				span.line
+				span.line
+			button.type-1.modal-open(data-target="#subscribe") <small>предварительная</small> регистрация
+
 		div.modal.mobile-menu#mobile-menu.modal-holder
 			.container
-				button.type-1.modal-open(data-target="#subscribe") записаться
+				button.type-1.modal-open(data-target="#subscribe") <small>предварительная</small> регистрация
 				ul.main-navigation
 					li.active
 						a(href="#about")
 							span О курсе
 					li
 						a(href="#teachers")
-							span Предподаватели
+							span Когда
 					li
 						a(href="#program")
-							span Программа
+							span Где
 					li
 						a(href="#prices")
-							span Стоимость
+							span Предподаватели
 					li
 						a(href="#contact")
 							span Контакты
@@ -70,17 +73,17 @@ html(lang='en')
 							span О курсе
 					li
 						a(href="#teachers")
-							span Предподаватели
+							span Когда
 					li
 						a(href="#program")
-							span Программа
+							span Где
 					li
 						a(href="#prices")
-							span Стоимость
+							span Предподаватели
 					li
 						a(href="#contact")
 							span Контакты
-				button.type-1.modal-open(data-target="#subscribe") записаться
+				button.type-1.modal-open(data-target="#subscribe") <small>предварительная</small> регистрация
 		section.header
 			.container
 				.left-col
@@ -103,19 +106,23 @@ html(lang='en')
 				.left-col
 					h2 Когда
 				.right-col
-					.date-holder-1
+					.date-holder-1.hidden
 						.icon-holder
 							img(src="img/icons/calendar-icon-1.svg").calendar-icon-1
 						.text-holder
 							span.bold 3 месяца
 							span 15 февраля – 16 мая
-					.date-holder-1
+					.date-holder-1.hidden
 						.icon-holder
 							img(src="img/icons/clock-icon-1.svg").clock-icon-1
 						.text-holder
 							span.bold Вторник - Четверг
 							span 19:15 – 21:15
-		section.whos-block
+					.description-holder
+							h4 Все подробности о новом курсе UX+UI будут известны с 15 мая.
+							p Зарегистрируйтесь предварительно и мы будем держать вас в курсе наших обновлений.
+
+		section.whos-block.hidden
 			.container
 				.left-col
 					h2 Для кого
@@ -123,10 +130,27 @@ html(lang='en')
 					.content
 						p User Experience, он же UX, он же пользовательский опыт. Такое распостраненное и модное слово сейчас, что оно уже давно вышло за рамки дизайнерской тусовки.
 						h4 ВАЖНО! Для занятий вам понадобится ноутбук.
-		section.do-it-block
+
+		section.do-it-block.hidden
 			.container(style="background-image: url(img/content/audience-1.jpg);")
 				.button-holder
 					button.modal-open(data-target="#subscribe") записаться
+
+		section.presentation-block#contact
+			.container(style="background-image: url(img/content/audience-1.jpg);")
+				.left-col
+					h2 Место проведения
+					.address-holder
+						span.bold Prostir 86
+						span ул. Казимира Малевича, 86П
+						button Посмотреть на карте
+						button.type-4.tablet-visible.modal-open(data-target="#presentation") Смотреть фото
+				.right-col
+					div#view-presentation.view-presentation.modal-open(data-target="#presentation")
+						img.hidden(src="img/icons/zoom-icon-1.svg")
+						svg(height="92" width="94" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94 92")
+							<path fill="#ffffff" fill-rule="evenodd" d="M 45.32 37.01 L 45.32 26 C 45.32 24.16 43.83 22.68 42 22.68 C 40.17 22.68 38.68 24.16 38.68 26 L 38.68 37.01 L 26.88 37.01 C 25.05 37.01 23.55 38.42 23.55 40.16 C 23.55 41.9 25.04 43.31 26.88 43.31 L 38.68 43.31 L 38.68 54.33 C 38.68 56.17 40.17 57.65 42 57.65 C 43.83 57.65 45.32 56.16 45.32 54.33 L 45.32 43.31 L 57.12 43.31 C 58.95 43.31 60.45 41.9 60.45 40.16 C 60.45 38.43 58.96 37.01 57.12 37.01 L 45.32 37.01 Z M 68.08 70.41 C 60.95 75.88 51.88 79.15 42 79.15 C 19.08 79.15 0.5 61.54 0.5 39.81 C 0.5 18.09 19.08 0.47 42 0.47 C 64.92 0.47 83.5 18.09 83.5 39.81 C 83.5 49.97 79.44 59.23 72.77 66.21 L 92.26 85.69 C 93.55 86.99 93.61 89.04 92.38 90.26 C 91.15 91.49 89.1 91.43 87.81 90.14 L 68.08 70.41 Z M 42 72.99 C 61.33 72.99 77 58.14 77 39.81 C 77 21.49 61.33 6.64 42 6.64 C 22.67 6.64 7 21.49 7 39.81 C 7 58.14 22.67 72.99 42 72.99 Z M 42 72.99" />
+
 		section.teachers-block
 			.container
 				.header-row
@@ -165,6 +189,7 @@ html(lang='en')
 					.right-col
 						p Дизайнер интерфейсов со стажем более 10 лет. Прошел классическую школу старой закалки начиная с полиграфии, рекламных агенств и диджитал студий. Позже прокачал свои навыки в аутсорсовых и продуктовых IT-компаниях. Сейчас основал своё дизайн агенство и успешно работает с рынком. <br /> <br /> За плечами несколько сотен Web-проектов и мобильных приложений. Разработал дизайн десктоп-приложений для Windows и iOS, а также интерфейсы для телевизоров.
 						button.type-2.tablet-hidden.modal-open(data-target="#portfolio") Портфолио
+
 		section#teachers.teachers
 			.container
 				.left-col
@@ -215,46 +240,8 @@ html(lang='en')
 										.content-holder
 											p.name Еще Кто-то
 											p Основатель и арт-директор студии TDESER
-		section.program#program
-			.header-row.container
-				.left-col &nbsp
-				.right-col
-					.label.button-label.modal-open(data-target="#subscribe") записаться на  курс
-			.container.border
-				.left-col
-					h2 Программа курса
-				.right-col
-					ul.type-1
-						li
-							span История UX дизайна. Концепция дизайн-мышления.
-						li
-							span Consumer experience vs user experience
-						li
-							span Как понять своего пользователя. Use-cases и user journey. Прототипирование c использованием персонажей.
-						li
-							span Продуктовый дизайн: процесс проектирования и разработки 
-						li
-							span Общие принципы разработки интерфейсов. 
-						li
-							span Типология сайтов. Мифы и лайфхаки проектирования.
-						li
-							span Работа с формами и подача текста.
-						li
-							span Проектирование мобильных приложений. 
-						li
-							span Lean Startup.
-						li
-							span Интерфейсы будущего. 
-					br
-					h4 Практическая работа на курсе:
-					ul.type-1
-						li
-							span Проектирование интерфейсов бытовых приборов
-						li
-							span Проектирование сайтов
-						li
-							span Проектирование онлайн-сервисов
-		section#prices.price-block.yellow
+
+		section#prices.price-block.yellow.hidden
 			.container
 				.left-col
 					h2 Стоимость
@@ -272,21 +259,8 @@ html(lang='en')
 						.text-holder
 							span.bold 15 человек
 							span в группе
-		section.presentation-block#contact
-			.container(style="background-image: url(img/content/audience-1.jpg);")
-				.left-col
-					h2 Место проведения
-					.address-holder
-						span.bold Prostir 86
-						span ул. Казимира Малевича, 86П
-						button Посмотреть на карте
-						button.type-4.tablet-visible.modal-open(data-target="#presentation") Смотреть фото
-				.right-col
-					div#view-presentation.view-presentation.modal-open(data-target="#presentation")
-						img.hidden(src="img/icons/zoom-icon-1.svg")
-						svg(height="92" width="94" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94 92")
-							<path fill="#ffffff" fill-rule="evenodd" d="M 45.32 37.01 L 45.32 26 C 45.32 24.16 43.83 22.68 42 22.68 C 40.17 22.68 38.68 24.16 38.68 26 L 38.68 37.01 L 26.88 37.01 C 25.05 37.01 23.55 38.42 23.55 40.16 C 23.55 41.9 25.04 43.31 26.88 43.31 L 38.68 43.31 L 38.68 54.33 C 38.68 56.17 40.17 57.65 42 57.65 C 43.83 57.65 45.32 56.16 45.32 54.33 L 45.32 43.31 L 57.12 43.31 C 58.95 43.31 60.45 41.9 60.45 40.16 C 60.45 38.43 58.96 37.01 57.12 37.01 L 45.32 37.01 Z M 68.08 70.41 C 60.95 75.88 51.88 79.15 42 79.15 C 19.08 79.15 0.5 61.54 0.5 39.81 C 0.5 18.09 19.08 0.47 42 0.47 C 64.92 0.47 83.5 18.09 83.5 39.81 C 83.5 49.97 79.44 59.23 72.77 66.21 L 92.26 85.69 C 93.55 86.99 93.61 89.04 92.38 90.26 C 91.15 91.49 89.1 91.43 87.81 90.14 L 68.08 70.41 Z M 42 72.99 C 61.33 72.99 77 58.14 77 39.81 C 77 21.49 61.33 6.64 42 6.64 C 22.67 6.64 7 21.49 7 39.81 C 7 58.14 22.67 72.99 42 72.99 Z M 42 72.99" />
-		section.start-date-block
+
+		section.start-date-block.hidden
 			.container
 				.left-col
 					h2 До начала курса
@@ -359,7 +333,48 @@ html(lang='en')
 							//- span.user.free
 								//- img(src="img/icons/user-icon-16.svg")
 					button.type-3.modal-open(data-target="#subscribe") записаться на  курс
-		section.footer
+
+		section.program#program
+			.header-row.container.hidden
+				.left-col &nbsp
+				.right-col
+					.label.button-label.modal-open(data-target="#subscribe") записаться на  курс
+			.container.border
+				.left-col
+					h2 Программа курса
+				.right-col
+					ul.type-1
+						li
+							span История UX дизайна. Концепция дизайн-мышления.
+						li
+							span Consumer experience vs user experience
+						li
+							span Как понять своего пользователя. Use-cases и user journey. Прототипирование c использованием персонажей.
+						li
+							span Продуктовый дизайн: процесс проектирования и разработки 
+						li
+							span Общие принципы разработки интерфейсов. 
+						li
+							span Типология сайтов. Мифы и лайфхаки проектирования.
+						li
+							span Работа с формами и подача текста.
+						li
+							span Проектирование мобильных приложений. 
+						li
+							span Lean Startup.
+						li
+							span Интерфейсы будущего. 
+					br
+					h4 Практическая работа на курсе:
+					ul.type-1
+						li
+							span Проектирование интерфейсов бытовых приборов
+						li
+							span Проектирование сайтов
+						li
+							span Проектирование онлайн-сервисов
+
+		section.footer.yellow
 			.container
 				.left-col
 					.footer-logo
