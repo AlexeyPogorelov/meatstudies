@@ -146,7 +146,8 @@ $hover-color: #f4da00
 			padding: 6px
 
 		button.type-1
-			font-size: 18px
+			background: $main-color
+			font-size: 21.5px
 			font-weight: 700
 			letter-spacing: 1.2px
 			line-height: 17px
@@ -154,10 +155,14 @@ $hover-color: #f4da00
 			padding: 14px 9px
 			// width: 200px
 			width: calc(100% - 31px)
+			small
+				display: block
+				font-size: 15px
 		button.close-button
 			background: url('../img/icons/cross-button-1.svg') 0 0 no-repeat
 			position: absolute
 			bottom: 20px
+			top: auto
 			left: 50%
 			margin-left: -15px
 			transform: rotate(45deg)
@@ -204,8 +209,8 @@ $hover-color: #f4da00
 // when-block
 .when-block
 	.container
-		padding-top: 54px
-		padding-bottom: 13px
+		padding-top: 61px
+		padding-bottom: 44px
 
 		.date-holder-1
 			margin-top: 10px
@@ -219,15 +224,16 @@ $hover-color: #f4da00
 			padding-right: 20px
 			h4
 				font-size: 23px
-				line-height: 27px
+				line-height: 31px
 				color: #414141
 				font-weight: 900
-				margin-bottom: 40px
+				margin-bottom: 28px
 
 			p
 				color: black;
 				font-weight: 400
 				margin-bottom: 20px
+				line-height: 28px
 
 // end when-block
 
@@ -924,7 +930,7 @@ $hover-color: #f4da00
 			line-height: 32px
 
 .modal-holder#subscribe
-	.left-col
+	.full-col
 		width: 50%
 		padding: 20px 0
 
@@ -936,7 +942,7 @@ $hover-color: #f4da00
 			top: 50%
 			transform: translateY(-50%)
 			text-align: center
-			width: 50%
+			width: 100%
 
 			button
 				margin: auto

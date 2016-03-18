@@ -441,10 +441,13 @@ $tablet-cont-width: 660px
 
 //	TABLET
 @media screen and (max-width: 900px)
+
 	.container
 		width: $tablet-cont-width
+
 	.tablet-visible
 		display: inline-block !important
+
 	.tablet-hidden
 		display: none !important
 
@@ -452,19 +455,25 @@ $tablet-cont-width: 660px
 		padding-left: 100px
 		text-align: left
 		float: none
+
 	.left-col
 		padding-right: 0
 		text-align: left
 		width: $tablet-cont-width
+
 	.right-col
 		width: $tablet-cont-width
+
 	h2
 		font-size: 32px
+
 	.top-line
 		min-height: 70px
 		text-align: center
+
 		.container
 			width: auto
+
 		button
 			display: none
 
@@ -472,17 +481,20 @@ $tablet-cont-width: 660px
 		li
 			margin: 0 14px 0 -10px
 			padding: 20px 0
+
 		a
 			font-size: 18px
 			line-height: 17px
-	
+
 	// header
 	.header
 		margin-top: 0
+		// padding-top: 40px
 		padding-bottom: 0
 
 		.left-col
 			margin-top: 36px
+			margin-top: 67px
 
 		.right-col
 			margin-top: 32px
@@ -974,6 +986,14 @@ $tablet-cont-width: 660px
 	.top-line
 		display: none
 
+	.mobile-top-line
+		text-align: right
+		background: transparent
+		.gamburger
+			margin-top: 28px
+		button.type-1
+			display: none
+
 	#to-top
 		display: none
 
@@ -1037,6 +1057,8 @@ $tablet-cont-width: 660px
 
 
 	.header
+		// padding-top: 60px
+
 		.left-col
 			margin-top: 14px
 		.right-col
@@ -1327,6 +1349,7 @@ $tablet-cont-width: 660px
 
 //	xSMALL
 @media screen and (max-width: 480px)
+
 	.container
 		width: 100%
 
@@ -1345,6 +1368,11 @@ $tablet-cont-width: 660px
 		.modal-content
 			.gallery-slider
 				margin-top: calc(50vh - 260px)
+	.mobile-menu .container
+		ul.main-navigation
+			margin-top: 20px
+		button.close-button, .btn.close-button
+			bottom: 8px
 
 @media screen and (max-height: 580px) and (max-width: 580px)
 	#presentation
