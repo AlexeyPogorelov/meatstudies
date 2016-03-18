@@ -52,7 +52,7 @@ var animationPrefix = (function () {
 					$('.fadeInRight').addClass('wow fadeInRight').on(animationPrefix, function () {
 						$(this).removeClass('wow');
 					});
-					$('section').not('.header, #program, #contact, #prices').find('> *').addClass('wow fadeInUp').on(animationPrefix, function () {
+					$('section').not('.header, #program, #contact, #prices').find('> * > *').addClass('wow fadeInUp').on(animationPrefix, function () {
 						$(this).removeClass('wow');
 					});
 					$('section.header').addClass('wow').on(animationPrefix, function () {
