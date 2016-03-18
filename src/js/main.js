@@ -509,7 +509,6 @@ $(document).on('ready', function () {
 			var plg = {
 				init: function () {
 					DOM.$lnks = $self.find(opt.linkClass);
-					// state.pages = DOM.$lnks.length;
 					plg.resize();
 				},
 				scroll: function (top) {
