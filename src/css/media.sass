@@ -1303,7 +1303,7 @@ $tablet-cont-width: 660px
 							.image-holder
 								padding: 0 4px
 
-@media screen and (max-height: 480px)
+@media screen and (max-height: 520px)
 	.mobile-menu
 		.container
 			left: 0
@@ -1314,7 +1314,7 @@ $tablet-cont-width: 660px
 				// display: none
 			button.close-button, .btn.close-button
 				top: auto
-				bottom: 30px
+				bottom: 20px
 			li
 				padding: 2px
 	.modal-holder, .modal-holder#subscribe
@@ -1322,7 +1322,7 @@ $tablet-cont-width: 660px
 		.close-modal
 			bottom: auto
 			left: auto
-			bottom: 30px
+			bottom: 20px
 			left: 50%
 			// transform: translateZ(200px)
 			// z-index: 999
@@ -1339,6 +1339,12 @@ $tablet-cont-width: 660px
 				position: static
 		.modal-content .left-col form .form-group:last-child
 			margin-bottom: 0
+		.full-col form .form-group
+			padding-left: 20px
+			padding-right: 20px
+		.close-modal
+			transform: rotate(45deg) translate(20px, -6px)
+			position: static
 	#mail-sent .modal-content
 		padding: 20px
 		position: absolute !important
@@ -1362,12 +1368,22 @@ $tablet-cont-width: 660px
 					.slide-wrapper
 						padding: 0 10px
 
+	.modal-holder#subscribe
+		.full-col form .form-group
+			padding-left: 20px
+			padding-right: 20px
+		button.type-3, .btn.type-3
+			padding-left: 0
+			padding-right: 0
+			font-size: 16px
+
 //	FIXES
 @media screen and (max-height: 580px) and (max-width: 622px)
 	#presentation
 		.modal-content
 			.gallery-slider
-				margin-top: calc(50vh - 260px)
+				margin-top: 50vh !important
+				transform: translate(0, -50%) !important
 	.mobile-menu .container
 		ul.main-navigation
 			margin-top: 20px
