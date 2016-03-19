@@ -230,7 +230,7 @@ $hover-color: #f4da00
 				margin-bottom: 28px
 
 			p
-				color: black;
+				color: black
 				font-weight: 400
 				margin-bottom: 20px
 				line-height: 28px
@@ -262,9 +262,8 @@ $hover-color: #f4da00
 // do-it-block
 .do-it-block
 	.container
-		background-color: #d8d8d8
 		background-size: cover
-		background-position: 50%
+		background: #d8d8d8 50%
 		height: 528px
 		position: relative
 
@@ -608,8 +607,8 @@ $hover-color: #f4da00
 			opacity: .3
 			&.free
 				opacity: 1
-			&:hover
-				 //filter: invert(.6)
+			// &:hover
+				//filter: invert(.6)
 
 // end start-date-block
 
@@ -923,7 +922,6 @@ $hover-color: #f4da00
 			margin-bottom: 25px
 
 		p
-			/* Text style for "На ваш Email п" */
 			width: 600px
 			color: black
 			font-size: 21px
@@ -1146,6 +1144,9 @@ div[data-control="editable"]
 body.client-ios
 	button.type-1, #mobile-menu button.type-1
 		padding: 14px 9px 10px
+	.top-line
+		button
+			padding: 3px 70px 0
 	.gamburger
 		transform: translateZ(101px)
 	.program .button-label
@@ -1173,6 +1174,9 @@ body.client-ios
 body.client-mac
 	button.type-1, #mobile-menu button.type-1
 		padding-bottom: 16px
+	.top-line
+		button
+			padding: 3px 70px 0
 
 .stripe-loading-indicator.loaded, .stripe-loaded
 	display: none !important
