@@ -62,7 +62,7 @@ $hover-color: #f4da00
 		letter-spacing: 1.47px
 		line-height: 21px
 		margin: 0
-		padding: 0 70px
+		padding: 0 70px 4px
 		height: 88px
 		position: absolute
 		right: 0
@@ -282,7 +282,6 @@ $hover-color: #f4da00
 			padding: 27px 76px
 			text-transform: uppercase
 			transform: translate(-50%, -50%)
-			font-weight: 700
 			transition: background .3s, color .3s
 			// height: 80px
 			// width: 348px
@@ -477,8 +476,7 @@ $hover-color: #f4da00
 		height: 658px
 
 		.left-col
-			background: rgba(255,255,255,.9)
-			background-position: 50%
+			background: rgba(255, 255, 255, .9) 50%
 			background-size: cover
 			padding-top: 147px
 			height: 100%
@@ -607,6 +605,8 @@ $hover-color: #f4da00
 			opacity: .3
 			&.free
 				opacity: 1
+			//&:hover
+				 //filter: invert(.6)
 			// &:hover
 				//filter: invert(.6)
 
@@ -634,7 +634,7 @@ $hover-color: #f4da00
 			margin-bottom: 29px
 			position: relative
 
-		p
+		//p
 			// color: #fff
 
 		a
@@ -655,6 +655,10 @@ $hover-color: #f4da00
 
 		.socials-type-2 a
 			color: #fff
+			&:hover
+				color: #000
+		.underline:before
+			background-color: #000
 
 // end footer
 
@@ -848,8 +852,7 @@ $hover-color: #f4da00
 
 		.temp-frame
 			border: 10px solid $main-color
-			padding: 24px
-			padding-top: 40px
+			padding: 40px 24px 24px
 
 			h2
 				color: black
@@ -944,8 +947,7 @@ $hover-color: #f4da00
 			width: 100%
 
 			button
-				margin: auto
-				margin-top: 14px
+				margin: 14px auto auto
 				font-weight: 900
 				width: 100%
 
@@ -1013,8 +1015,7 @@ $hover-color: #f4da00
 				text-align: center
 				width: 100%
 				button
-					margin: auto
-					margin-top: 14px
+					margin: 14px auto auto
 					font-weight: 900
 					width: 100%
 				.form-group
@@ -1136,7 +1137,7 @@ $hover-color: #f4da00
 // end modals
 
 // FIXES
-div[data-control="editable"]
+//div[data-control="editable"]
 	// z-index: 9
 .redactor-editor, .redactor-box, .redactor-box textarea
 	background-color: transparent !important
@@ -1146,7 +1147,7 @@ body.client-ios
 		padding: 14px 9px 10px
 	.top-line
 		button
-			padding: 3px 70px 0
+			padding: 0 70px 2px
 	.gamburger
 		transform: translateZ(101px)
 	.program .button-label
@@ -1164,7 +1165,6 @@ body.client-ios
 			float: left
 			height: calc(100% + 1px)
 			margin-left: -1px
-			display: block
 		&:after
 			content: ''
 			display: block
@@ -1176,7 +1176,8 @@ body.client-mac
 		padding-bottom: 16px
 	.top-line
 		button
-			padding: 3px 70px 0
+			padding: 0 70px 4px
+
 
 .stripe-loading-indicator.loaded, .stripe-loaded
 	display: none !important
