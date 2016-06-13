@@ -72,6 +72,7 @@ $hover-color: #f3bd00
 		width: calc(100% - 40px)
 
 	button
+		display: block
 		color: black
 		font-size: 22px
 		font-weight: 700
@@ -191,6 +192,7 @@ $hover-color: #f3bd00
 
 	.left-col
 		margin-top: 15px
+		margin-top: -1px
 
 	.right-col
 		margin-top: 73px
@@ -276,7 +278,7 @@ $hover-color: #f3bd00
 			font-weight: 900
 			line-height: 25px
 			max-width: 500px
-			min-height: 54px
+			min-height: 55px
 			padding-left: 103px
 			position: relative
 
@@ -284,10 +286,10 @@ $hover-color: #f3bd00
 			line-height: 27px
 			&:before
 				content: ''
-				background: url('../img/content/laptop-icon-1.svg')
+				background: url('../img/content/laptop-icon-1.svg') 0 0 no-repeat
 				position: absolute
 				left: 0
-				height: 54px
+				height: 55px
 				width: 76px
 
 // end whos-block
@@ -1199,7 +1201,7 @@ body.client-ios
 		padding: 14px 9px 10px
 	.top-line
 		button
-			padding: 0 70px 2px
+			padding: 2px 70px 0
 	.gamburger
 		transform: translateZ(101px)
 	.program .button-label
@@ -1225,10 +1227,13 @@ body.client-ios
 
 body.client-mac
 	button.type-1, #mobile-menu button.type-1
-		padding-bottom: 16px
+		// padding-top: 2px
 	.top-line
 		button
-			padding: 0 70px 4px
+			padding: 2px 70px 0
+	.mobile-top-line
+		button.type-1
+			padding: 11px 36px 9px
 
 
 .stripe-loading-indicator.loaded, .stripe-loaded
