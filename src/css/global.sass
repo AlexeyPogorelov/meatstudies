@@ -21,6 +21,12 @@ body
 			// transition: position .3s
 			// transition-delay: .3s
 
+body::-webkit-scrollbar
+	width: 0
+	height: 0
+	background-color: #fff
+	border: none
+
 // webkit scroll
 .lightbox-cell::-webkit-scrollbar-corner, .dropdown::-webkit-scrollbar-corner, .mobile-menu .container::-webkit-scrollbar-corner
 	background-color: #e5e5e5
@@ -77,9 +83,10 @@ h1
 h2
 	color: $main-color
 	font-size: 48px
+	font-size: 52px
 	font-weight: 700
-	letter-spacing: -0.1px
-	line-height: 46px
+	letter-spacing: 1px
+	line-height: 1em
 
 h3
 	font-size: 36px

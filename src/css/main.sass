@@ -53,19 +53,29 @@ $hover-color: #f4da00
 		transform: translateY(0)
 		transition: transform .3s ease-out
 
+	// button
+	// 	background: $main-color
+	// 	border-radius: 0
+	// 	color: black
+	// 	font-size: 26px
+	// 	font-weight: 700
+	// 	letter-spacing: 1.47px
+	// 	line-height: 21px
+	// 	margin: 0
+	// 	padding: 0 70px 4px
+	// 	height: 88px
+	// 	position: absolute
+	// 	right: 0
+	// 	top: 0
+
 	button
-		background: $main-color
-		border-radius: 0
 		color: black
-		font-size: 26px
+		font-size: 22px
 		font-weight: 700
 		letter-spacing: 1.47px
 		line-height: 21px
-		margin: 0
-		padding: 0 70px 4px
-		height: 88px
 		position: absolute
-		right: 0
+		right: 12px
 		top: 0
 
 		small
@@ -204,13 +214,18 @@ $hover-color: #f4da00
 
 #main-slider.main-slider
 	margin-top: 77px
+#header
+	.container.main-slider-container
+		// width: calc(100% - 140px)
 // end header
 
 // when-block
 .when-block
 	.container
-		padding-top: 61px
-		padding-bottom: 44px
+		// padding-top: 61px
+		padding-top: 53px
+		// padding-bottom: 44px
+		padding-bottom: 14px
 
 		.date-holder-1
 			margin-top: 10px
@@ -248,14 +263,28 @@ $hover-color: #f4da00
 
 		p
 			line-height: 26px
+			margin-bottom: 1.6em
 
 		h4
-			margin-top: 50px
+			margin-top: 45px
 			color: #414141
 			font-size: 20px
 			font-weight: 900
 			line-height: 25px
 			max-width: 500px
+			min-height: 54px
+			padding-left: 103px
+			position: relative
+
+			font-size: 23px
+			line-height: 27px
+			&:before
+				content: ''
+				background: url('../img/content/laptop-icon-1.svg')
+				position: absolute
+				left: 0
+				height: 54px
+				width: 76px
 
 // end whos-block
 
@@ -339,10 +368,18 @@ $hover-color: #f4da00
 			line-height: 27px
 			max-width: 560px
 			margin-bottom: 29px
+			color: #1a1a1a
+			font-size: 20px
+			// font-weight: 400
+			line-height: 1.4em
 
 		button
 			margin-left: -1px
-			margin-top: 7px
+			margin-top: 0
+			color: $main-color
+			font-size: 28px
+			font-weight: 700
+			letter-spacing: 2px
 // end teachers-block
 
 // teachers
@@ -401,7 +438,7 @@ $hover-color: #f4da00
 
 // program
 .program
-	margin-top: 80px
+	margin-top: 88px
 	// margin-bottom: 58px
 	position: relative
 	animation: none !important
@@ -463,6 +500,7 @@ $hover-color: #f4da00
 
 			.money-icon-1
 				margin-top: 14px
+				margin-top: 11px
 
 			.team-icon-1
 				margin-top: 2px
@@ -619,7 +657,7 @@ $hover-color: #f4da00
 	.container
 		padding-top: 55px
 		padding-bottom: 55px
-		// background-color: black
+		background-color: black
 
 		.footer-logo
 			margin-top: 20px
@@ -634,11 +672,11 @@ $hover-color: #f4da00
 			margin-bottom: 29px
 			position: relative
 
-		//p
-			// color: #fff
+		p
+			color: #fff
 
 		a
-			// color: $main-color
+			color: $main-color
 			display: inline-block
 			font-size: 25px
 			font-weight: 700
@@ -932,7 +970,7 @@ $hover-color: #f4da00
 			line-height: 32px
 
 .modal-holder#subscribe
-	.full-col
+	.left-col, .full-col
 		// width: 50%
 		padding: 20px 0
 
@@ -975,6 +1013,10 @@ $hover-color: #f4da00
 
 					input
 						width: 100%
+	.left-col
+		width: 50%
+		form
+			width: 50%
 	.right-col
 		background: $main-color
 		position: absolute

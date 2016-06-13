@@ -24,9 +24,9 @@ html(lang='en')
 		meta(name="msapplication-TileImage" content="/mstile-144x144.png")
 		meta(name="theme-color" content="#ffffff")
 
-		link(rel='stylesheet', href='bower_components/normalize-css/normalize.css')
-		link(rel='stylesheet', href='bower_components/font-awesome/css/font-awesome.min.css')
-		link(rel='stylesheet', href='bower_components/animate.css/animate.css')
+		link(rel='stylesheet', href='vendor/normalize-css/normalize.css')
+		link(rel='stylesheet', href='vendor/font-awesome/css/font-awesome.min.css')
+		link(rel='stylesheet', href='vendor/animate.css/animate.css')
 		link(rel='stylesheet', href='css/concated.css')
 
 	body
@@ -52,17 +52,17 @@ html(lang='en')
 						a(href="#header")
 							span О курсе
 					li
-						a(href="#about")
-							span Когда
-					li
-						a(href="#contact")
-							span Где
-					li
 						a(href="#teachers-block")
-							span Предподаватели
+							span Предподаватель
 					li
 						a(href="#program")
 							span Программа
+					li
+						a(href="#prices")
+							span Стоимость
+					li
+						a(href="#contact")
+							span Контакты
 				button.close-button.close-modal
 
 		div.top-line
@@ -72,18 +72,20 @@ html(lang='en')
 						a(href="#header")
 							span О курсе
 					li
-						a(href="#about")
-							span Когда
-					li
-						a(href="#contact")
-							span Где
-					li
 						a(href="#teachers-block")
-							span Предподаватели
+							span Предподаватель
 					li
 						a(href="#program")
 							span Программа
-				button.type-1.modal-open(data-target="#subscribe") <small>предварительная</small> регистрация
+					li
+						a(href="#prices")
+							span Стоимость
+					li
+						a(href="#contact")
+							span Контакты
+				button.type-1.modal-open(data-target="#subscribe") записаться
+
+					//- <small>предварительная</small> регистрация
 		section#header.header
 			.container
 				.left-col
@@ -94,7 +96,7 @@ html(lang='en')
 						h2 UID и UXD
 						h5 3 месяца по вторникам и четвергам. 
 						p User Experience, он же UX, он же пользовательский опыт. Такое распостраненное и модное слово сейчас, что оно уже давно вышло за рамки дизайнерской тусовки. <br /> <br /> Все его слышали, но не все, к сожалению, понимают. UX подход это прежде всего  умение думать. Так User Experience, он же UX, он же пользовательский опыт. 
-			.container
+			.container.main-slider-container
 				div#main-slider.main-slider
 					.slider-viewport
 						.slider-holder
@@ -106,50 +108,37 @@ html(lang='en')
 				.left-col
 					h2 Когда
 				.right-col
-					.date-holder-1.hidden
+					.date-holder-1
 						.icon-holder
 							img(src="img/icons/calendar-icon-1.svg").calendar-icon-1
 						.text-holder
 							span.bold 3 месяца
 							span 15 февраля – 16 мая
-					.date-holder-1.hidden
+					.date-holder-1
 						.icon-holder
 							img(src="img/icons/clock-icon-1.svg").clock-icon-1
 						.text-holder
 							span.bold Вторник - Четверг
 							span 19:15 – 21:15
-					.description-holder
+					.description-holder.hidden
 							h4 Все подробности о новом курсе UX+UI будут известны с 15 мая.
 							p Зарегистрируйтесь предварительно и мы будем держать вас в курсе наших обновлений.
 
-		section.whos-block.hidden
+		section.whos-block
 			.container
 				.left-col
 					h2 Для кого
 				.right-col
 					.content
-						p User Experience, он же UX, он же пользовательский опыт. Такое распостраненное и модное слово сейчас, что оно уже давно вышло за рамки дизайнерской тусовки.
-						h4 ВАЖНО! Для занятий вам понадобится ноутбук.
+						p - Для дизайнеров с другой среды, которые хотят поменять свой профиль деятельности (полиграфия, реклама, интерьеры…)  
+						p - Для уже практикующих дизайнеров интерфейсов, которые хотят подтянуть и систематизировать свои скилы на практике 
+						p - Для людей с опытом работы в графических редакторах
+						h4 Для обучения вам понадобится свой ноутбук.
 
-		section.do-it-block.hidden
+		section.do-it-block
 			.container(style="background-image: url(img/content/audience-1.jpg);")
 				.button-holder
 					button.modal-open(data-target="#subscribe") записаться
-
-		section.presentation-block#contact
-			.container(style="background-image: url(img/content/audience-1.jpg);")
-				.left-col
-					h2 Место проведения
-					.address-holder
-						span.bold Prostir 86
-						span ул. Казимира Малевича, 86П
-						button Посмотреть на карте
-						button.type-4.tablet-visible.modal-open(data-target="#presentation") Смотреть фото
-				.right-col
-					div#view-presentation.view-presentation.modal-open(data-target="#presentation")
-						img.hidden(src="img/icons/zoom-icon-1.svg")
-						svg(height="92" width="94" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94 92")
-							<path fill="#ffffff" fill-rule="evenodd" d="M 45.32 37.01 L 45.32 26 C 45.32 24.16 43.83 22.68 42 22.68 C 40.17 22.68 38.68 24.16 38.68 26 L 38.68 37.01 L 26.88 37.01 C 25.05 37.01 23.55 38.42 23.55 40.16 C 23.55 41.9 25.04 43.31 26.88 43.31 L 38.68 43.31 L 38.68 54.33 C 38.68 56.17 40.17 57.65 42 57.65 C 43.83 57.65 45.32 56.16 45.32 54.33 L 45.32 43.31 L 57.12 43.31 C 58.95 43.31 60.45 41.9 60.45 40.16 C 60.45 38.43 58.96 37.01 57.12 37.01 L 45.32 37.01 Z M 68.08 70.41 C 60.95 75.88 51.88 79.15 42 79.15 C 19.08 79.15 0.5 61.54 0.5 39.81 C 0.5 18.09 19.08 0.47 42 0.47 C 64.92 0.47 83.5 18.09 83.5 39.81 C 83.5 49.97 79.44 59.23 72.77 66.21 L 92.26 85.69 C 93.55 86.99 93.61 89.04 92.38 90.26 C 91.15 91.49 89.1 91.43 87.81 90.14 L 68.08 70.41 Z M 42 72.99 C 61.33 72.99 77 58.14 77 39.81 C 77 21.49 61.33 6.64 42 6.64 C 22.67 6.64 7 21.49 7 39.81 C 7 58.14 22.67 72.99 42 72.99 Z M 42 72.99" />
 
 		section#teachers-block.teachers-block
 			.container
@@ -187,10 +176,51 @@ html(lang='en')
 									span pinterest
 									i.fa.fa-pinterest
 					.right-col
-						p Дизайнер интерфейсов со стажем более 10 лет. Прошел классическую школу старой закалки начиная с полиграфии, рекламных агенств и диджитал студий. Позже прокачал свои навыки в аутсорсовых и продуктовых IT-компаниях. Сейчас основал своё дизайн агенство и успешно работает с рынком. <br /> <br /> За плечами несколько сотен Web-проектов и мобильных приложений. Разработал дизайн десктоп-приложений для Windows и iOS, а также интерфейсы для телевизоров.
-						button.type-2.tablet-hidden.modal-open(data-target="#portfolio") Портфолио
+						//- p Дизайнер интерфейсов со стажем более 10 лет. Прошел классическую школу старой закалки начиная с полиграфии, рекламных агенств и диджитал студий. Позже прокачал свои навыки в аутсорсовых и продуктовых IT-компаниях. Сейчас основал своё дизайн агенство и успешно работает с рынком. <br /> <br /> За плечами несколько сотен Web-проектов и мобильных приложений. Разработал дизайн десктоп-приложений для Windows и iOS, а также интерфейсы для телевизоров.
+						p Дизайнер со стажем более 10 лет. Как и многие дизайнеры старой закалки начинал с полиграфии и рекламных агентств. За это время работал в Leo Burnett, в крупных IT компаниях, в диджитал студиях и внутри самих продуктов. Неоднократно был отмечен призами конкурса The Very Best Of. Создал несколько успешных дизайн команд. <br /> <br /> Основал своё продакт-дизайн агентство, которое специализируется на дизайн разработке интерфейсов (от идеи до фронт-энда) для клиентов по всему миру.
+						button.type-4.tablet-hidden.modal-open(data-target="#portfolio") Портфолио
 
-		section#teachers.teachers
+		section.program#program
+			.header-row.container
+				.left-col &nbsp
+				.right-col
+					.label.button-label.modal-open(data-target="#subscribe") записаться на  курс
+			.container.border
+				.left-col
+					h2 Программа курса
+				.right-col
+					ul.type-1
+						li
+							span История UX дизайна. Концепция дизайн-мышления.
+						li
+							span Consumer experience vs user experience
+						li
+							span Как понять своего пользователя. Use-cases и user journey. Прототипирование c использованием персонажей.
+						li
+							span Продуктовый дизайн: процесс проектирования и разработки 
+						li
+							span Общие принципы разработки интерфейсов. 
+						li
+							span Типология сайтов. Мифы и лайфхаки проектирования.
+						li
+							span Работа с формами и подача текста.
+						li
+							span Проектирование мобильных приложений. 
+						li
+							span Lean Startup.
+						li
+							span Интерфейсы будущего. 
+					br
+					h4 Практическая работа на курсе:
+					ul.type-1
+						li
+							span Проектирование интерфейсов бытовых приборов
+						li
+							span Проектирование сайтов
+						li
+							span Проектирование онлайн-сервисов
+
+		section#teachers.teachers.hidden
 			.container
 				.left-col
 					h2 Лекторы курса
@@ -241,7 +271,7 @@ html(lang='en')
 											p.name Еще Кто-то
 											p Основатель и арт-директор студии TDESER
 
-		section#prices.price-block.yellow.hidden
+		section#prices.price-block.yellow
 			.container
 				.left-col
 					h2 Стоимость
@@ -260,7 +290,22 @@ html(lang='en')
 							span.bold 15 человек
 							span в группе
 
-		section.start-date-block.hidden
+		section.presentation-block#contact
+			.container(style="background-image: url(img/content/audience-1.jpg);")
+				.left-col
+					h2 Место проведения
+					.address-holder
+						span.bold Prostir 86
+						span ул. Казимира Малевича, 86П
+						button Посмотреть на карте
+						button.type-4.tablet-visible.modal-open(data-target="#presentation") Смотреть фото
+				.right-col
+					div#view-presentation.view-presentation.modal-open(data-target="#presentation")
+						img.hidden(src="img/icons/zoom-icon-1.svg")
+						svg(height="92" width="94" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 94 92")
+							<path fill="#ffffff" fill-rule="evenodd" d="M 45.32 37.01 L 45.32 26 C 45.32 24.16 43.83 22.68 42 22.68 C 40.17 22.68 38.68 24.16 38.68 26 L 38.68 37.01 L 26.88 37.01 C 25.05 37.01 23.55 38.42 23.55 40.16 C 23.55 41.9 25.04 43.31 26.88 43.31 L 38.68 43.31 L 38.68 54.33 C 38.68 56.17 40.17 57.65 42 57.65 C 43.83 57.65 45.32 56.16 45.32 54.33 L 45.32 43.31 L 57.12 43.31 C 58.95 43.31 60.45 41.9 60.45 40.16 C 60.45 38.43 58.96 37.01 57.12 37.01 L 45.32 37.01 Z M 68.08 70.41 C 60.95 75.88 51.88 79.15 42 79.15 C 19.08 79.15 0.5 61.54 0.5 39.81 C 0.5 18.09 19.08 0.47 42 0.47 C 64.92 0.47 83.5 18.09 83.5 39.81 C 83.5 49.97 79.44 59.23 72.77 66.21 L 92.26 85.69 C 93.55 86.99 93.61 89.04 92.38 90.26 C 91.15 91.49 89.1 91.43 87.81 90.14 L 68.08 70.41 Z M 42 72.99 C 61.33 72.99 77 58.14 77 39.81 C 77 21.49 61.33 6.64 42 6.64 C 22.67 6.64 7 21.49 7 39.81 C 7 58.14 22.67 72.99 42 72.99 Z M 42 72.99" />
+
+		section.start-date-block
 			.container
 				.left-col
 					h2 До начала курса
@@ -334,51 +379,11 @@ html(lang='en')
 								//- img(src="img/icons/user-icon-16.svg")
 					button.type-3.modal-open(data-target="#subscribe") записаться на  курс
 
-		section.program#program
-			.header-row.container.hidden
-				.left-col &nbsp
-				.right-col
-					.label.button-label.modal-open(data-target="#subscribe") записаться на  курс
-			.container.border
-				.left-col
-					h2 Программа курса
-				.right-col
-					ul.type-1
-						li
-							span История UX дизайна. Концепция дизайн-мышления.
-						li
-							span Consumer experience vs user experience
-						li
-							span Как понять своего пользователя. Use-cases и user journey. Прототипирование c использованием персонажей.
-						li
-							span Продуктовый дизайн: процесс проектирования и разработки 
-						li
-							span Общие принципы разработки интерфейсов. 
-						li
-							span Типология сайтов. Мифы и лайфхаки проектирования.
-						li
-							span Работа с формами и подача текста.
-						li
-							span Проектирование мобильных приложений. 
-						li
-							span Lean Startup.
-						li
-							span Интерфейсы будущего. 
-					br
-					h4 Практическая работа на курсе:
-					ul.type-1
-						li
-							span Проектирование интерфейсов бытовых приборов
-						li
-							span Проектирование сайтов
-						li
-							span Проектирование онлайн-сервисов
-
-		section#footer.footer.yellow
+		section#footer.footer
 			.container
 				.left-col
 					.footer-logo
-						img(src="img/content/main-logo-2.svg")
+						img(src="img/content/main-logo-3.svg")
 				.right-col
 					.text-group
 						p По всем вопросам пишите на email
@@ -437,7 +442,8 @@ html(lang='en')
 
 			.modal-content
 				div
-					.full-col
+					//- .full-col
+					.left-col
 						form(action="#")
 							.form-group
 								.input-holder
@@ -461,7 +467,7 @@ html(lang='en')
 									.error-label ))
 							.form-group
 								div.btn.submit.type-3(type="submit") отправить
-					.right-col.hidden
+					.right-col
 						.content-holder
 							.date-holder-1
 								.icon-holder
@@ -488,6 +494,6 @@ html(lang='en')
 									span.bold 15 человек
 									span в группе
 
-	script(src='bower_components/jquery/dist/jquery.js')
-	script(src='bower_components/wow/dist/wow.js')
+	script(src='vendor/jquery/dist/jquery.js')
+	script(src='vendor/wow/dist/wow.js')
 	script(src='js/main.js')
