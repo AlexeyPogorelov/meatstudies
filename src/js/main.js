@@ -52,11 +52,14 @@ var animationPrefix = (function () {
 					$('.fadeInRight').addClass('wow fadeInRight').on(animationPrefix, function () {
 						$(this).removeClass('wow');
 					});
-					$('section').not('.header, #program, #contact, #prices').find('> * > *').addClass('wow fadeInUp').on(animationPrefix, function () {
+					$('section').not('.header, #program, #contact, #prices, .do-it-block').find('> * > *').addClass('wow fadeInUp').on(animationPrefix, function () {
 						$(this).removeClass('wow');
 					});
 					$('section.header').addClass('wow').on(animationPrefix, function () {
 						$(this).removeClass('wow');
+					});
+					$('.do-it-block .container').addClass('wow fadeInUp').on(animationPrefix, function () {
+						// $(this).removeClass('wow fadeInUp');
 					});
 					$('#program').find('.button-label').addClass('wow fadeInUp').on(animationPrefix, function () {
 						$(this).removeClass('wow');

@@ -1,10 +1,10 @@
 $font-stack: "Gotham Pro", sans-serif
-$main-color: #ffe400
+$main-color: #ffd500
 $font-color: #1a1a1a
 $dark-color: #eee
 $left-width: 460px
 $right-width: 700px
-$hover-color: #f4da00
+$hover-color: #f3bd00
 
 .right-col, .left-col
 	float: left
@@ -46,11 +46,11 @@ $hover-color: #f4da00
 	position: fixed
 	top: 0
 	width: 100%
-	transform: translateY(-100%)
+	transform: translateY(-100%) translateZ(0)
 	transition: transform .3s ease-in
 	z-index: 2
 	&.showed
-		transform: translateY(0)
+		transform: translateY(0) translateZ(0)
 		transition: transform .3s ease-out
 
 	// button
@@ -68,15 +68,19 @@ $hover-color: #f4da00
 	// 	right: 0
 	// 	top: 0
 
+	.container
+		width: calc(100% - 40px)
+
 	button
 		color: black
 		font-size: 22px
 		font-weight: 700
 		letter-spacing: 1.47px
-		line-height: 21px
+		line-height: 20px
 		position: absolute
 		right: 12px
 		top: 0
+		height: 64px
 
 		small
 			display: block
@@ -373,13 +377,17 @@ $hover-color: #f4da00
 			// font-weight: 400
 			line-height: 1.4em
 
-		button
+		button, .btn
+			background: none
+			padding: 0
 			margin-left: -1px
 			margin-top: 0
 			color: $main-color
 			font-size: 28px
 			font-weight: 700
 			letter-spacing: 2px
+			&:hover
+				color: $hover-color
 // end teachers-block
 
 // teachers
@@ -694,9 +702,9 @@ $hover-color: #f4da00
 		.socials-type-2 a
 			color: #fff
 			&:hover
-				color: #000
-		.underline:before
-			background-color: #000
+				color: $main-color
+		// .underline:before
+			// background-color: #000
 
 // end footer
 
@@ -716,13 +724,15 @@ $hover-color: #f4da00
 		margin-top: 6px
 
 	button.type-1
-		background: $main-color
+		// background: $main-color
 		font-size: 21px
 		padding: 11px 36px
 		margin: 0
 		top: 0
+		top: 12px
 		position: absolute
 		right: 0
+		right: 12px
 		width: auto
 
 		small
