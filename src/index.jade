@@ -86,8 +86,18 @@ html(lang='en')
 						a(href="#contact")
 							span Контакты
 				button.type-1.modal-open(data-target="#subscribe") записаться
-
 					//- <small>предварительная</small> регистрация
+
+		section#sold.sold.yellow
+			.container
+				.left-col
+					.main-content
+						h3 SORRY, МЕСТ БОЛЬШЕ НЕТ :(
+						p Новые курсы планируются на сентябрь. <br />Записывайтесь, чтоб узнать о наборах первым.
+				.right-col
+					.button-holder
+						button.modal-open(data-target="#subscribe") записаться
+
 		section#header.header
 			.container
 				.left-col
@@ -105,6 +115,7 @@ html(lang='en')
 							.slide
 								.image-holder
 									img(src="img/content/tabel-collage-1.png")
+
 		section#about.when-block.yellow
 			.container
 				.left-col
@@ -444,8 +455,8 @@ html(lang='en')
 
 			.modal-content
 				div
-					//- .full-col
-					.left-col
+					//- .left-col
+					.full-col
 						form(action="#")
 							.form-group
 								.input-holder
@@ -469,7 +480,7 @@ html(lang='en')
 									.error-label ))
 							.form-group
 								div.btn.submit.type-3(type="submit") отправить
-					.right-col
+					.right-col.hidden
 						.content-holder
 							.date-holder-1
 								.icon-holder
